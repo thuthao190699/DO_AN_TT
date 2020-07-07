@@ -33,8 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_NhanVien));
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaGroupBox2 = new Guna.UI.WinForms.GunaGroupBox();
             this.cbChucVu = new Guna.UI.WinForms.GunaComboBox();
+            this.gunaGroupBox2 = new Guna.UI.WinForms.GunaGroupBox();
             this.txtMK = new Guna.UI.WinForms.GunaLineTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTK = new Guna.UI.WinForms.GunaLineTextBox();
@@ -51,12 +51,11 @@
             this.btnUpdate = new Guna.UI.WinForms.GunaGradientButton();
             this.btnSave = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
-            this.pictureThem = new System.Windows.Forms.PictureBox();
+            this.btnThem = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaGroupBox1.SuspendLayout();
             this.gunaGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureThem)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaGroupBox1
@@ -64,7 +63,7 @@
             this.gunaGroupBox1.BackColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox1.BaseColor = System.Drawing.Color.White;
             this.gunaGroupBox1.BorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaGroupBox1.Controls.Add(this.pictureThem);
+            this.gunaGroupBox1.Controls.Add(this.btnThem);
             this.gunaGroupBox1.Controls.Add(this.cbChucVu);
             this.gunaGroupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gunaGroupBox1.LineColor = System.Drawing.Color.Gainsboro;
@@ -74,6 +73,24 @@
             this.gunaGroupBox1.TabIndex = 0;
             this.gunaGroupBox1.Text = "Chức Vụ";
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 8);
+            // 
+            // cbChucVu
+            // 
+            this.cbChucVu.BackColor = System.Drawing.Color.Transparent;
+            this.cbChucVu.BaseColor = System.Drawing.Color.White;
+            this.cbChucVu.BorderColor = System.Drawing.Color.Silver;
+            this.cbChucVu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbChucVu.FocusedColor = System.Drawing.Color.Empty;
+            this.cbChucVu.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbChucVu.ForeColor = System.Drawing.Color.Black;
+            this.cbChucVu.FormattingEnabled = true;
+            this.cbChucVu.Location = new System.Drawing.Point(3, 40);
+            this.cbChucVu.Name = "cbChucVu";
+            this.cbChucVu.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbChucVu.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cbChucVu.Size = new System.Drawing.Size(156, 26);
+            this.cbChucVu.TabIndex = 1;
             // 
             // gunaGroupBox2
             // 
@@ -98,24 +115,6 @@
             this.gunaGroupBox2.TabIndex = 0;
             this.gunaGroupBox2.Text = "Thông Tin";
             this.gunaGroupBox2.TextLocation = new System.Drawing.Point(10, 8);
-            // 
-            // cbChucVu
-            // 
-            this.cbChucVu.BackColor = System.Drawing.Color.Transparent;
-            this.cbChucVu.BaseColor = System.Drawing.Color.White;
-            this.cbChucVu.BorderColor = System.Drawing.Color.Silver;
-            this.cbChucVu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbChucVu.FocusedColor = System.Drawing.Color.Empty;
-            this.cbChucVu.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbChucVu.ForeColor = System.Drawing.Color.Black;
-            this.cbChucVu.FormattingEnabled = true;
-            this.cbChucVu.Location = new System.Drawing.Point(3, 40);
-            this.cbChucVu.Name = "cbChucVu";
-            this.cbChucVu.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cbChucVu.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbChucVu.Size = new System.Drawing.Size(156, 26);
-            this.cbChucVu.TabIndex = 1;
             // 
             // txtMK
             // 
@@ -407,15 +406,28 @@
             this.gunaPictureBox2.TabIndex = 3;
             this.gunaPictureBox2.TabStop = false;
             // 
-            // pictureThem
+            // btnThem
             // 
-            this.pictureThem.Image = global::DoAnThucTap.Properties.Resources.add;
-            this.pictureThem.Location = new System.Drawing.Point(180, 40);
-            this.pictureThem.Name = "pictureThem";
-            this.pictureThem.Size = new System.Drawing.Size(42, 26);
-            this.pictureThem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureThem.TabIndex = 13;
-            this.pictureThem.TabStop = false;
+            this.btnThem.AnimationHoverSpeed = 0.07F;
+            this.btnThem.AnimationSpeed = 0.03F;
+            this.btnThem.BaseColor1 = System.Drawing.Color.Lavender;
+            this.btnThem.BaseColor2 = System.Drawing.Color.Lavender;
+            this.btnThem.BorderColor = System.Drawing.Color.Black;
+            this.btnThem.FocusedColor = System.Drawing.Color.Empty;
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Image = global::DoAnThucTap.Properties.Resources.add;
+            this.btnThem.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnThem.Location = new System.Drawing.Point(175, 40);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.btnThem.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btnThem.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnThem.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnThem.OnHoverImage = null;
+            this.btnThem.OnPressedColor = System.Drawing.Color.Black;
+            this.btnThem.Size = new System.Drawing.Size(47, 33);
+            this.btnThem.TabIndex = 14;
             // 
             // Frm_NhanVien
             // 
@@ -439,7 +451,6 @@
             this.gunaGroupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureThem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -461,10 +472,10 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaDataGridView gunaDataGridView1;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
-        private System.Windows.Forms.PictureBox pictureThem;
         private Guna.UI.WinForms.GunaGradientButton btnSave;
         private Guna.UI.WinForms.GunaGradientButton btnUpdate;
         private Guna.UI.WinForms.GunaGradientButton btnCancel;
         private Guna.UI.WinForms.GunaGradientButton btnXoa;
+        private Guna.UI.WinForms.GunaGradientButton btnThem;
     }
 }

@@ -42,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtTimTenSP = new Guna.UI.WinForms.GunaLineTextBox();
+            this.btnCancel = new Guna.UI.WinForms.GunaGradientButton();
             this.btnXoa = new Guna.UI.WinForms.GunaGradientButton();
             this.btnHetHang = new Guna.UI.WinForms.GunaGradientButton();
             this.btnRefresh = new Guna.UI.WinForms.GunaGradientButton();
@@ -51,19 +52,17 @@
             this.btnTim = new Guna.UI.WinForms.GunaGradientButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnCancel = new Guna.UI.WinForms.GunaGradientButton();
+            this.btnThem = new Guna.UI.WinForms.GunaGradientButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.cbLoaiSP);
-            this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.txtSoLuongSP);
             this.groupBox1.Controls.Add(this.txtGiaSP);
             this.groupBox1.Controls.Add(this.txtTenSP);
@@ -109,6 +108,7 @@
             this.txtSoLuongSP.PasswordChar = '\0';
             this.txtSoLuongSP.Size = new System.Drawing.Size(133, 26);
             this.txtSoLuongSP.TabIndex = 35;
+            this.txtSoLuongSP.Text = "0";
             this.txtSoLuongSP.TextChanged += new System.EventHandler(this.gunaLineTextBox5_TextChanged);
             // 
             // txtGiaSP
@@ -220,6 +220,30 @@
             this.txtTimTenSP.PasswordChar = '\0';
             this.txtTimTenSP.Size = new System.Drawing.Size(328, 26);
             this.txtTimTenSP.TabIndex = 5;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.AnimationHoverSpeed = 0.07F;
+            this.btnCancel.AnimationSpeed = 0.03F;
+            this.btnCancel.BaseColor1 = System.Drawing.Color.SlateBlue;
+            this.btnCancel.BaseColor2 = System.Drawing.Color.Fuchsia;
+            this.btnCancel.BorderColor = System.Drawing.Color.Black;
+            this.btnCancel.FocusedColor = System.Drawing.Color.Empty;
+            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnCancel.Location = new System.Drawing.Point(741, 344);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.btnCancel.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btnCancel.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnCancel.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnCancel.OnHoverImage = null;
+            this.btnCancel.OnPressedColor = System.Drawing.Color.Black;
+            this.btnCancel.Size = new System.Drawing.Size(139, 42);
+            this.btnCancel.TabIndex = 13;
+            this.btnCancel.Text = "Cancel";
             // 
             // btnXoa
             // 
@@ -409,39 +433,28 @@
             this.gunaPictureBox2.TabIndex = 2;
             this.gunaPictureBox2.TabStop = false;
             // 
-            // pictureBox2
+            // btnThem
             // 
-            this.pictureBox2.Image = global::DoAnThucTap.Properties.Resources.add;
-            this.pictureBox2.Location = new System.Drawing.Point(269, 99);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(42, 26);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.AnimationHoverSpeed = 0.07F;
-            this.btnCancel.AnimationSpeed = 0.03F;
-            this.btnCancel.BaseColor1 = System.Drawing.Color.SlateBlue;
-            this.btnCancel.BaseColor2 = System.Drawing.Color.Fuchsia;
-            this.btnCancel.BorderColor = System.Drawing.Color.Black;
-            this.btnCancel.FocusedColor = System.Drawing.Color.Empty;
-            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
-            this.btnCancel.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCancel.Location = new System.Drawing.Point(741, 344);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.btnCancel.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.btnCancel.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnCancel.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnCancel.OnHoverImage = null;
-            this.btnCancel.OnPressedColor = System.Drawing.Color.Black;
-            this.btnCancel.Size = new System.Drawing.Size(139, 42);
-            this.btnCancel.TabIndex = 13;
-            this.btnCancel.Text = "Cancel";
+            this.btnThem.AnimationHoverSpeed = 0.07F;
+            this.btnThem.AnimationSpeed = 0.03F;
+            this.btnThem.BaseColor1 = System.Drawing.Color.Lavender;
+            this.btnThem.BaseColor2 = System.Drawing.Color.Lavender;
+            this.btnThem.BorderColor = System.Drawing.Color.Black;
+            this.btnThem.FocusedColor = System.Drawing.Color.Empty;
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Image = global::DoAnThucTap.Properties.Resources.add;
+            this.btnThem.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnThem.Location = new System.Drawing.Point(281, 99);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.btnThem.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btnThem.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnThem.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnThem.OnHoverImage = null;
+            this.btnThem.OnPressedColor = System.Drawing.Color.Black;
+            this.btnThem.Size = new System.Drawing.Size(47, 33);
+            this.btnThem.TabIndex = 37;
             // 
             // Frm_SanPham
             // 
@@ -469,7 +482,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -487,7 +499,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaComboBox cbLoaiSP;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -500,5 +511,6 @@
         private Guna.UI.WinForms.GunaGradientButton btnHetHang;
         private Guna.UI.WinForms.GunaGradientButton btnXoa;
         private Guna.UI.WinForms.GunaGradientButton btnCancel;
+        private Guna.UI.WinForms.GunaGradientButton btnThem;
     }
 }

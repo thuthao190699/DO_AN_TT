@@ -30,21 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnSanPham = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnNhanVien = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnKhachHang = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnHoaDon = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnNhaCungCap = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnThongKe = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnNhaCungCap = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnHoaDon = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnKhachHang = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnNhanVien = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnSanPham = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -66,12 +66,36 @@
             this.panel1.Size = new System.Drawing.Size(621, 98);
             this.panel1.TabIndex = 3;
             // 
-            // panel2
+            // label3
             // 
-            this.panel2.Location = new System.Drawing.Point(228, 105);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(621, 401);
-            this.panel2.TabIndex = 4;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(14, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(130, 17);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "SĐT : 0763914365";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(14, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(338, 17);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Địa Chỉ: 1272 Kha Vạn Cân, Linh Trung, Thủ Đức.";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(13, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(409, 24);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "CHÀO MỪNG BẠN ĐẾN VỚI CỬA HÀNG.";
             // 
             // pictureBox3
             // 
@@ -104,13 +128,20 @@
             this.gunaPictureBox2.TabIndex = 1;
             this.gunaPictureBox2.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(228, 105);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(621, 401);
+            this.panel2.TabIndex = 4;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DoAnThucTap.Properties.Resources.aaa;
             this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(222, 171);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -128,156 +159,11 @@
             this.panel3.Size = new System.Drawing.Size(221, 505);
             this.panel3.TabIndex = 5;
             // 
-            // btnSanPham
-            // 
-            this.btnSanPham.AnimationHoverSpeed = 0.07F;
-            this.btnSanPham.AnimationSpeed = 0.03F;
-            this.btnSanPham.BaseColor = System.Drawing.Color.Lime;
-            this.btnSanPham.BorderColor = System.Drawing.Color.Black;
-            this.btnSanPham.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnSanPham.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnSanPham.CheckedForeColor = System.Drawing.Color.White;
-            this.btnSanPham.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnSanPham.CheckedImage")));
-            this.btnSanPham.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnSanPham.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSanPham.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSanPham.ForeColor = System.Drawing.Color.Black;
-            this.btnSanPham.Image = global::DoAnThucTap.Properties.Resources.sp;
-            this.btnSanPham.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnSanPham.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnSanPham.Location = new System.Drawing.Point(3, 189);
-            this.btnSanPham.Name = "btnSanPham";
-            this.btnSanPham.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnSanPham.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSanPham.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSanPham.OnHoverImage = null;
-            this.btnSanPham.OnHoverLineColor = System.Drawing.Color.Lime;
-            this.btnSanPham.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSanPham.Size = new System.Drawing.Size(180, 42);
-            this.btnSanPham.TabIndex = 3;
-            this.btnSanPham.Text = "Sản Phẩm";
-            // 
-            // btnNhanVien
-            // 
-            this.btnNhanVien.AnimationHoverSpeed = 0.07F;
-            this.btnNhanVien.AnimationSpeed = 0.03F;
-            this.btnNhanVien.BaseColor = System.Drawing.Color.Lime;
-            this.btnNhanVien.BorderColor = System.Drawing.Color.Black;
-            this.btnNhanVien.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnNhanVien.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnNhanVien.CheckedForeColor = System.Drawing.Color.White;
-            this.btnNhanVien.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.CheckedImage")));
-            this.btnNhanVien.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnNhanVien.FocusedColor = System.Drawing.Color.Empty;
-            this.btnNhanVien.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnNhanVien.ForeColor = System.Drawing.Color.Black;
-            this.btnNhanVien.Image = global::DoAnThucTap.Properties.Resources.nvPNG;
-            this.btnNhanVien.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnNhanVien.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnNhanVien.Location = new System.Drawing.Point(3, 237);
-            this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnNhanVien.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnNhanVien.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnNhanVien.OnHoverImage = null;
-            this.btnNhanVien.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnNhanVien.OnPressedColor = System.Drawing.Color.Black;
-            this.btnNhanVien.Size = new System.Drawing.Size(180, 42);
-            this.btnNhanVien.TabIndex = 4;
-            this.btnNhanVien.Text = "Nhân Viên";
-            // 
-            // btnKhachHang
-            // 
-            this.btnKhachHang.AnimationHoverSpeed = 0.07F;
-            this.btnKhachHang.AnimationSpeed = 0.03F;
-            this.btnKhachHang.BaseColor = System.Drawing.Color.Lime;
-            this.btnKhachHang.BorderColor = System.Drawing.Color.Black;
-            this.btnKhachHang.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnKhachHang.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnKhachHang.CheckedForeColor = System.Drawing.Color.White;
-            this.btnKhachHang.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnKhachHang.CheckedImage")));
-            this.btnKhachHang.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnKhachHang.FocusedColor = System.Drawing.Color.Empty;
-            this.btnKhachHang.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnKhachHang.ForeColor = System.Drawing.Color.Black;
-            this.btnKhachHang.Image = global::DoAnThucTap.Properties.Resources.kh;
-            this.btnKhachHang.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnKhachHang.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnKhachHang.Location = new System.Drawing.Point(3, 285);
-            this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnKhachHang.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnKhachHang.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnKhachHang.OnHoverImage = null;
-            this.btnKhachHang.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnKhachHang.OnPressedColor = System.Drawing.Color.Black;
-            this.btnKhachHang.Size = new System.Drawing.Size(180, 42);
-            this.btnKhachHang.TabIndex = 5;
-            this.btnKhachHang.Text = "Khách Hàng";
-            // 
-            // btnHoaDon
-            // 
-            this.btnHoaDon.AnimationHoverSpeed = 0.07F;
-            this.btnHoaDon.AnimationSpeed = 0.03F;
-            this.btnHoaDon.BaseColor = System.Drawing.Color.Lime;
-            this.btnHoaDon.BorderColor = System.Drawing.Color.Black;
-            this.btnHoaDon.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnHoaDon.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnHoaDon.CheckedForeColor = System.Drawing.Color.White;
-            this.btnHoaDon.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnHoaDon.CheckedImage")));
-            this.btnHoaDon.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnHoaDon.FocusedColor = System.Drawing.Color.Empty;
-            this.btnHoaDon.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnHoaDon.ForeColor = System.Drawing.Color.Black;
-            this.btnHoaDon.Image = global::DoAnThucTap.Properties.Resources.hd;
-            this.btnHoaDon.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnHoaDon.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnHoaDon.Location = new System.Drawing.Point(3, 333);
-            this.btnHoaDon.Name = "btnHoaDon";
-            this.btnHoaDon.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnHoaDon.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnHoaDon.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnHoaDon.OnHoverImage = null;
-            this.btnHoaDon.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnHoaDon.OnPressedColor = System.Drawing.Color.Black;
-            this.btnHoaDon.Size = new System.Drawing.Size(180, 42);
-            this.btnHoaDon.TabIndex = 6;
-            this.btnHoaDon.Text = "Hóa Đơn";
-            // 
-            // btnNhaCungCap
-            // 
-            this.btnNhaCungCap.AnimationHoverSpeed = 0.07F;
-            this.btnNhaCungCap.AnimationSpeed = 0.03F;
-            this.btnNhaCungCap.BaseColor = System.Drawing.Color.Lime;
-            this.btnNhaCungCap.BorderColor = System.Drawing.Color.Black;
-            this.btnNhaCungCap.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnNhaCungCap.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnNhaCungCap.CheckedForeColor = System.Drawing.Color.White;
-            this.btnNhaCungCap.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnNhaCungCap.CheckedImage")));
-            this.btnNhaCungCap.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnNhaCungCap.FocusedColor = System.Drawing.Color.Empty;
-            this.btnNhaCungCap.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnNhaCungCap.ForeColor = System.Drawing.Color.Black;
-            this.btnNhaCungCap.Image = global::DoAnThucTap.Properties.Resources.ncc;
-            this.btnNhaCungCap.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnNhaCungCap.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnNhaCungCap.Location = new System.Drawing.Point(3, 381);
-            this.btnNhaCungCap.Name = "btnNhaCungCap";
-            this.btnNhaCungCap.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnNhaCungCap.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnNhaCungCap.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnNhaCungCap.OnHoverImage = null;
-            this.btnNhaCungCap.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnNhaCungCap.OnPressedColor = System.Drawing.Color.Black;
-            this.btnNhaCungCap.Size = new System.Drawing.Size(180, 42);
-            this.btnNhaCungCap.TabIndex = 7;
-            this.btnNhaCungCap.Text = "Nhà Cung Cấp";
-            // 
             // btnThongKe
             // 
             this.btnThongKe.AnimationHoverSpeed = 0.07F;
             this.btnThongKe.AnimationSpeed = 0.03F;
-            this.btnThongKe.BaseColor = System.Drawing.Color.Lime;
+            this.btnThongKe.BaseColor = System.Drawing.Color.CadetBlue;
             this.btnThongKe.BorderColor = System.Drawing.Color.Black;
             this.btnThongKe.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnThongKe.CheckedBorderColor = System.Drawing.Color.Black;
@@ -302,36 +188,150 @@
             this.btnThongKe.TabIndex = 8;
             this.btnThongKe.Text = "Thống Kê";
             // 
-            // label1
+            // btnNhaCungCap
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(13, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(409, 24);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "CHÀO MỪNG BẠN ĐẾN VỚI CỬA HÀNG.";
+            this.btnNhaCungCap.AnimationHoverSpeed = 0.07F;
+            this.btnNhaCungCap.AnimationSpeed = 0.03F;
+            this.btnNhaCungCap.BaseColor = System.Drawing.Color.CadetBlue;
+            this.btnNhaCungCap.BorderColor = System.Drawing.Color.Black;
+            this.btnNhaCungCap.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnNhaCungCap.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnNhaCungCap.CheckedForeColor = System.Drawing.Color.White;
+            this.btnNhaCungCap.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnNhaCungCap.CheckedImage")));
+            this.btnNhaCungCap.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnNhaCungCap.FocusedColor = System.Drawing.Color.Empty;
+            this.btnNhaCungCap.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnNhaCungCap.ForeColor = System.Drawing.Color.Black;
+            this.btnNhaCungCap.Image = global::DoAnThucTap.Properties.Resources.ncc;
+            this.btnNhaCungCap.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnNhaCungCap.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnNhaCungCap.Location = new System.Drawing.Point(3, 381);
+            this.btnNhaCungCap.Name = "btnNhaCungCap";
+            this.btnNhaCungCap.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnNhaCungCap.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnNhaCungCap.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnNhaCungCap.OnHoverImage = null;
+            this.btnNhaCungCap.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnNhaCungCap.OnPressedColor = System.Drawing.Color.Black;
+            this.btnNhaCungCap.Size = new System.Drawing.Size(180, 42);
+            this.btnNhaCungCap.TabIndex = 7;
+            this.btnNhaCungCap.Text = "Nhà Cung Cấp";
             // 
-            // label2
+            // btnHoaDon
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(14, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(338, 17);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Địa Chỉ: 1272 Kha Vạn Cân, Linh Trung, Thủ Đức.";
+            this.btnHoaDon.AnimationHoverSpeed = 0.07F;
+            this.btnHoaDon.AnimationSpeed = 0.03F;
+            this.btnHoaDon.BaseColor = System.Drawing.Color.CadetBlue;
+            this.btnHoaDon.BorderColor = System.Drawing.Color.Black;
+            this.btnHoaDon.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnHoaDon.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnHoaDon.CheckedForeColor = System.Drawing.Color.White;
+            this.btnHoaDon.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnHoaDon.CheckedImage")));
+            this.btnHoaDon.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnHoaDon.FocusedColor = System.Drawing.Color.Empty;
+            this.btnHoaDon.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnHoaDon.ForeColor = System.Drawing.Color.Black;
+            this.btnHoaDon.Image = global::DoAnThucTap.Properties.Resources.hd;
+            this.btnHoaDon.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnHoaDon.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnHoaDon.Location = new System.Drawing.Point(3, 333);
+            this.btnHoaDon.Name = "btnHoaDon";
+            this.btnHoaDon.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnHoaDon.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnHoaDon.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnHoaDon.OnHoverImage = null;
+            this.btnHoaDon.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnHoaDon.OnPressedColor = System.Drawing.Color.Black;
+            this.btnHoaDon.Size = new System.Drawing.Size(180, 42);
+            this.btnHoaDon.TabIndex = 6;
+            this.btnHoaDon.Text = "Hóa Đơn";
             // 
-            // label3
+            // btnKhachHang
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(14, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(178, 17);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "SĐT Tư Vấn: 0763914365";
+            this.btnKhachHang.AnimationHoverSpeed = 0.07F;
+            this.btnKhachHang.AnimationSpeed = 0.03F;
+            this.btnKhachHang.BaseColor = System.Drawing.Color.CadetBlue;
+            this.btnKhachHang.BorderColor = System.Drawing.Color.Black;
+            this.btnKhachHang.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnKhachHang.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnKhachHang.CheckedForeColor = System.Drawing.Color.White;
+            this.btnKhachHang.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnKhachHang.CheckedImage")));
+            this.btnKhachHang.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnKhachHang.FocusedColor = System.Drawing.Color.Empty;
+            this.btnKhachHang.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnKhachHang.ForeColor = System.Drawing.Color.Black;
+            this.btnKhachHang.Image = global::DoAnThucTap.Properties.Resources.kh;
+            this.btnKhachHang.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnKhachHang.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnKhachHang.Location = new System.Drawing.Point(3, 285);
+            this.btnKhachHang.Name = "btnKhachHang";
+            this.btnKhachHang.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnKhachHang.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnKhachHang.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnKhachHang.OnHoverImage = null;
+            this.btnKhachHang.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnKhachHang.OnPressedColor = System.Drawing.Color.Black;
+            this.btnKhachHang.Size = new System.Drawing.Size(180, 42);
+            this.btnKhachHang.TabIndex = 5;
+            this.btnKhachHang.Text = "Khách Hàng";
+            // 
+            // btnNhanVien
+            // 
+            this.btnNhanVien.AnimationHoverSpeed = 0.07F;
+            this.btnNhanVien.AnimationSpeed = 0.03F;
+            this.btnNhanVien.BaseColor = System.Drawing.Color.CadetBlue;
+            this.btnNhanVien.BorderColor = System.Drawing.Color.Black;
+            this.btnNhanVien.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnNhanVien.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnNhanVien.CheckedForeColor = System.Drawing.Color.White;
+            this.btnNhanVien.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.CheckedImage")));
+            this.btnNhanVien.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnNhanVien.FocusedColor = System.Drawing.Color.Empty;
+            this.btnNhanVien.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnNhanVien.ForeColor = System.Drawing.Color.Black;
+            this.btnNhanVien.Image = global::DoAnThucTap.Properties.Resources.nvPNG;
+            this.btnNhanVien.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnNhanVien.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnNhanVien.Location = new System.Drawing.Point(3, 237);
+            this.btnNhanVien.Name = "btnNhanVien";
+            this.btnNhanVien.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnNhanVien.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnNhanVien.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnNhanVien.OnHoverImage = null;
+            this.btnNhanVien.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnNhanVien.OnPressedColor = System.Drawing.Color.Black;
+            this.btnNhanVien.Size = new System.Drawing.Size(180, 42);
+            this.btnNhanVien.TabIndex = 4;
+            this.btnNhanVien.Text = "Nhân Viên";
+            // 
+            // btnSanPham
+            // 
+            this.btnSanPham.AnimationHoverSpeed = 0.07F;
+            this.btnSanPham.AnimationSpeed = 0.03F;
+            this.btnSanPham.BaseColor = System.Drawing.Color.CadetBlue;
+            this.btnSanPham.BorderColor = System.Drawing.Color.Black;
+            this.btnSanPham.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnSanPham.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnSanPham.CheckedForeColor = System.Drawing.Color.White;
+            this.btnSanPham.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnSanPham.CheckedImage")));
+            this.btnSanPham.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnSanPham.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSanPham.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSanPham.ForeColor = System.Drawing.Color.Black;
+            this.btnSanPham.Image = global::DoAnThucTap.Properties.Resources.sp;
+            this.btnSanPham.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnSanPham.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSanPham.Location = new System.Drawing.Point(3, 189);
+            this.btnSanPham.Name = "btnSanPham";
+            this.btnSanPham.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnSanPham.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSanPham.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSanPham.OnHoverImage = null;
+            this.btnSanPham.OnHoverLineColor = System.Drawing.Color.Lime;
+            this.btnSanPham.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSanPham.Size = new System.Drawing.Size(180, 42);
+            this.btnSanPham.TabIndex = 3;
+            this.btnSanPham.Text = "Sản Phẩm";
             // 
             // Frm_Main
             // 
