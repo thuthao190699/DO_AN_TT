@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_SanPham));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnThem = new Guna.UI.WinForms.GunaGradientButton();
             this.cbLoaiSP = new Guna.UI.WinForms.GunaComboBox();
             this.txtSoLuongSP = new Guna.UI.WinForms.GunaLineTextBox();
             this.txtGiaSP = new Guna.UI.WinForms.GunaLineTextBox();
@@ -52,7 +53,6 @@
             this.btnTim = new Guna.UI.WinForms.GunaGradientButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
-            this.btnThem = new Guna.UI.WinForms.GunaGradientButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,6 +77,29 @@
             this.groupBox1.Size = new System.Drawing.Size(537, 155);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // btnThem
+            // 
+            this.btnThem.AnimationHoverSpeed = 0.07F;
+            this.btnThem.AnimationSpeed = 0.03F;
+            this.btnThem.BaseColor1 = System.Drawing.Color.Lavender;
+            this.btnThem.BaseColor2 = System.Drawing.Color.Lavender;
+            this.btnThem.BorderColor = System.Drawing.Color.Black;
+            this.btnThem.FocusedColor = System.Drawing.Color.Empty;
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Image = global::DoAnThucTap.Properties.Resources.add;
+            this.btnThem.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnThem.Location = new System.Drawing.Point(281, 99);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.btnThem.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btnThem.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnThem.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnThem.OnHoverImage = null;
+            this.btnThem.OnPressedColor = System.Drawing.Color.Black;
+            this.btnThem.Size = new System.Drawing.Size(47, 33);
+            this.btnThem.TabIndex = 37;
             // 
             // cbLoaiSP
             // 
@@ -432,29 +455,6 @@
             this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox2.TabIndex = 2;
             this.gunaPictureBox2.TabStop = false;
-            // 
-            // btnThem
-            // 
-            this.btnThem.AnimationHoverSpeed = 0.07F;
-            this.btnThem.AnimationSpeed = 0.03F;
-            this.btnThem.BaseColor1 = System.Drawing.Color.Lavender;
-            this.btnThem.BaseColor2 = System.Drawing.Color.Lavender;
-            this.btnThem.BorderColor = System.Drawing.Color.Black;
-            this.btnThem.FocusedColor = System.Drawing.Color.Empty;
-            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Image = global::DoAnThucTap.Properties.Resources.add;
-            this.btnThem.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnThem.Location = new System.Drawing.Point(281, 99);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.btnThem.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.btnThem.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnThem.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnThem.OnHoverImage = null;
-            this.btnThem.OnPressedColor = System.Drawing.Color.Black;
-            this.btnThem.Size = new System.Drawing.Size(47, 33);
-            this.btnThem.TabIndex = 37;
             // 
             // Frm_SanPham
             // 

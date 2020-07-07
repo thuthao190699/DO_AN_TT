@@ -396,3 +396,19 @@ as
 begin
 select MaSP,TenSP,SoLuongTon,TenTL from SanPham,LoaiSP where SoLuongTon <= 2 and SanPham.MaTL=LoaiSP.MaTL
 end
+-------------
+go 
+create proc TimSanPham
+@text nvarchar(50)
+as
+begin
+select*from SanPham where CONCAT(MaSP, TenSP) like '%'+@text+'%'
+end
+----------------
+go 
+create proc TimSDT  
+@text nvarchar(50)
+as
+begin
+select*from KhachHang where CONCAT(TenKH, SDT) like '%'+@text+'%'
+end
