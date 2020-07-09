@@ -37,12 +37,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lbThangNay = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbThangTruoc = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lbThangNay = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -58,6 +58,7 @@
             this.gunaPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox3.TabIndex = 35;
             this.gunaPictureBox3.TabStop = false;
+            this.gunaPictureBox3.Click += new System.EventHandler(this.gunaPictureBox3_Click);
             // 
             // label1
             // 
@@ -113,21 +114,14 @@
             this.panel1.Size = new System.Drawing.Size(324, 124);
             this.panel1.TabIndex = 40;
             // 
-            // chart1
+            // lbThangNay
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(12, 177);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(764, 261);
-            this.chart1.TabIndex = 41;
-            this.chart1.Text = "chart1";
+            this.lbThangNay.AutoSize = true;
+            this.lbThangNay.Location = new System.Drawing.Point(127, 70);
+            this.lbThangNay.Name = "lbThangNay";
+            this.lbThangNay.Size = new System.Drawing.Size(35, 13);
+            this.lbThangNay.TabIndex = 46;
+            this.lbThangNay.Text = "label9";
             // 
             // label5
             // 
@@ -168,15 +162,21 @@
             this.label8.TabIndex = 45;
             this.label8.Text = "Doanh Thu:";
             // 
-            // lbThangNay
+            // chart1
             // 
-            this.lbThangNay.AutoSize = true;
-            this.lbThangNay.Location = new System.Drawing.Point(127, 70);
-            this.lbThangNay.Name = "lbThangNay";
-            this.lbThangNay.Size = new System.Drawing.Size(35, 13);
-            this.lbThangNay.TabIndex = 46;
-            this.lbThangNay.Text = "label9";
-            this.lbThangNay.Click += new System.EventHandler(this.label9_Click);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(12, 177);
+            this.chart1.Name = "chart1";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(764, 261);
+            this.chart1.TabIndex = 41;
+            this.chart1.Text = "chart1";
             // 
             // Frm_ThongKe
             // 
@@ -193,6 +193,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_ThongKe";
             this.Text = "Frm_ThongKe";
+            this.Load += new System.EventHandler(this.Frm_ThongKe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

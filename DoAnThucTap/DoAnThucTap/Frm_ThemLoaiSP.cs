@@ -16,5 +16,29 @@ namespace DoAnThucTap
         {
             InitializeComponent();
         }
+        XuLyDuLieuDataContext kn = new XuLyDuLieuDataContext();
+
+        private void gunaPictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtTenTL.Text != "")
+            {
+               kn.ThemLoaiSP(Convert.ToInt32(lbMaTL.Text), txtTenTL.Text);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền tên loại sản phẩm !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenTL.Focus();
+            }
+        }
+
+        private void Frm_ThemLoaiSP_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

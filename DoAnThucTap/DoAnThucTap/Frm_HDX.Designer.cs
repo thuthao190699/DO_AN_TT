@@ -51,6 +51,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cbTenNV = new Guna.UI.WinForms.GunaComboBox();
             this.txtKhachHang = new Guna.UI.WinForms.GunaLineTextBox();
+            this.MaHDX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChiTiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -227,6 +233,13 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaHDX,
+            this.TenKH,
+            this.TenNV,
+            this.NgayXuat,
+            this.ThanhTien,
+            this.ChiTiet});
             this.dataGridView1.Location = new System.Drawing.Point(2, 239);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(787, 208);
@@ -290,6 +303,7 @@
             this.gunaPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox3.TabIndex = 31;
             this.gunaPictureBox3.TabStop = false;
+            this.gunaPictureBox3.Click += new System.EventHandler(this.gunaPictureBox3_Click);
             // 
             // btnThem
             // 
@@ -379,6 +393,36 @@
             this.txtKhachHang.Size = new System.Drawing.Size(160, 26);
             this.txtKhachHang.TabIndex = 54;
             // 
+            // MaHDX
+            // 
+            this.MaHDX.HeaderText = "Hóa đơn";
+            this.MaHDX.Name = "MaHDX";
+            // 
+            // TenKH
+            // 
+            this.TenKH.HeaderText = "Tên khách hàng";
+            this.TenKH.Name = "TenKH";
+            // 
+            // TenNV
+            // 
+            this.TenNV.HeaderText = "Tên nhân viên";
+            this.TenNV.Name = "TenNV";
+            // 
+            // NgayXuat
+            // 
+            this.NgayXuat.HeaderText = "Ngày Xuất";
+            this.NgayXuat.Name = "NgayXuat";
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.HeaderText = "Thành tiền";
+            this.ThanhTien.Name = "ThanhTien";
+            // 
+            // ChiTiet
+            // 
+            this.ChiTiet.HeaderText = "Chi tiết";
+            this.ChiTiet.Name = "ChiTiet";
+            // 
             // Frm_HDX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,5 +486,11 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI.WinForms.GunaComboBox cbTenNV;
         private Guna.UI.WinForms.GunaLineTextBox txtKhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHDX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayXuat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChiTiet;
     }
 }

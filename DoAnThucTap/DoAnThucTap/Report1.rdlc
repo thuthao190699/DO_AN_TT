@@ -386,7 +386,7 @@
         <Top>2.11458in</Top>
         <Left>1.58333in</Left>
         <Height>0.5in</Height>
-        <Width>6.03125in</Width>
+        <Width>6.03126in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -787,6 +787,49 @@
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSetDuLieu">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>a41930e9-bd82-4879-b433-8d6519154d7e</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DuLieu">
+      <Query>
+        <DataSourceName>DataSetDuLieu</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="MaSP">
+          <DataField>MaSP</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MaHDN">
+          <DataField>MaHDN</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Dongia">
+          <DataField>Dongia</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Soluong">
+          <DataField>Soluong</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DataSetDuLieu</rd:DataSetName>
+        <rd:SchemaPath>D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\DataSetDuLieu.xsd</rd:SchemaPath>
+        <rd:TableName>CTHDN</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>CTHDNTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>c3b19236-e494-4aa8-9069-0ae451f8d955</rd:ReportID>
 </Report>

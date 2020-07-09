@@ -101,6 +101,7 @@
             this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox2.TabIndex = 5;
             this.gunaPictureBox2.TabStop = false;
+            this.gunaPictureBox2.Click += new System.EventHandler(this.gunaPictureBox2_Click);
             // 
             // btnSave
             // 
@@ -125,6 +126,7 @@
             this.btnSave.Size = new System.Drawing.Size(160, 42);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Frm_ThemLoaiSP
             // 
@@ -141,6 +143,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_ThemLoaiSP";
             this.Text = "Frm_ThemLoaiSP";
+            this.Load += new System.EventHandler(this.Frm_ThemLoaiSP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             this.ResumeLayout(false);

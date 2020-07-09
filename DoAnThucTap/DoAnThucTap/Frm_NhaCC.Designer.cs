@@ -43,6 +43,10 @@
             this.btnSave = new Guna.UI.WinForms.GunaGradientButton();
             this.btnUpdate = new Guna.UI.WinForms.GunaGradientButton();
             this.btnAdd = new Guna.UI.WinForms.GunaGradientButton();
+            this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -57,10 +61,16 @@
             this.gunaPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox3.TabIndex = 33;
             this.gunaPictureBox3.TabStop = false;
+            this.gunaPictureBox3.Click += new System.EventHandler(this.gunaPictureBox3_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaNCC,
+            this.TenNCC,
+            this.SDT,
+            this.DiaChi});
             this.dataGridView1.Location = new System.Drawing.Point(12, 231);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(710, 186);
@@ -261,6 +271,26 @@
             this.btnAdd.TabIndex = 43;
             this.btnAdd.Text = "Add";
             // 
+            // MaNCC
+            // 
+            this.MaNCC.HeaderText = "Mã nhà cung cấp";
+            this.MaNCC.Name = "MaNCC";
+            // 
+            // TenNCC
+            // 
+            this.TenNCC.HeaderText = "Tên nhà cung cấp";
+            this.TenNCC.Name = "TenNCC";
+            // 
+            // SDT
+            // 
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.Name = "SDT";
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            // 
             // Frm_NhaCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,5 +336,9 @@
         private Guna.UI.WinForms.GunaGradientButton btnSave;
         private Guna.UI.WinForms.GunaGradientButton btnUpdate;
         private Guna.UI.WinForms.GunaGradientButton btnAdd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNCC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
     }
 }

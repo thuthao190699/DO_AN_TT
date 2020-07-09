@@ -144,7 +144,6 @@ D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.csproj.CoreCompileInpu
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.csproj.CopyComplete
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.exe
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.pdb
-D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.Form1.resources
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\RdlCompile.cache
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\RdlCompile.compiled
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.Frm_Mail.resources

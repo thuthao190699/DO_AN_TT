@@ -164,6 +164,7 @@
             this.txtSDT.PasswordChar = '\0';
             this.txtSDT.Size = new System.Drawing.Size(167, 26);
             this.txtSDT.TabIndex = 29;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtUserName
             // 
@@ -217,6 +218,7 @@
             this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox2.TabIndex = 27;
             this.gunaPictureBox2.TabStop = false;
+            this.gunaPictureBox2.Click += new System.EventHandler(this.gunaPictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -251,6 +253,7 @@
             this.btnSave.Size = new System.Drawing.Size(107, 42);
             this.btnSave.TabIndex = 33;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Frm_ThemNV
             // 
@@ -277,6 +280,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_ThemNV";
             this.Text = "Frm_ThemNV";
+            this.Load += new System.EventHandler(this.Frm_ThemNV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

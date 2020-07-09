@@ -127,6 +127,7 @@
             this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox2.TabIndex = 1;
             this.gunaPictureBox2.TabStop = false;
+            this.gunaPictureBox2.Click += new System.EventHandler(this.gunaPictureBox2_Click);
             // 
             // panel2
             // 
@@ -187,6 +188,7 @@
             this.btnThongKe.Size = new System.Drawing.Size(180, 42);
             this.btnThongKe.TabIndex = 8;
             this.btnThongKe.Text = "Thống Kê";
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // btnNhaCungCap
             // 
@@ -216,6 +218,7 @@
             this.btnNhaCungCap.Size = new System.Drawing.Size(180, 42);
             this.btnNhaCungCap.TabIndex = 7;
             this.btnNhaCungCap.Text = "Nhà Cung Cấp";
+            this.btnNhaCungCap.Click += new System.EventHandler(this.btnNhaCungCap_Click);
             // 
             // btnHoaDon
             // 
@@ -245,6 +248,7 @@
             this.btnHoaDon.Size = new System.Drawing.Size(180, 42);
             this.btnHoaDon.TabIndex = 6;
             this.btnHoaDon.Text = "Hóa Đơn";
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // btnKhachHang
             // 
@@ -274,6 +278,7 @@
             this.btnKhachHang.Size = new System.Drawing.Size(180, 42);
             this.btnKhachHang.TabIndex = 5;
             this.btnKhachHang.Text = "Khách Hàng";
+            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             // 
             // btnNhanVien
             // 
@@ -303,6 +308,7 @@
             this.btnNhanVien.Size = new System.Drawing.Size(180, 42);
             this.btnNhanVien.TabIndex = 4;
             this.btnNhanVien.Text = "Nhân Viên";
+            this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
             // 
             // btnSanPham
             // 
@@ -332,6 +338,7 @@
             this.btnSanPham.Size = new System.Drawing.Size(180, 42);
             this.btnSanPham.TabIndex = 3;
             this.btnSanPham.Text = "Sản Phẩm";
+            this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
             // 
             // Frm_Main
             // 
@@ -344,6 +351,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Main";
             this.Text = "Frm_Main";
+            this.Load += new System.EventHandler(this.Frm_Main_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

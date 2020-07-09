@@ -148,6 +148,7 @@
             this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox2.TabIndex = 24;
             this.gunaPictureBox2.TabStop = false;
+            this.gunaPictureBox2.Click += new System.EventHandler(this.gunaPictureBox2_Click);
             // 
             // btnSave
             // 
@@ -172,6 +173,7 @@
             this.btnSave.Size = new System.Drawing.Size(139, 42);
             this.btnSave.TabIndex = 25;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Frm_ThongTinNV
             // 
@@ -192,6 +194,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_ThongTinNV";
             this.Text = "Frm_ThongTinNV";
+            this.Load += new System.EventHandler(this.Frm_ThongTinNV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

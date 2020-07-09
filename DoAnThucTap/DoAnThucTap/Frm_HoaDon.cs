@@ -16,5 +16,22 @@ namespace DoAnThucTap
         {
             InitializeComponent();
         }
+
+        private void gunaPictureBox1_Click(object sender, EventArgs e)
+        {
+            Frm_HDN hdn = new Frm_HDN();
+            hdn.ShowDialog();
+        }
+
+        private void gunaPictureBox2_Click(object sender, EventArgs e)
+        {
+            Frm_HDX hdx = new Frm_HDX();
+            hdx.ShowDialog();
+        }
+
+        private void gunaPictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

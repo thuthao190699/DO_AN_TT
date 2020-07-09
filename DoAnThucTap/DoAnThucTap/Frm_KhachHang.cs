@@ -21,5 +21,10 @@ namespace DoAnThucTap
         {
 
         }
+
+        private void gunaPictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

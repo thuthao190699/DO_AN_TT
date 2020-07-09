@@ -49,6 +49,12 @@
             this.cbTenNV = new Guna.UI.WinForms.GunaComboBox();
             this.lbMaNV = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.MaHDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChiTiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +62,13 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaHDN,
+            this.TenNCC,
+            this.NhanVien,
+            this.NgayLap,
+            this.ThanhTien,
+            this.ChiTiet});
             this.dataGridView1.Location = new System.Drawing.Point(1, 238);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(787, 208);
@@ -274,6 +287,7 @@
             this.gunaPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox3.TabIndex = 4;
             this.gunaPictureBox3.TabStop = false;
+            this.gunaPictureBox3.Click += new System.EventHandler(this.gunaPictureBox3_Click);
             // 
             // btnUpdate
             // 
@@ -337,6 +351,36 @@
             this.label3.TabIndex = 51;
             this.label3.Text = "Nhân Viên Lập:";
             // 
+            // MaHDN
+            // 
+            this.MaHDN.HeaderText = "Mã HD";
+            this.MaHDN.Name = "MaHDN";
+            // 
+            // TenNCC
+            // 
+            this.TenNCC.HeaderText = "Tên nhà cung cấp";
+            this.TenNCC.Name = "TenNCC";
+            // 
+            // NhanVien
+            // 
+            this.NhanVien.HeaderText = "nhân viên";
+            this.NhanVien.Name = "NhanVien";
+            // 
+            // NgayLap
+            // 
+            this.NgayLap.HeaderText = "Ngày lập";
+            this.NgayLap.Name = "NgayLap";
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.HeaderText = "Thành tiền";
+            this.ThanhTien.Name = "ThanhTien";
+            // 
+            // ChiTiet
+            // 
+            this.ChiTiet.HeaderText = "Chi tiết";
+            this.ChiTiet.Name = "ChiTiet";
+            // 
             // Frm_HDN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,5 +440,11 @@
         private Guna.UI.WinForms.GunaComboBox cbTenNV;
         private System.Windows.Forms.Label lbMaNV;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHDN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNCC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayLap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChiTiet;
     }
 }

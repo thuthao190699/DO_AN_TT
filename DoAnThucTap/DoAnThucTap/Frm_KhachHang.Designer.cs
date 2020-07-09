@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_KhachHang));
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtEmail = new Guna.UI.WinForms.GunaLineTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDiaChi = new Guna.UI.WinForms.GunaLineTextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,7 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtKhachHang = new Guna.UI.WinForms.GunaLineTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtEmail = new Guna.UI.WinForms.GunaLineTextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtTimSDT = new Guna.UI.WinForms.GunaLineTextBox();
             this.btnCancel = new Guna.UI.WinForms.GunaGradientButton();
             this.btnXoa = new Guna.UI.WinForms.GunaGradientButton();
@@ -47,6 +47,11 @@
             this.btnAdd = new Guna.UI.WinForms.GunaGradientButton();
             this.btnTim = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
+            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gunaGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
@@ -74,13 +79,19 @@
             this.gunaGroupBox1.Text = "Thông Tin Khách Hàng";
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // dataGridView1
+            // txtEmail
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(266, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(546, 238);
-            this.dataGridView1.TabIndex = 0;
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmail.FocusedLineColor = System.Drawing.Color.SpringGreen;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtEmail.LineColor = System.Drawing.Color.Black;
+            this.txtEmail.Location = new System.Drawing.Point(23, 265);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.Size = new System.Drawing.Size(219, 26);
+            this.txtEmail.TabIndex = 34;
             // 
             // label4
             // 
@@ -168,19 +179,19 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Tên Khách Hàng:";
             // 
-            // txtEmail
+            // dataGridView1
             // 
-            this.txtEmail.BackColor = System.Drawing.Color.White;
-            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.FocusedLineColor = System.Drawing.Color.SpringGreen;
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.LineColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(23, 265);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.Size = new System.Drawing.Size(219, 26);
-            this.txtEmail.TabIndex = 34;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaKH,
+            this.TenKH,
+            this.SDT,
+            this.DiaChi,
+            this.Email});
+            this.dataGridView1.Location = new System.Drawing.Point(266, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(546, 238);
+            this.dataGridView1.TabIndex = 0;
             // 
             // txtTimSDT
             // 
@@ -352,6 +363,32 @@
             this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox2.TabIndex = 3;
             this.gunaPictureBox2.TabStop = false;
+            this.gunaPictureBox2.Click += new System.EventHandler(this.gunaPictureBox2_Click);
+            // 
+            // MaKH
+            // 
+            this.MaKH.HeaderText = "Mã";
+            this.MaKH.Name = "MaKH";
+            // 
+            // TenKH
+            // 
+            this.TenKH.HeaderText = "Tên khách hàng";
+            this.TenKH.Name = "TenKH";
+            // 
+            // SDT
+            // 
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.Name = "SDT";
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
             // 
             // Frm_KhachHang
             // 
@@ -399,5 +436,10 @@
         private Guna.UI.WinForms.GunaGradientButton btnAdd;
         private Guna.UI.WinForms.GunaGradientButton btnCancel;
         private Guna.UI.WinForms.GunaGradientButton btnXoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
     }
 }

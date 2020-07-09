@@ -1,6 +1,5 @@
 use DATT
 
-
 ---------------SanPham----------------
 go
 create proc selectSanPham 
@@ -23,7 +22,7 @@ as
 begin
 update SanPham set TenSP=@TenSP,Gia=@Gia,HinhAnh=@HinhAnh,SoLuongTon=@SoLuongTon,MaTL=@MaTL where MaSP=@MaSP
 end
---exec UpdateSanPham  10,'abc',2000,null,2,1
+exec UpdateSanPham  10,'abc',2000,null,2,1
 go
 create proc DeleteSanPham(@MaSP int)
 as 
@@ -326,7 +325,7 @@ go
 create proc ThemTongTienXuat(@MaHDX int)
 as begin
 declare @sum float
-set @sum= (select SUM(ct.Soluong*ct.ThanhTien) as 'ThanhTien'
+set @sum= (select SUM(ct.Soluong*hd.ThanhTien) as 'ThanhTien'
 			from CTHDX ct,HoaDonXuat hd
 			where ct.MaHDX=hd.MaHDX and hd.MaHDX=@MaHDX)
 update HoaDonXuat set ThanhTien=@sum where MaHDX=@MaHDX
