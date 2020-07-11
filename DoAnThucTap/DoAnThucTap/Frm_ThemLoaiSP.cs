@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,6 +13,7 @@ namespace DoAnThucTap
 {
     public partial class Frm_ThemLoaiSP : Form
     {
+        Thread th;
         public Frm_ThemLoaiSP()
         {
             InitializeComponent();
@@ -21,13 +23,20 @@ namespace DoAnThucTap
         private void gunaPictureBox2_Click(object sender, EventArgs e)
         {
             this.Close();
+            th = new Thread(LoadForm);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtTenTL.Text != "")
+            if (txtTenTL.Text != null || txtTenTL.Text != "")
             {
-               kn.ThemLoaiSP(Convert.ToInt32(lbMaTL.Text), txtTenTL.Text);
+                kn.ThemLoaiSP(Convert.ToInt32(lbMaTL.Text), txtTenTL.Text);
+                this.Close();
+                th = new Thread(LoadForm);
+                th.SetApartmentState(ApartmentState.STA);
+                th.Start();
             }
             else
             {
@@ -36,9 +45,15 @@ namespace DoAnThucTap
             }
         }
 
+        private void LoadForm()
+        {
+            Application.Run(new Frm_SanPham());
+        }
+
         private void Frm_ThemLoaiSP_Load(object sender, EventArgs e)
         {
-
+            var a = kn.LoaiSPs.OrderByDescending(s => s.MaTL).FirstOrDefault();
+            lbMaTL.Text = Convert.ToString(a.MaTL + 1);
         }
     }
 }

@@ -30,19 +30,29 @@ namespace DoAnThucTap
         private void gunaPictureBox2_Click(object sender, EventArgs e)
         {
             this.Close();
+            th = new Thread(MoFormMain);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+
+        private void MoFormMain()
+        {
+            Application.Run(new Frm_Main());
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             choose = 1;
+            
             //able();
-            //txtTenSP.Enabled = true;
-            //txtGiaSP.Enabled = true;
-            //cbLoaiSP.Enabled = true;
-            //btnLoaiSP.Enabled = true;
-            //var a = kn.SanPhams.OrderByDescending(s => s.MaSP).FirstOrDefault();
-            //txtMaSP.Text = Convert.ToString(a.MaSP + 1);
-            //btnSave.Enabled = true;
+            txtMaSP.Enabled = true;
+            txtTenSP.Enabled = true;
+            txtGiaSP.Enabled = true;
+            txtSoLuongSP.Enabled = true;
+            cbLoaiSP.Enabled = true;
+            var a = kn.SanPhams.OrderByDescending(s => s.MaSP).FirstOrDefault();
+            txtMaSP.Text = Convert.ToString(a.MaSP + 1);
+            btnSave.Enabled = true;
         }
         private void Clear()
         {
@@ -55,26 +65,26 @@ namespace DoAnThucTap
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             choose = 2;
-            //btnUpdate.Enabled = false;
+            btnUpdate.Enabled = false;
 
-            //btnSave.Enabled = true;
-            //btnCancel.Enabled = true;
-            //txtSoluong.Enabled = true;
-            //txtTenSP.Enabled = true;
-            //txtGiaSP.Enabled = true;
-            //cbLoaiSP.Enabled = true;
-            //btnLoaiSP.Enabled = true;
+            txtTenSP.Enabled = true;
+            txtGiaSP.Enabled = true;
+            txtSoLuongSP.Enabled = true;
+            cbLoaiSP.Enabled = true;
+
+            btnSave.Enabled = true;
+            txtSoLuongSP.Enabled = true;
+            txtTenSP.Enabled = true;
+            txtGiaSP.Enabled = true;
+            cbLoaiSP.Enabled = true;
+            btnLoaiSP.Enabled = true;
             //able();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
 
-            //Clear();
-            //btnAdd.Enabled = true;
-            //dataGridView1.Enabled = true;
-            //btnUpdate.Enabled = false;
-            //btnSave.Enabled = false;
+           
         }
 
 
@@ -97,11 +107,12 @@ namespace DoAnThucTap
                             Convert.ToDouble(txtGiaSP.Text), stream.ToArray(),
                             Convert.ToInt32(txtSoLuongSP.Text),
                             Convert.ToInt32(cbLoaiSP.SelectedValue.ToString()));
-                        DialogResult dr = MessageBox.Show("Thêm thành công ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (dr == DialogResult.OK)
-                        {
-                            Frm_SanPham_Load(sender, e);
-                        }
+                        MessageBox.Show("Thêm thành công ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Frm_SanPham_Load(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nho chen hinh", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -120,7 +131,7 @@ namespace DoAnThucTap
                         kn.UpdateSanPham(Convert.ToInt32(txtMaSP.Text), txtTenSP.Text,
                             Convert.ToDouble(txtGiaSP.Text), stream.ToArray(),
                             Convert.ToInt32(txtSoLuongSP.Text),
-                            Convert.ToInt32(cbLoaiSP.SelectedValue.ToString()));
+                            Convert.ToInt32(cbLoaiSP.SelectedValue));
                         DialogResult dr = MessageBox.Show("Sửa thành công ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (dr == DialogResult.OK)
                         {
@@ -129,6 +140,7 @@ namespace DoAnThucTap
                             th.SetApartmentState(ApartmentState.STA);
                             th.Start();
                         }
+                        Frm_SanPham_Load(sender, e);
                     }
                     else {
                         kn.UpdateSanPham(Convert.ToInt32(txtMaSP.Text), txtTenSP.Text,
@@ -143,6 +155,7 @@ namespace DoAnThucTap
                             th.SetApartmentState(ApartmentState.STA);
                             th.Start();
                         }
+                        Frm_SanPham_Load(sender, e);
                     }
                 }
             }
@@ -207,14 +220,28 @@ namespace DoAnThucTap
 
         private void btnLoaiSP_Click(object sender, EventArgs e)
         {
-            Frm_ThemLoaiSP themloaisp = new Frm_ThemLoaiSP();
-            themloaisp.Show();
+            this.Close();
+            th = new Thread(MoFormThemLoaiSP);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+
+        private void MoFormThemLoaiSP()
+        {
+            Application.Run(new Frm_ThemLoaiSP());
         }
 
         private void btnHetHang_Click(object sender, EventArgs e)
         {
-            Frm_ThongKeSLSP tkslsp = new Frm_ThongKeSLSP();
-            tkslsp.ShowDialog();
+            this.Close();
+            th = new Thread(MoFromThongKe);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+
+        private void MoFromThongKe()
+        {
+            Application.Run(new Frm_ThongKe());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -236,9 +263,17 @@ namespace DoAnThucTap
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            kn.DeleteSanPham(Convert.ToInt32(txtMaSP.Text));
-            dataGridView1.DataSource = kn.SanPhams;
-            Frm_SanPham_Load(sender, e);
+            try
+            {
+                kn.DeleteSanPham(Convert.ToInt32(txtMaSP.Text));
+                dataGridView1.DataSource = kn.SanPhams;
+                Frm_SanPham_Load(sender, e);
+            }
+            catch 
+            {
+                MessageBox.Show("Khong the xoa", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
 
         private void load()
@@ -265,6 +300,11 @@ namespace DoAnThucTap
             cbLoaiSP.ValueMember = "MaTL";
             cbLoaiSP.DataSource = kn.LoaiSPs;
 
+            txtMaSP.Enabled = false;
+            txtTenSP.Enabled = false;
+            txtGiaSP.Enabled = false;
+            txtSoLuongSP.Enabled = false;
+            cbLoaiSP.Enabled = false;
             txtMaSP.Text = "";
             txtTenSP.Text = "";
             txtGiaSP.Text = "";

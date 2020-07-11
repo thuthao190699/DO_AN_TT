@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,6 +14,10 @@ namespace DoAnThucTap
 {
     public partial class Frm_Main : Form
     {
+        Thread th;
+
+        public string nhanTenNV { get; internal set; }
+
         public Frm_Main()
         {
             InitializeComponent();
@@ -19,8 +25,15 @@ namespace DoAnThucTap
 
         private void btnSanPham_Click(object sender, EventArgs e)
         {
-            Frm_SanPham sp = new Frm_SanPham();
-            sp.ShowDialog();
+            this.Close();
+            th = new Thread(MoFormSanPham);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+
+        private void MoFormSanPham()
+        {
+            Application.Run(new Frm_SanPham());
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)
@@ -62,6 +75,17 @@ namespace DoAnThucTap
         {
             Frm_ThongKe tk = new Frm_ThongKe();
             tk.ShowDialog();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Frm_Mail mail = new Frm_Mail();
+            mail.ShowDialog();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://www.facebook.com/");
         }
     }
 }

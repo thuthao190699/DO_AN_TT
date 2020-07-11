@@ -33,21 +33,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lbMaHDN = new System.Windows.Forms.Label();
             this.lbMaSP = new System.Windows.Forms.Label();
-            this.lbTenNV = new System.Windows.Forms.Label();
-            this.lbMaNV = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.btnXuat = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaPictureBox3 = new Guna.UI.WinForms.GunaPictureBox();
             this.btnUpdate = new Guna.UI.WinForms.GunaGradientButton();
             this.btnSave = new Guna.UI.WinForms.GunaGradientButton();
-            this.dpNgayLap = new Guna.UI.WinForms.GunaDateTimePicker();
             this.lbDonGia = new System.Windows.Forms.Label();
-            this.cbTenNCC = new Guna.UI.WinForms.GunaComboBox();
             this.txtSoLuong = new Guna.UI.WinForms.GunaLineTextBox();
+            this.lbTenNCC = new System.Windows.Forms.Label();
+            this.lbNgay = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbTenNV = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,16 +100,6 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Ngày Lập:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(64, 277);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 19);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Nhân Viên:";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -138,24 +127,6 @@
             this.lbMaSP.Size = new System.Drawing.Size(70, 13);
             this.lbMaSP.TabIndex = 14;
             this.lbMaSP.Text = "mã sản phẩm";
-            // 
-            // lbTenNV
-            // 
-            this.lbTenNV.AutoSize = true;
-            this.lbTenNV.Location = new System.Drawing.Point(191, 277);
-            this.lbTenNV.Name = "lbTenNV";
-            this.lbTenNV.Size = new System.Drawing.Size(72, 13);
-            this.lbTenNV.TabIndex = 17;
-            this.lbTenNV.Text = "tên nhân viên";
-            // 
-            // lbMaNV
-            // 
-            this.lbMaNV.AutoSize = true;
-            this.lbMaNV.Location = new System.Drawing.Point(342, 277);
-            this.lbMaNV.Name = "lbMaNV";
-            this.lbMaNV.Size = new System.Drawing.Size(71, 13);
-            this.lbMaNV.TabIndex = 18;
-            this.lbMaNV.Text = "mã nhân viên";
             // 
             // label13
             // 
@@ -190,6 +161,7 @@
             this.btnXuat.Size = new System.Drawing.Size(159, 42);
             this.btnXuat.TabIndex = 24;
             this.btnXuat.Text = "Xuất CTHDN";
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // gunaPictureBox3
             // 
@@ -251,28 +223,6 @@
             this.btnSave.TabIndex = 55;
             this.btnSave.Text = "Save";
             // 
-            // dpNgayLap
-            // 
-            this.dpNgayLap.BaseColor = System.Drawing.Color.White;
-            this.dpNgayLap.BorderColor = System.Drawing.Color.Silver;
-            this.dpNgayLap.CustomFormat = null;
-            this.dpNgayLap.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dpNgayLap.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dpNgayLap.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dpNgayLap.ForeColor = System.Drawing.Color.Black;
-            this.dpNgayLap.Location = new System.Drawing.Point(190, 230);
-            this.dpNgayLap.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dpNgayLap.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dpNgayLap.Name = "dpNgayLap";
-            this.dpNgayLap.OnHoverBaseColor = System.Drawing.Color.White;
-            this.dpNgayLap.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dpNgayLap.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dpNgayLap.OnPressedColor = System.Drawing.Color.Black;
-            this.dpNgayLap.Size = new System.Drawing.Size(223, 30);
-            this.dpNgayLap.TabIndex = 25;
-            this.dpNgayLap.Text = "Thứ Ba, Tháng Bảy 7, 2020";
-            this.dpNgayLap.Value = new System.DateTime(2020, 7, 7, 14, 53, 39, 431);
-            // 
             // lbDonGia
             // 
             this.lbDonGia.AutoSize = true;
@@ -281,24 +231,6 @@
             this.lbDonGia.Size = new System.Drawing.Size(43, 13);
             this.lbDonGia.TabIndex = 58;
             this.lbDonGia.Text = "đơn giá";
-            // 
-            // cbTenNCC
-            // 
-            this.cbTenNCC.BackColor = System.Drawing.Color.Transparent;
-            this.cbTenNCC.BaseColor = System.Drawing.Color.White;
-            this.cbTenNCC.BorderColor = System.Drawing.Color.Silver;
-            this.cbTenNCC.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbTenNCC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTenNCC.FocusedColor = System.Drawing.Color.Empty;
-            this.cbTenNCC.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbTenNCC.ForeColor = System.Drawing.Color.Black;
-            this.cbTenNCC.FormattingEnabled = true;
-            this.cbTenNCC.Location = new System.Drawing.Point(190, 179);
-            this.cbTenNCC.Name = "cbTenNCC";
-            this.cbTenNCC.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cbTenNCC.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbTenNCC.Size = new System.Drawing.Size(121, 26);
-            this.cbTenNCC.TabIndex = 59;
             // 
             // txtSoLuong
             // 
@@ -313,20 +245,56 @@
             this.txtSoLuong.Size = new System.Drawing.Size(160, 26);
             this.txtSoLuong.TabIndex = 60;
             // 
+            // lbTenNCC
+            // 
+            this.lbTenNCC.AutoSize = true;
+            this.lbTenNCC.Location = new System.Drawing.Point(193, 186);
+            this.lbTenNCC.Name = "lbTenNCC";
+            this.lbTenNCC.Size = new System.Drawing.Size(39, 13);
+            this.lbTenNCC.TabIndex = 61;
+            this.lbTenNCC.Text = "Nhàcc";
+            // 
+            // lbNgay
+            // 
+            this.lbNgay.AutoSize = true;
+            this.lbNgay.Location = new System.Drawing.Point(193, 234);
+            this.lbNgay.Name = "lbNgay";
+            this.lbNgay.Size = new System.Drawing.Size(49, 13);
+            this.lbNgay.TabIndex = 62;
+            this.lbNgay.Text = "Ngày lập";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(64, 277);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 19);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Nhân Viên:";
+            // 
+            // lbTenNV
+            // 
+            this.lbTenNV.AutoSize = true;
+            this.lbTenNV.Location = new System.Drawing.Point(191, 277);
+            this.lbTenNV.Name = "lbTenNV";
+            this.lbTenNV.Size = new System.Drawing.Size(72, 13);
+            this.lbTenNV.TabIndex = 17;
+            this.lbTenNV.Text = "tên nhân viên";
+            // 
             // Frm_CTHDN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 450);
+            this.Controls.Add(this.lbNgay);
+            this.Controls.Add(this.lbTenNCC);
             this.Controls.Add(this.txtSoLuong);
-            this.Controls.Add(this.cbTenNCC);
             this.Controls.Add(this.lbDonGia);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.dpNgayLap);
             this.Controls.Add(this.btnXuat);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.lbMaNV);
             this.Controls.Add(this.lbTenNV);
             this.Controls.Add(this.lbMaSP);
             this.Controls.Add(this.lbMaHDN);
@@ -341,6 +309,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_CTHDN";
             this.Text = "Frm_CTHDN";
+            this.Load += new System.EventHandler(this.Frm_CTHDN_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -355,19 +324,18 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbMaHDN;
         private System.Windows.Forms.Label lbMaSP;
-        private System.Windows.Forms.Label lbTenNV;
-        private System.Windows.Forms.Label lbMaNV;
         private System.Windows.Forms.Label label13;
         private Guna.UI.WinForms.GunaGradientButton btnXuat;
         private Guna.UI.WinForms.GunaGradientButton btnUpdate;
         private Guna.UI.WinForms.GunaGradientButton btnSave;
-        private Guna.UI.WinForms.GunaDateTimePicker dpNgayLap;
         private System.Windows.Forms.Label lbDonGia;
-        private Guna.UI.WinForms.GunaComboBox cbTenNCC;
         private Guna.UI.WinForms.GunaLineTextBox txtSoLuong;
+        private System.Windows.Forms.Label lbTenNCC;
+        private System.Windows.Forms.Label lbNgay;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbTenNV;
     }
 }

@@ -45,8 +45,8 @@
             this.btnUpdate = new Guna.UI.WinForms.GunaGradientButton();
             this.btnSave = new Guna.UI.WinForms.GunaGradientButton();
             this.txtSoLuong = new Guna.UI.WinForms.GunaLineTextBox();
-            this.gunaDateTimePicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.txtTenKH = new Guna.UI.WinForms.GunaLineTextBox();
+            this.lbTenKH = new System.Windows.Forms.Label();
+            this.lbNgayLap = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -263,48 +263,31 @@
             this.txtSoLuong.Size = new System.Drawing.Size(160, 26);
             this.txtSoLuong.TabIndex = 61;
             // 
-            // gunaDateTimePicker1
+            // lbTenKH
             // 
-            this.gunaDateTimePicker1.BaseColor = System.Drawing.Color.White;
-            this.gunaDateTimePicker1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaDateTimePicker1.CustomFormat = null;
-            this.gunaDateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.gunaDateTimePicker1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaDateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaDateTimePicker1.ForeColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker1.Location = new System.Drawing.Point(139, 244);
-            this.gunaDateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.gunaDateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.gunaDateTimePicker1.Name = "gunaDateTimePicker1";
-            this.gunaDateTimePicker1.OnHoverBaseColor = System.Drawing.Color.White;
-            this.gunaDateTimePicker1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaDateTimePicker1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaDateTimePicker1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker1.Size = new System.Drawing.Size(223, 30);
-            this.gunaDateTimePicker1.TabIndex = 62;
-            this.gunaDateTimePicker1.Text = "Thứ Ba, Tháng Bảy 7, 2020";
-            this.gunaDateTimePicker1.Value = new System.DateTime(2020, 7, 7, 15, 34, 15, 207);
+            this.lbTenKH.AutoSize = true;
+            this.lbTenKH.Location = new System.Drawing.Point(160, 217);
+            this.lbTenKH.Name = "lbTenKH";
+            this.lbTenKH.Size = new System.Drawing.Size(82, 13);
+            this.lbTenKH.TabIndex = 63;
+            this.lbTenKH.Text = "tên khách hàng";
             // 
-            // txtTenKH
+            // lbNgayLap
             // 
-            this.txtTenKH.BackColor = System.Drawing.Color.White;
-            this.txtTenKH.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenKH.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtTenKH.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTenKH.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtTenKH.Location = new System.Drawing.Point(160, 206);
-            this.txtTenKH.Name = "txtTenKH";
-            this.txtTenKH.PasswordChar = '\0';
-            this.txtTenKH.Size = new System.Drawing.Size(160, 26);
-            this.txtTenKH.TabIndex = 63;
+            this.lbNgayLap.AutoSize = true;
+            this.lbNgayLap.Location = new System.Drawing.Point(160, 261);
+            this.lbNgayLap.Name = "lbNgayLap";
+            this.lbNgayLap.Size = new System.Drawing.Size(47, 13);
+            this.lbNgayLap.TabIndex = 64;
+            this.lbNgayLap.Text = "ngày lập";
             // 
             // Frm_CTHDX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(607, 450);
-            this.Controls.Add(this.txtTenKH);
-            this.Controls.Add(this.gunaDateTimePicker1);
+            this.Controls.Add(this.lbNgayLap);
+            this.Controls.Add(this.lbTenKH);
             this.Controls.Add(this.txtSoLuong);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSave);
@@ -350,7 +333,7 @@
         private Guna.UI.WinForms.GunaGradientButton btnUpdate;
         private Guna.UI.WinForms.GunaGradientButton btnSave;
         private Guna.UI.WinForms.GunaLineTextBox txtSoLuong;
-        private Guna.UI.WinForms.GunaDateTimePicker gunaDateTimePicker1;
-        private Guna.UI.WinForms.GunaLineTextBox txtTenKH;
+        private System.Windows.Forms.Label lbTenKH;
+        private System.Windows.Forms.Label lbNgayLap;
     }
 }

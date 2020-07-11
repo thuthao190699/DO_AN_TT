@@ -190,9 +190,10 @@
             this.txtPass.LineColor = System.Drawing.Color.Black;
             this.txtPass.Location = new System.Drawing.Point(441, 300);
             this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '\0';
+            this.txtPass.PasswordChar = '●';
             this.txtPass.Size = new System.Drawing.Size(190, 26);
             this.txtPass.TabIndex = 31;
+            this.txtPass.UseSystemPasswordChar = true;
             // 
             // txtEmail
             // 

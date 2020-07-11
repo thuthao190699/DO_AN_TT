@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@
             this.btnKhachHang = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnNhanVien = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnSanPham = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -106,6 +108,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox4
             // 
@@ -116,6 +119,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // gunaPictureBox2
             // 
@@ -340,6 +344,10 @@
             this.btnSanPham.Text = "Sản Phẩm";
             this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
             // 
+            // gunaDragControl1
+            // 
+            this.gunaDragControl1.TargetControl = this.panel2;
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -381,5 +389,6 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnKhachHang;
         private Guna.UI.WinForms.GunaAdvenceButton btnNhanVien;
         private Guna.UI.WinForms.GunaAdvenceButton btnSanPham;
+        private Guna.UI.WinForms.GunaDragControl gunaDragControl1;
     }
 }

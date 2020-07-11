@@ -137,7 +137,6 @@ D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.Frm_ThemLoaiSP.resourc
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.Frm_ThemNhaCC.resources
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.Frm_ThemNV.resources
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.Frm_ThongKeSLSP.resources
-D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.Frm_ThongTinNV.resources
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.Properties.Resources.resources
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.csproj.GenerateResource.cache
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.csproj.CoreCompileInputs.cache

@@ -142,6 +142,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_ThemLoaiSP";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_ThemLoaiSP";
             this.Load += new System.EventHandler(this.Frm_ThemLoaiSP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

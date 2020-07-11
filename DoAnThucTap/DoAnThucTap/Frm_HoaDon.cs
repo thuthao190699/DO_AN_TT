@@ -33,5 +33,12 @@ namespace DoAnThucTap
         {
             this.Close();
         }
+
+        private void Frm_HoaDon_Load(object sender, EventArgs e)
+        {
+
+            //this.reportViewer1.RefreshReport();
+            //this.reportViewer2.RefreshReport();
+        }
     }
 }

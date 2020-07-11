@@ -32,11 +32,11 @@
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnXuatThongKe = new Guna.UI.WinForms.GunaGradientButton();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoaiSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnXuatThongKe = new Guna.UI.WinForms.GunaGradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +66,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSP,
@@ -76,30 +77,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(582, 216);
             this.dataGridView1.TabIndex = 8;
-            // 
-            // btnXuatThongKe
-            // 
-            this.btnXuatThongKe.AnimationHoverSpeed = 0.07F;
-            this.btnXuatThongKe.AnimationSpeed = 0.03F;
-            this.btnXuatThongKe.BaseColor1 = System.Drawing.Color.SlateBlue;
-            this.btnXuatThongKe.BaseColor2 = System.Drawing.Color.Fuchsia;
-            this.btnXuatThongKe.BorderColor = System.Drawing.Color.Black;
-            this.btnXuatThongKe.FocusedColor = System.Drawing.Color.Empty;
-            this.btnXuatThongKe.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXuatThongKe.ForeColor = System.Drawing.Color.Black;
-            this.btnXuatThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatThongKe.Image")));
-            this.btnXuatThongKe.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnXuatThongKe.Location = new System.Drawing.Point(238, 379);
-            this.btnXuatThongKe.Name = "btnXuatThongKe";
-            this.btnXuatThongKe.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.btnXuatThongKe.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.btnXuatThongKe.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnXuatThongKe.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnXuatThongKe.OnHoverImage = null;
-            this.btnXuatThongKe.OnPressedColor = System.Drawing.Color.Black;
-            this.btnXuatThongKe.Size = new System.Drawing.Size(176, 42);
-            this.btnXuatThongKe.TabIndex = 9;
-            this.btnXuatThongKe.Text = "Xuất Thống Kê";
             // 
             // MaSP
             // 
@@ -124,6 +101,30 @@
             this.LoaiSP.DataPropertyName = "LoaiSP";
             this.LoaiSP.HeaderText = "Loại Sản Phẩm";
             this.LoaiSP.Name = "LoaiSP";
+            // 
+            // btnXuatThongKe
+            // 
+            this.btnXuatThongKe.AnimationHoverSpeed = 0.07F;
+            this.btnXuatThongKe.AnimationSpeed = 0.03F;
+            this.btnXuatThongKe.BaseColor1 = System.Drawing.Color.SlateBlue;
+            this.btnXuatThongKe.BaseColor2 = System.Drawing.Color.Fuchsia;
+            this.btnXuatThongKe.BorderColor = System.Drawing.Color.Black;
+            this.btnXuatThongKe.FocusedColor = System.Drawing.Color.Empty;
+            this.btnXuatThongKe.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXuatThongKe.ForeColor = System.Drawing.Color.Black;
+            this.btnXuatThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatThongKe.Image")));
+            this.btnXuatThongKe.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnXuatThongKe.Location = new System.Drawing.Point(238, 379);
+            this.btnXuatThongKe.Name = "btnXuatThongKe";
+            this.btnXuatThongKe.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.btnXuatThongKe.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btnXuatThongKe.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnXuatThongKe.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnXuatThongKe.OnHoverImage = null;
+            this.btnXuatThongKe.OnPressedColor = System.Drawing.Color.Black;
+            this.btnXuatThongKe.Size = new System.Drawing.Size(176, 42);
+            this.btnXuatThongKe.TabIndex = 9;
+            this.btnXuatThongKe.Text = "Xuất Thống Kê";
             // 
             // Frm_ThongKeSLSP
             // 

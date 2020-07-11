@@ -16,6 +16,11 @@ namespace DoAnThucTap
         {
             InitializeComponent();
         }
+        XuLyDuLieuDataContext kn = new XuLyDuLieuDataContext();
+        public class TranferData
+        {
+            public static int done;
+        }
 
         private void gunaPictureBox2_Click(object sender, EventArgs e)
         {
@@ -32,24 +37,26 @@ namespace DoAnThucTap
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+           //vậy xóa cái đó, xem dùm t cái phân quyền chạy ổn ko
             if (txtTenNV.Text == "" || txtSDT.Text == "" || txtEmail.Text == "" || txtUserName.Text == "" || txtPass.Text == "")
             {
-                MessageBox.Show("Vui long dien day du thong tin", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                //kn.ThemNhanVien(Convert.ToInt32(lbMaNV.Text), txtTenNV.Text, txtSDT.Text, txtEmail.Text, txtUserName.Text, txtPass.Text, Convert.ToInt32(cbChucVu.SelectedValue.ToString()));
+                kn.ThemNhanVien(Convert.ToInt32(lbMaNV.Text), txtTenNV.Text, txtSDT.Text, txtEmail.Text, txtUserName.Text, txtPass.Text, Convert.ToInt32(cbChucVu.SelectedValue.ToString()));
+                Frm_ThemNV_Load(sender, e);
                 this.Close();
             }
         }
 
         private void Frm_ThemNV_Load(object sender, EventArgs e)
         {
-           // var a = net.NhanViens.OrderByDescending(s => s.MaNV).FirstOrDefault();
-           // lbMaNV.Text = Convert.ToInt32(a.MaNV + 1).ToString();
+            var a = kn.NhanViens.OrderByDescending(s => s.MaNV).FirstOrDefault();
+            lbMaNV.Text = Convert.ToInt32(a.MaNV + 1).ToString();
             cbChucVu.DisplayMember = "TenCV";
             cbChucVu.ValueMember = "MaCV";
-           // cbChucVu.DataSource = net.ChucVus;
+            cbChucVu.DataSource = kn.ChucVus;
         }
     }
 }

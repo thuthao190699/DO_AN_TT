@@ -21,5 +21,11 @@ namespace DoAnThucTap
         {
             this.Close();
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            Frm_ThemKhachHang themKH = new Frm_ThemKhachHang();
+            themKH.ShowDialog();
+        }
     }
 }

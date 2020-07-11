@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_SanPham));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbLoaiSP = new System.Windows.Forms.ComboBox();
             this.btnLoaiSP = new Guna.UI.WinForms.GunaGradientButton();
             this.txtSoLuongSP = new Guna.UI.WinForms.GunaLineTextBox();
             this.txtGiaSP = new Guna.UI.WinForms.GunaLineTextBox();
@@ -41,6 +42,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaTL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTimTenSP = new Guna.UI.WinForms.GunaLineTextBox();
             this.btnXoa = new Guna.UI.WinForms.GunaGradientButton();
             this.btnHetHang = new Guna.UI.WinForms.GunaGradientButton();
@@ -48,17 +54,11 @@
             this.btnSave = new Guna.UI.WinForms.GunaGradientButton();
             this.btnUpdate = new Guna.UI.WinForms.GunaGradientButton();
             this.btnAdd = new Guna.UI.WinForms.GunaGradientButton();
-            this.btnTim = new Guna.UI.WinForms.GunaGradientButton();
             this.pic_AnhSach = new System.Windows.Forms.PictureBox();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.OpenFileImage = new System.Windows.Forms.OpenFileDialog();
-            this.cbLoaiSP = new System.Windows.Forms.ComboBox();
-            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaTL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AnhSach)).BeginInit();
@@ -83,6 +83,14 @@
             this.groupBox1.Size = new System.Drawing.Size(537, 155);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // cbLoaiSP
+            // 
+            this.cbLoaiSP.FormattingEnabled = true;
+            this.cbLoaiSP.Location = new System.Drawing.Point(131, 105);
+            this.cbLoaiSP.Name = "cbLoaiSP";
+            this.cbLoaiSP.Size = new System.Drawing.Size(133, 21);
+            this.cbLoaiSP.TabIndex = 38;
             // 
             // btnLoaiSP
             // 
@@ -232,6 +240,41 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // MaSP
+            // 
+            this.MaSP.DataPropertyName = "MaSP";
+            this.MaSP.HeaderText = "Mã";
+            this.MaSP.Name = "MaSP";
+            this.MaSP.ReadOnly = true;
+            // 
+            // TenSP
+            // 
+            this.TenSP.DataPropertyName = "TenSP";
+            this.TenSP.HeaderText = "Tên sản phẩm";
+            this.TenSP.Name = "TenSP";
+            this.TenSP.ReadOnly = true;
+            // 
+            // Gia
+            // 
+            this.Gia.DataPropertyName = "Gia";
+            this.Gia.HeaderText = "Giá";
+            this.Gia.Name = "Gia";
+            this.Gia.ReadOnly = true;
+            // 
+            // SoLuongTon
+            // 
+            this.SoLuongTon.DataPropertyName = "SoLuongTon";
+            this.SoLuongTon.HeaderText = "Số Lượng Tồn";
+            this.SoLuongTon.Name = "SoLuongTon";
+            this.SoLuongTon.ReadOnly = true;
+            // 
+            // MaTL
+            // 
+            this.MaTL.DataPropertyName = "MaTL";
+            this.MaTL.HeaderText = "Loại sản phẩm";
+            this.MaTL.Name = "MaTL";
+            this.MaTL.ReadOnly = true;
+            // 
             // txtTimTenSP
             // 
             this.txtTimTenSP.BackColor = System.Drawing.Color.White;
@@ -239,7 +282,7 @@
             this.txtTimTenSP.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtTimTenSP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTimTenSP.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtTimTenSP.Location = new System.Drawing.Point(197, 204);
+            this.txtTimTenSP.Location = new System.Drawing.Point(296, 198);
             this.txtTimTenSP.Name = "txtTimTenSP";
             this.txtTimTenSP.PasswordChar = '\0';
             this.txtTimTenSP.Size = new System.Drawing.Size(328, 26);
@@ -396,31 +439,6 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnTim
-            // 
-            this.btnTim.AnimationHoverSpeed = 0.07F;
-            this.btnTim.AnimationSpeed = 0.03F;
-            this.btnTim.BackColor = System.Drawing.Color.White;
-            this.btnTim.BaseColor1 = System.Drawing.Color.SlateBlue;
-            this.btnTim.BaseColor2 = System.Drawing.Color.Fuchsia;
-            this.btnTim.BorderColor = System.Drawing.Color.Black;
-            this.btnTim.FocusedColor = System.Drawing.Color.Empty;
-            this.btnTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnTim.ForeColor = System.Drawing.Color.Black;
-            this.btnTim.Image = global::DoAnThucTap.Properties.Resources.tim;
-            this.btnTim.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnTim.Location = new System.Drawing.Point(554, 204);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.btnTim.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.btnTim.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnTim.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnTim.OnHoverImage = null;
-            this.btnTim.OnPressedColor = System.Drawing.Color.Black;
-            this.btnTim.Size = new System.Drawing.Size(127, 26);
-            this.btnTim.TabIndex = 6;
-            this.btnTim.Text = "Tìm Kiếm";
-            // 
             // pic_AnhSach
             // 
             this.pic_AnhSach.Location = new System.Drawing.Point(25, 36);
@@ -456,54 +474,22 @@
             // 
             this.OpenFileImage.FileName = "openFileDialog1";
             // 
-            // cbLoaiSP
+            // label6
             // 
-            this.cbLoaiSP.FormattingEnabled = true;
-            this.cbLoaiSP.Location = new System.Drawing.Point(131, 105);
-            this.cbLoaiSP.Name = "cbLoaiSP";
-            this.cbLoaiSP.Size = new System.Drawing.Size(133, 21);
-            this.cbLoaiSP.TabIndex = 38;
-            // 
-            // MaSP
-            // 
-            this.MaSP.DataPropertyName = "MaSP";
-            this.MaSP.HeaderText = "Mã";
-            this.MaSP.Name = "MaSP";
-            this.MaSP.ReadOnly = true;
-            // 
-            // TenSP
-            // 
-            this.TenSP.DataPropertyName = "TenSP";
-            this.TenSP.HeaderText = "Tên sản phẩm";
-            this.TenSP.Name = "TenSP";
-            this.TenSP.ReadOnly = true;
-            // 
-            // Gia
-            // 
-            this.Gia.DataPropertyName = "Gia";
-            this.Gia.HeaderText = "Giá";
-            this.Gia.Name = "Gia";
-            this.Gia.ReadOnly = true;
-            // 
-            // SoLuongTon
-            // 
-            this.SoLuongTon.DataPropertyName = "SoLuongTon";
-            this.SoLuongTon.HeaderText = "Số Lượng Tồn";
-            this.SoLuongTon.Name = "SoLuongTon";
-            this.SoLuongTon.ReadOnly = true;
-            // 
-            // MaTL
-            // 
-            this.MaTL.DataPropertyName = "MaTL";
-            this.MaTL.HeaderText = "Loại sản phẩm";
-            this.MaTL.Name = "MaTL";
-            this.MaTL.ReadOnly = true;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(215, 205);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 19);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Tìm Kiếm:";
             // 
             // Frm_SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 450);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnHetHang);
@@ -511,7 +497,6 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnTim);
             this.Controls.Add(this.txtTimTenSP);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pic_AnhSach);
@@ -519,6 +504,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_SanPham";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_SanPham";
             this.Load += new System.EventHandler(this.Frm_SanPham_Load);
             this.groupBox1.ResumeLayout(false);
@@ -527,6 +513,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_AnhSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -546,7 +533,6 @@
         private System.Windows.Forms.PictureBox pic_AnhSach;
         private System.Windows.Forms.DataGridView dataGridView1;
         private Guna.UI.WinForms.GunaLineTextBox txtTimTenSP;
-        private Guna.UI.WinForms.GunaGradientButton btnTim;
         private Guna.UI.WinForms.GunaGradientButton btnAdd;
         private Guna.UI.WinForms.GunaGradientButton btnUpdate;
         private Guna.UI.WinForms.GunaGradientButton btnSave;
@@ -562,5 +548,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongTon;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTL;
+        private System.Windows.Forms.Label label6;
     }
 }

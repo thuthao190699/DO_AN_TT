@@ -153,6 +153,7 @@
             this.txtSDT.PasswordChar = '\0';
             this.txtSDT.Size = new System.Drawing.Size(219, 26);
             this.txtSDT.TabIndex = 30;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtDiaChi
             // 
@@ -205,6 +206,7 @@
             this.btnSave.Size = new System.Drawing.Size(139, 42);
             this.btnSave.TabIndex = 39;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Frm_ThemKhachHang
             // 
@@ -226,6 +228,7 @@
             this.Controls.Add(this.gunaPictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_ThemKhachHang";
+            this.Load += new System.EventHandler(this.Frm_ThemKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             this.ResumeLayout(false);

@@ -1,5 +1,14 @@
 use DATT
 
+------------------------
+go
+create proc select_chucvu
+as 
+begin
+select *from ChucVu
+end
+
+
 ---------------SanPham----------------
 go
 create proc selectSanPham 
@@ -17,12 +26,12 @@ end
 --exec ThemSanPham  10,aaa,2000,null,1,1
 
 go
-create proc UpdateSanPham(@MaSP int,@TenSP nvarchar(50),@Gia float,@HinhAnh image, @SoLuongTon int,@MaTL int)
+alter proc UpdateSanPham(@MaSP int,@TenSP nvarchar(50),@Gia float,@HinhAnh image, @SoLuongTon int,@MaTL int)
 as 
 begin
 update SanPham set TenSP=@TenSP,Gia=@Gia,HinhAnh=@HinhAnh,SoLuongTon=@SoLuongTon,MaTL=@MaTL where MaSP=@MaSP
 end
-exec UpdateSanPham  10,'abc',2000,null,2,1
+--exec UpdateSanPham  10,'abc',2000,null,2,1
 go
 create proc DeleteSanPham(@MaSP int)
 as 
@@ -31,6 +40,12 @@ delete from SanPham where MaSP=@MaSP
 end
 --exec DeleteSanPham 10
 -------------------KhachHang-------------
+go
+create proc select_KhachHang
+as begin
+select * from KhachHang
+end
+
 go
 create proc ThemKhachHang(@MaKH int, @TenKH nvarchar(50), @SDT text, @DiaChi nvarchar(50), @Email nvarchar(50))
 as
@@ -54,11 +69,11 @@ end
 
 ----------------------NhanVien----------------
 go
-create proc select_Nhanvien
+alter proc select_Nhanvien
 as begin
 select * from NhanVien
 end
-
+																
 go 
 create proc ThemNhanVien(@MaNV int, @TenNV nvarchar(50), @SDT text, @Email nvarchar(50), @TK nvarchar(50), @MK nvarchar(50), @MaCV int)
 as 
@@ -67,7 +82,7 @@ insert into NhanVien values (@MaNV, @TenNV, @SDT, @Email, @TK, @MK, @MaCV)
 end
 --exec ThemNhanVien 1005,'aaa','1111111','aaa@gmail.com','123456','vv5323',2
 go
-create proc UpdateNhanVien(@MaNV int, @TenNV nvarchar(50), @SDT text, @Email nvarchar(50), @TK nvarchar(50), @MK nvarchar(50), @MaCV int)
+create proc UpdateNhanVien(@MaNV int, @TenNV nvarchar(50), @SDT text, @Email nvarchar(50), @MaCV int)
 as 
 begin
 update NhanVien set TenNV=@TenNV,SDT=@SDT,Email=@Email where MaNV=@MaNV
@@ -104,6 +119,32 @@ delete from LoaiSP where MaTL=@MaTL
 end
 --exec DeleteLoaiSP 10
 ------------------HoaDonNhap----------------
+go
+create proc selectHoaDonNhap
+as begin
+	select *--hdn.MaHDN, ncc.TenNCC, nv.TenNV, hdn.NgayNhap ,(cthdn.Dongia * cthdn.Soluong) as 'ThanhTienChuan'
+	from CTHDN cthdn, HoaDonNhap hdn, NhanVien nv, NhaCC ncc
+	where cthdn.MaHDN = hdn.MaHDN and hdn.MaNCC = ncc.MaNCC and hdn.MaNV = nv.MaNV
+end
+
+go
+create proc selectReport(@MaHDN int)
+as begin
+	select *
+	from CTHDN cthdn, HoaDonNhap hdn, NhanVien nv, NhaCC ncc, SanPham sp
+	where	cthdn.MaHDN = hdn.MaHDN and hdn.MaNCC = ncc.MaNCC and 
+			hdn.MaNV = nv.MaNV and sp.MaSP = cthdn.MaSP and hdn.MaHDN=@MaHDN
+end
+
+go
+create proc selectReportTongTien(@MaHDN int)
+as begin
+	select SUM(Soluong*Dongia) as 'ThanhTien'
+	from CTHDN,HoaDonNhap
+	where	CTHDN.MaHDN=HoaDonNhap.MaHDN
+			and HoaDonNhap.MaHDN= @MaHDN
+end
+
 go
 create proc ThemHoaDonNhap(@MaHDN int,@MaNCC int,@MaNV int,@NgayNhap date,@ThanhTien int)
 as 
@@ -197,6 +238,33 @@ end
 
 --------------------HoaDonXuat----------------
 go
+alter proc selectHoaDonXuat
+as begin
+	select hdx.MaHDX, kh.TenKH, nv.TenNV, hdx.NgayXuat ,(sp.Gia * cthdx.Soluong) as 'ThanhTienChuan'
+	from CTHDX cthdx, HoaDonXuat hdx, NhanVien nv, KhachHang kh, SanPham sp
+	where cthdx.MaHDX = hdx.MaHDX and hdx.MaKH = kh.MaKH and hdx.MaNV = nv.MaNV
+end
+
+go
+create proc selectReportXuat(@MaHDX int)
+as begin
+	select *
+	from CTHDX cthdx, HoaDonXuat hdx, NhanVien nv, KhachHang kh, SanPham sp
+	where	cthdx.MaHDX = hdx.MaHDX and hdx.MaKH = kh.MaKH and 
+			hdx.MaNV = nv.MaNV and sp.MaSP = cthdx.MaSP and hdx.MaHDX=@MaHDX
+end
+
+go
+create proc selectReportTongTienXuat(@MaHDX int)
+as begin
+	select SUM(Soluong*Gia) as 'ThanhTien'
+	from CTHDX,HoaDonXuat,SanPham
+	where	CTHDX.MaHDX=HoaDonXuat.MaHDX
+			and HoaDonXuat.MaHDX= @MaHDX
+end
+
+
+go
 create proc selectHoaDonXuat
 as
 begin
@@ -287,6 +355,12 @@ select * from NhaCC
 end
 
 go
+create proc DeleteNhaCC (@MaNCC int)
+as begin
+delete from NhaCC where MaNCC=@MaNCC
+end
+
+go
 create proc ThemNhaCungCap (@MaNCC int,@TenNCC nvarchar(50),@SDT text,@Diacchi nvarchar(50))
 as 
 begin
@@ -348,7 +422,7 @@ update NhanVien set MK=@MK where MaNV=@MaNV
 end
 --------------------------
 go
-create proc tongtienthangtruoc
+alter proc tongtienthangtruoc
 as begin
 	declare @count int
 	if(DATEPART (m,GETDATE())-1>0)

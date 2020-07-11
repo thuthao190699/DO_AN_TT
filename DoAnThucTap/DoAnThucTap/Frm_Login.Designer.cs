@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Login));
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbChange = new System.Windows.Forms.Label();
             this.btnDangNhap = new Guna.UI.WinForms.GunaGradientButton();
             this.lbForgot = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -76,7 +75,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lbChange);
             this.panel1.Controls.Add(this.btnDangNhap);
             this.panel1.Controls.Add(this.lbForgot);
             this.panel1.Controls.Add(this.label3);
@@ -87,19 +85,9 @@
             this.panel1.Controls.Add(this.gunaPictureBox2);
             this.panel1.Location = new System.Drawing.Point(363, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(281, 451);
+            this.panel1.Size = new System.Drawing.Size(304, 451);
             this.panel1.TabIndex = 1;
-            // 
-            // lbChange
-            // 
-            this.lbChange.AutoSize = true;
-            this.lbChange.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbChange.ForeColor = System.Drawing.Color.Blue;
-            this.lbChange.Location = new System.Drawing.Point(152, 261);
-            this.lbChange.Name = "lbChange";
-            this.lbChange.Size = new System.Drawing.Size(121, 17);
-            this.lbChange.TabIndex = 8;
-            this.lbChange.Text = "Change Password";
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnDangNhap
             // 
@@ -124,17 +112,19 @@
             this.btnDangNhap.Size = new System.Drawing.Size(160, 42);
             this.btnDangNhap.TabIndex = 7;
             this.btnDangNhap.Text = "Đăng Nhập";
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // lbForgot
             // 
             this.lbForgot.AutoSize = true;
             this.lbForgot.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbForgot.ForeColor = System.Drawing.Color.Blue;
-            this.lbForgot.Location = new System.Drawing.Point(15, 261);
+            this.lbForgot.Location = new System.Drawing.Point(152, 249);
             this.lbForgot.Name = "lbForgot";
             this.lbForgot.Size = new System.Drawing.Size(114, 17);
             this.lbForgot.TabIndex = 6;
             this.lbForgot.Text = "Forgot Password";
+            this.lbForgot.Click += new System.EventHandler(this.lbForgot_Click);
             // 
             // label3
             // 
@@ -165,9 +155,11 @@
             this.txtPass.LineColor = System.Drawing.Color.Gainsboro;
             this.txtPass.Location = new System.Drawing.Point(106, 206);
             this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '\0';
+            this.txtPass.PasswordChar = '●';
             this.txtPass.Size = new System.Drawing.Size(160, 26);
             this.txtPass.TabIndex = 3;
+            this.txtPass.Text = "123";
+            this.txtPass.UseSystemPasswordChar = true;
             // 
             // txtName
             // 
@@ -181,6 +173,8 @@
             this.txtName.PasswordChar = '\0';
             this.txtName.Size = new System.Drawing.Size(160, 26);
             this.txtName.TabIndex = 2;
+            this.txtName.Text = "thao";
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // label1
             // 
@@ -202,6 +196,7 @@
             this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox2.TabIndex = 0;
             this.gunaPictureBox2.TabStop = false;
+            this.gunaPictureBox2.Click += new System.EventHandler(this.gunaPictureBox2_Click);
             // 
             // panel2
             // 
@@ -212,7 +207,7 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(650, 0);
+            this.panel2.Location = new System.Drawing.Point(363, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(304, 451);
             this.panel2.TabIndex = 2;
@@ -239,7 +234,8 @@
             this.btnThoatforgot.OnPressedColor = System.Drawing.Color.Black;
             this.btnThoatforgot.Size = new System.Drawing.Size(118, 42);
             this.btnThoatforgot.TabIndex = 12;
-            this.btnThoatforgot.Text = "Thoát";
+            this.btnThoatforgot.Text = "Trở Về";
+            this.btnThoatforgot.Click += new System.EventHandler(this.btnThoatforgot_Click);
             // 
             // btnXNforgot
             // 
@@ -264,6 +260,7 @@
             this.btnXNforgot.Size = new System.Drawing.Size(118, 42);
             this.btnXNforgot.TabIndex = 11;
             this.btnXNforgot.Text = "Xác Nhận";
+            this.btnXNforgot.Click += new System.EventHandler(this.btnXNforgot_Click);
             // 
             // txtAccount
             // 
@@ -330,7 +327,7 @@
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(960, 0);
+            this.panel3.Location = new System.Drawing.Point(363, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(304, 451);
             this.panel3.TabIndex = 3;
@@ -358,6 +355,7 @@
             this.btnThoatchange.Size = new System.Drawing.Size(118, 42);
             this.btnThoatchange.TabIndex = 13;
             this.btnThoatchange.Text = "Thoát";
+            this.btnThoatchange.Click += new System.EventHandler(this.btnThoatchange_Click);
             // 
             // btnXNchange
             // 
@@ -382,6 +380,7 @@
             this.btnXNchange.Size = new System.Drawing.Size(118, 42);
             this.btnXNchange.TabIndex = 12;
             this.btnXNchange.Text = "Xác Nhận";
+            this.btnXNchange.Click += new System.EventHandler(this.btnXNchange_Click);
             // 
             // txtNewPass
             // 
@@ -443,14 +442,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1276, 450);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(669, 450);
+            this.Controls.Add(this.gunaPictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.gunaPictureBox1);
+            this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Login";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Frm_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -475,7 +475,6 @@
         private Guna.UI.WinForms.GunaLineTextBox txtPass;
         private Guna.UI.WinForms.GunaLineTextBox txtName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbChange;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI.WinForms.GunaGradientButton btnThoatforgot;
         private Guna.UI.WinForms.GunaGradientButton btnXNforgot;
