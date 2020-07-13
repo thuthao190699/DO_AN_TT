@@ -125,6 +125,7 @@
             this.btnXuatThongKe.Size = new System.Drawing.Size(176, 42);
             this.btnXuatThongKe.TabIndex = 9;
             this.btnXuatThongKe.Text = "Xuất Thống Kê";
+            this.btnXuatThongKe.Click += new System.EventHandler(this.btnXuatThongKe_Click);
             // 
             // Frm_ThongKeSLSP
             // 
@@ -138,6 +139,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_ThongKeSLSP";
             this.Text = "Frm_ThongKeSLSP";
+            this.Load += new System.EventHandler(this.Frm_ThongKeSLSP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

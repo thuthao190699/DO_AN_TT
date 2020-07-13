@@ -186,7 +186,7 @@ namespace DoAnThucTap
 
         private void txtGiaSP_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -233,6 +233,8 @@ namespace DoAnThucTap
 
         private void btnHetHang_Click(object sender, EventArgs e)
         {
+            Frm_ThongKeSLSP tk = new Frm_ThongKeSLSP();
+            tk.ShowDialog();
             this.Close();
             th = new Thread(MoFromThongKe);
             th.SetApartmentState(ApartmentState.STA);
@@ -321,6 +323,11 @@ namespace DoAnThucTap
             else {
                 dataGridView1.DataSource = kn.SanPhams.ToList();
             }
+        }
+
+        private void txtTenSP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !((e.KeyChar >= 65 && e.KeyChar <= 122) || (e.KeyChar == 8));
         }
     }
 }

@@ -47,8 +47,9 @@ namespace DoAnThucTap
                 lbThangNay.Text = "Tháng này:" + b.ThanhTien;
 
             }
-            chart1.Series["Doanh Thu Mỗi Tháng"].XValueMember = "Thang";
-            chart1.Series["Doanh Thu Mỗi Tháng"].YValueMembers = "ThanhTien";
+            chart1.Series["Series1"].XValueMember = "Thang";
+            chart1.Series["Series1"].YValueMembers = "ThanhTien";
+            chart1.DataSource = kn.ThongKe(2020);
         }
     }
 }

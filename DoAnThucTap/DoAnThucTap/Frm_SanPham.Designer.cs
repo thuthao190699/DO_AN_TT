@@ -157,6 +157,7 @@
             this.txtTenSP.PasswordChar = '\0';
             this.txtTenSP.Size = new System.Drawing.Size(133, 26);
             this.txtTenSP.TabIndex = 32;
+            this.txtTenSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenSP_KeyPress);
             // 
             // txtMaSP
             // 

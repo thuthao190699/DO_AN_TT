@@ -119,14 +119,20 @@ delete from LoaiSP where MaTL=@MaTL
 end
 --exec DeleteLoaiSP 10
 ------------------HoaDonNhap----------------
+
 go
 create proc selectHoaDonNhap
 as begin
-	select *--hdn.MaHDN, ncc.TenNCC, nv.TenNV, hdn.NgayNhap ,(cthdn.Dongia * cthdn.Soluong) as 'ThanhTienChuan'
-	from CTHDN cthdn, HoaDonNhap hdn, NhanVien nv, NhaCC ncc
-	where cthdn.MaHDN = hdn.MaHDN and hdn.MaNCC = ncc.MaNCC and hdn.MaNV = nv.MaNV
+	select hdn.MaHDN, ncc.TenNCC, nv.TenNV, hdn.NgayNhap ,(ct.Dongia * ct.Soluong) as 'ThanhTienChuan', ct.MaHDN as 'CTHD', ct.MaSP,ct.Dongia,ct.Soluong
+	from CTHDN ct, HoaDonNhap hdn, NhanVien nv, NhaCC ncc
+	where ct.MaHDN = hdn.MaHDN and hdn.MaNCC = ncc.MaNCC and hdn.MaNV = nv.MaNV
 end
 
+go
+alter proc selectlistHoaDonNhap
+as begin
+	select * from HoaDonNhap hd,NhanVien nv, NhaCC ncc where hd.MaNV = nv.MaNV and hd.MaNCC = ncc.MaNCC
+end
 go
 create proc selectReport(@MaHDN int)
 as begin
@@ -146,12 +152,20 @@ as begin
 end
 
 go
-create proc ThemHoaDonNhap(@MaHDN int,@MaNCC int,@MaNV int,@NgayNhap date,@ThanhTien int)
+ proc ThemHoaDonNhap(@MaHDN int,@MaNCC int,@MaNV int,@NgayNhap date)
+as 
+begin
+insert into HoaDonNhap values(@MaHDN,@MaNCC,@MaNV,@NgayNhap,0)
+end
+--exec ThemHoaDonNhap 6,111,1002,'07-07-2020',2000 
+-----------------
+go
+create proc ThemHDN(@MaHDN int,@MaNCC int,@MaNV int,@NgayNhap date,@ThanhTien int)
 as 
 begin
 insert into HoaDonNhap values(@MaHDN,@MaNCC,@MaNV,@NgayNhap,@ThanhTien)
 end
---exec ThemHoaDonNhap 6,111,1002,'07-07-2020',2000 
+-----------------
 go
 create proc UpdateHoaDonNhap(@MaHDN int,@MaNCC int,@MaNV int,@NgayNhap date,@ThanhTien int)
 as 
@@ -186,6 +200,19 @@ begin
 insert into CTHDN values(@MaSP ,@MaHDN ,@Dongia , @Soluong )
 end
 --exec ThemCTHDN 1,6,20000,2
+
+go
+create proc ThemCTHDN1 (@MaSP int,@MaHDN int,@Dongia float, @Soluong int)
+as 
+begin
+insert into CTHDN values(@MaSP ,@MaHDN ,@Dongia , @Soluong )
+end
+go
+create proc UpdateCTHDN1 (@MaHDN int,@Dongia float, @Soluong int)
+as 
+begin
+update CTHDN set Soluong =@Soluong,Dongia = @Dongia where MaHDN = @MaHDN
+end
 
 go
 alter proc UpdateCTHDNGiaBanCu (@MaSP int,@MaHDN int, @Soluong int)
@@ -242,26 +269,46 @@ alter proc selectHoaDonXuat
 as begin
 	select hdx.MaHDX, kh.TenKH, nv.TenNV, hdx.NgayXuat ,(sp.Gia * cthdx.Soluong) as 'ThanhTienChuan'
 	from CTHDX cthdx, HoaDonXuat hdx, NhanVien nv, KhachHang kh, SanPham sp
-	where cthdx.MaHDX = hdx.MaHDX and hdx.MaKH = kh.MaKH and hdx.MaNV = nv.MaNV
+	where cthdx.MaHDX = hdx.MaHDX and hdx.MaKH = kh.MaKH and hdx.MaNV = nv.MaNV and sp.MaSP = cthdx.MaSP
 end
 
 go
-create proc selectReportXuat(@MaHDX int)
+create proc UpdatetHDX(
+@MaHDX int, 
+@MaKH int,
+@MaNV int,
+@NgayXuat date,
+@ThanhTien float
+)
 as begin
-	select *
-	from CTHDX cthdx, HoaDonXuat hdx, NhanVien nv, KhachHang kh, SanPham sp
-	where	cthdx.MaHDX = hdx.MaHDX and hdx.MaKH = kh.MaKH and 
-			hdx.MaNV = nv.MaNV and sp.MaSP = cthdx.MaSP and hdx.MaHDX=@MaHDX
+	update HoaDonXuat set MaKH=@MaKH,MaNV=@MaNV,NgayXuat=@NgayXuat,ThanhTien=@ThanhTien
+	where @MaHDX=MaHDX
 end
-
 go
-create proc selectReportTongTienXuat(@MaHDX int)
+
+create proc UpdatetCTHDX(@MaHDX int, @MaSP int,@Soluong int)
 as begin
-	select SUM(Soluong*Gia) as 'ThanhTien'
-	from CTHDX,HoaDonXuat,SanPham
-	where	CTHDX.MaHDX=HoaDonXuat.MaHDX
-			and HoaDonXuat.MaHDX= @MaHDX
+	update CTHDX set MaSP=@MaSP,Soluong=@Soluong
+	where @MaHDX=MaHDX
 end
+go
+
+--create proc selectReportXuat(@MaHDX int)
+--as begin
+--	select *
+--	from CTHDX cthdx, HoaDonXuat hdx, NhanVien nv, KhachHang kh, SanPham sp
+--	where	cthdx.MaHDX = hdx.MaHDX and hdx.MaKH = kh.MaKH and 
+--			hdx.MaNV = nv.MaNV and sp.MaSP = cthdx.MaSP and hdx.MaHDX=@MaHDX
+--end
+
+--go
+--create proc selectReportTongTienXuat(@MaHDX int)
+--as begin
+--	select SUM(Soluong*Gia) as 'ThanhTien'
+--	from CTHDX,HoaDonXuat,SanPham
+--	where	CTHDX.MaHDX=HoaDonXuat.MaHDX
+--			and HoaDonXuat.MaHDX= @MaHDX
+--end
 
 
 go
@@ -296,7 +343,7 @@ end
 ---------------CTHDX---------------
 go
 create proc ThemCTHDX (@MaSP int,@MaHDX int, @Soluong int)
-as 
+as
 begin
 	insert into CTHDX values(@MaSP ,@MaHDX , @Soluong)
 	update SanPham set SoLuongTon = SoLuongTon - @Soluong where MaSP = @MaSP
@@ -394,6 +441,29 @@ set @soLuongCTHDN = (select Soluong from CTHDN where MaSP=@MaSP)
 set @soluongTam = (select SoLuongTon from SanPham where MaSP=@MaSP)
 update SanPham set SoLuongTon=@soLuongTam+@SoluongTon where MaSP=@MaSP
 end
+
+go
+alter proc select_ThongKeSLSP
+as 
+begin
+select MaSP,TenSP,SoLuongTon,TenTL from SanPham,LoaiSP where SoLuongTon <= 2 and SanPham.MaTL=LoaiSP.MaTL
+end
+
+go 
+create proc selectThongKe
+as begin
+select * from SanPham,LoaiSP where SanPham.MaTL=LoaiSP.MaTL
+end
+---------------------------
+create proc ThongKe(@nam int)
+as begin
+	select DATEPART(MONTH, HoaDonXuat.NgayXuat) as 'Thang' , sum(HoaDonXuat.ThanhTien) as'ThanhTien'
+	from HoaDonXuat, SanPham, CTHDX 
+	where HoaDonXuat.MaHDX=CTHDX.MaHDX  and DATEPART(year,  HoaDonXuat.NgayXuat)=@nam
+	group by  DATEPART(MONTH, HoaDonXuat.NgayXuat) 
+end
+
+exec ThongKe 2020
 --------------------------
 go
 create proc ThemTongTienXuat(@MaHDX int)
@@ -463,12 +533,7 @@ begin
 	where DATEPART(MONTH, NgayXuat) = DATEPART(MONTH, GETDATE())
 end
 -----------------
-go
-create proc select_ThongKeSLSP
-as 
-begin
-select MaSP,TenSP,SoLuongTon,TenTL from SanPham,LoaiSP where SoLuongTon <= 2 and SanPham.MaTL=LoaiSP.MaTL
-end
+
 -------------
 go 
 create proc TimSanPham

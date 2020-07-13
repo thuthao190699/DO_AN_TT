@@ -22,7 +22,8 @@ MaHDN int primary key,
 MaNCC int,
 MaNV int,
 NgayNhap date,
-ThanhTien float)
+ThanhTien float
+)
 
 go
 create table CTHDN(
@@ -39,7 +40,6 @@ MaKH int,
 MaNV int,
 NgayXuat date,
 ThanhTien float)
-
 go
 create table CTHDX(
 MaSP int,

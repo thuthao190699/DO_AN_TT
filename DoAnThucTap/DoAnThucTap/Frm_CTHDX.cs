@@ -16,10 +16,38 @@ namespace DoAnThucTap
         {
             InitializeComponent();
         }
+        XuLyDuLieuDataContext kn = new XuLyDuLieuDataContext();
 
         private void gunaPictureBox3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Frm_CTHDX_Load(object sender, EventArgs e)
+        {
+            lbMaHDX.Text = Frm_HDX.mahdx.ToString();
+            CTHDX cthdx = kn.CTHDXes.Where(s => s.MaHDX == Frm_HDX.mahdx).FirstOrDefault();
+            HoaDonXuat hdx = kn.HoaDonXuats.Where(s => s.MaHDX == Frm_HDX.mahdx).FirstOrDefault();
+            SanPham tensp = kn.SanPhams.Where(s => s.MaSP == cthdx.MaSP).FirstOrDefault();
+            lbTenSP.Text = tensp.TenSP;
+            KhachHang tenkh = kn.KhachHangs.Where(s => s.MaKH == hdx.MaKH).FirstOrDefault();
+            lbTenKH.Text = tenkh.TenKH;
+            lbNgayXuat.Text = hdx.NgayXuat.ToString();
+            NhanVien tennv = kn.NhanViens.Where(s => s.MaNV == hdx.MaNV).FirstOrDefault();
+            lbTenNV.Text = tennv.TenNV;
+            txtSoLuong.Text = cthdx.Soluong.ToString();
+            txtGia.Text = tensp.Gia.ToString();
+
+            txtGia.Enabled = false;
+            txtSoLuong.Enabled = false;
+            
+
+
+        }
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

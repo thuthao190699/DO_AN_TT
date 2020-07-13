@@ -35,18 +35,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lbMaHDN = new System.Windows.Forms.Label();
-            this.lbMaSP = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.btnXuat = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaPictureBox3 = new Guna.UI.WinForms.GunaPictureBox();
             this.btnUpdate = new Guna.UI.WinForms.GunaGradientButton();
             this.btnSave = new Guna.UI.WinForms.GunaGradientButton();
-            this.lbDonGia = new System.Windows.Forms.Label();
             this.txtSoLuong = new Guna.UI.WinForms.GunaLineTextBox();
             this.lbTenNCC = new System.Windows.Forms.Label();
             this.lbNgay = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbTenNV = new System.Windows.Forms.Label();
+            this.txtDonGia = new Guna.UI.WinForms.GunaLineTextBox();
+            this.lbthanhtien = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbMaSP = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,9 +78,9 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(64, 138);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 19);
+            this.label3.Size = new System.Drawing.Size(110, 19);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Mã Sản Phẩm:";
+            this.label3.Text = "Tên Sản Phẩm:";
             // 
             // label4
             // 
@@ -118,15 +120,6 @@
             this.lbMaHDN.Size = new System.Drawing.Size(64, 13);
             this.lbMaHDN.TabIndex = 13;
             this.lbMaHDN.Text = "mã hóa đơn";
-            // 
-            // lbMaSP
-            // 
-            this.lbMaSP.AutoSize = true;
-            this.lbMaSP.Location = new System.Drawing.Point(191, 138);
-            this.lbMaSP.Name = "lbMaSP";
-            this.lbMaSP.Size = new System.Drawing.Size(70, 13);
-            this.lbMaSP.TabIndex = 14;
-            this.lbMaSP.Text = "mã sản phẩm";
             // 
             // label13
             // 
@@ -198,6 +191,7 @@
             this.btnUpdate.Size = new System.Drawing.Size(139, 42);
             this.btnUpdate.TabIndex = 56;
             this.btnUpdate.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -222,15 +216,7 @@
             this.btnSave.Size = new System.Drawing.Size(139, 42);
             this.btnSave.TabIndex = 55;
             this.btnSave.Text = "Save";
-            // 
-            // lbDonGia
-            // 
-            this.lbDonGia.AutoSize = true;
-            this.lbDonGia.Location = new System.Drawing.Point(187, 362);
-            this.lbDonGia.Name = "lbDonGia";
-            this.lbDonGia.Size = new System.Drawing.Size(43, 13);
-            this.lbDonGia.TabIndex = 58;
-            this.lbDonGia.Text = "đơn giá";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtSoLuong
             // 
@@ -244,6 +230,7 @@
             this.txtSoLuong.PasswordChar = '\0';
             this.txtSoLuong.Size = new System.Drawing.Size(160, 26);
             this.txtSoLuong.TabIndex = 60;
+            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
             // 
             // lbTenNCC
             // 
@@ -282,21 +269,64 @@
             this.lbTenNV.TabIndex = 17;
             this.lbTenNV.Text = "tên nhân viên";
             // 
+            // txtDonGia
+            // 
+            this.txtDonGia.BackColor = System.Drawing.Color.White;
+            this.txtDonGia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDonGia.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtDonGia.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDonGia.LineColor = System.Drawing.Color.Gainsboro;
+            this.txtDonGia.Location = new System.Drawing.Point(190, 351);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.PasswordChar = '\0';
+            this.txtDonGia.Size = new System.Drawing.Size(160, 26);
+            this.txtDonGia.TabIndex = 63;
+            this.txtDonGia.TextChanged += new System.EventHandler(this.txtDonGia_TextChanged);
+            // 
+            // lbthanhtien
+            // 
+            this.lbthanhtien.AutoSize = true;
+            this.lbthanhtien.Location = new System.Drawing.Point(191, 395);
+            this.lbthanhtien.Name = "lbthanhtien";
+            this.lbthanhtien.Size = new System.Drawing.Size(54, 13);
+            this.lbthanhtien.TabIndex = 65;
+            this.lbthanhtien.Text = "thanh tien";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label9.Location = new System.Drawing.Point(64, 395);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 19);
+            this.label9.TabIndex = 64;
+            this.label9.Text = "Thanh tien:";
+            // 
+            // lbMaSP
+            // 
+            this.lbMaSP.FormattingEnabled = true;
+            this.lbMaSP.Location = new System.Drawing.Point(190, 136);
+            this.lbMaSP.Name = "lbMaSP";
+            this.lbMaSP.Size = new System.Drawing.Size(121, 21);
+            this.lbMaSP.TabIndex = 66;
+            // 
             // Frm_CTHDN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 450);
+            this.Controls.Add(this.lbMaSP);
+            this.Controls.Add(this.lbthanhtien);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtDonGia);
             this.Controls.Add(this.lbNgay);
             this.Controls.Add(this.lbTenNCC);
             this.Controls.Add(this.txtSoLuong);
-            this.Controls.Add(this.lbDonGia);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnXuat);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.lbTenNV);
-            this.Controls.Add(this.lbMaSP);
             this.Controls.Add(this.lbMaHDN);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -326,16 +356,18 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbMaHDN;
-        private System.Windows.Forms.Label lbMaSP;
         private System.Windows.Forms.Label label13;
         private Guna.UI.WinForms.GunaGradientButton btnXuat;
         private Guna.UI.WinForms.GunaGradientButton btnUpdate;
         private Guna.UI.WinForms.GunaGradientButton btnSave;
-        private System.Windows.Forms.Label lbDonGia;
         private Guna.UI.WinForms.GunaLineTextBox txtSoLuong;
         private System.Windows.Forms.Label lbTenNCC;
         private System.Windows.Forms.Label lbNgay;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbTenNV;
+        private Guna.UI.WinForms.GunaLineTextBox txtDonGia;
+        private System.Windows.Forms.Label lbthanhtien;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox lbMaSP;
     }
 }
