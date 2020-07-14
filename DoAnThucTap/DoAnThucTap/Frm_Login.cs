@@ -13,8 +13,10 @@ using System.Windows.Forms;
 
 namespace DoAnThucTap
 {
+    public delegate void Voids();
     public partial class Frm_Login : Form
     {
+        
         public class TTNV
         {
             static public int Manv;

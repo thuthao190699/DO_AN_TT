@@ -51,6 +51,7 @@ namespace DoAnThucTap
             btnSave.Enabled = false;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = kn.NhaCungCap();
+            dataGridView1.Enabled = true;
             unAbleTextBox();
         }
 
@@ -68,6 +69,10 @@ namespace DoAnThucTap
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtTenNCC.Text == "" || txtSDT.Text == "" || txtDiaChi.Text == "" )
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin:", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             if (choose == 1)
             {
                 kn.ThemNhaCungCap(Convert.ToInt32(lbMaNCC.Text), txtTenNCC.Text, txtSDT.Text, txtDiaChi.Text);
@@ -144,6 +149,7 @@ namespace DoAnThucTap
                 {
                     kn.DeleteNhaCungCap(Convert.ToInt32(lbMaNCC.Text));
                     dataGridView1.DataSource = kn.NhaCCs;
+                    ClearforAddNew();
                 }
                 Frm_NhaCC_Load(sender, e);
             }

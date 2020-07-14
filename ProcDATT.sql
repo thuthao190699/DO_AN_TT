@@ -291,24 +291,24 @@ as begin
 	update CTHDX set MaSP=@MaSP,Soluong=@Soluong
 	where @MaHDX=MaHDX
 end
+
 go
+create proc selectReportXuat(@MaHDX int)
+as begin
+	select *, (cthdx.Soluong*sp.Gia) as 'ThanhTienChuan'
+	from CTHDX cthdx, HoaDonXuat hdx, NhanVien nv, KhachHang kh, SanPham sp
+	where	cthdx.MaHDX = hdx.MaHDX and hdx.MaKH = kh.MaKH and 
+			hdx.MaNV = nv.MaNV and sp.MaSP = cthdx.MaSP and hdx.MaHDX=@MaHDX
+end
 
---create proc selectReportXuat(@MaHDX int)
---as begin
---	select *
---	from CTHDX cthdx, HoaDonXuat hdx, NhanVien nv, KhachHang kh, SanPham sp
---	where	cthdx.MaHDX = hdx.MaHDX and hdx.MaKH = kh.MaKH and 
---			hdx.MaNV = nv.MaNV and sp.MaSP = cthdx.MaSP and hdx.MaHDX=@MaHDX
---end
-
---go
---create proc selectReportTongTienXuat(@MaHDX int)
---as begin
---	select SUM(Soluong*Gia) as 'ThanhTien'
---	from CTHDX,HoaDonXuat,SanPham
---	where	CTHDX.MaHDX=HoaDonXuat.MaHDX
---			and HoaDonXuat.MaHDX= @MaHDX
---end
+go
+create proc selectReportTongTienXuat(@MaHDX int)
+as begin
+	select SUM(CTHDX.Soluong* SanPham.Gia) as 'ThanhTien'
+	from CTHDX,HoaDonXuat,SanPham
+	where	CTHDX.MaHDX=HoaDonXuat.MaHDX and CTHDX.MaSP = SanPham.MaSP
+			and HoaDonXuat.MaHDX= @MaHDX
+end
 
 
 go
@@ -446,7 +446,9 @@ go
 alter proc select_ThongKeSLSP
 as 
 begin
-select MaSP,TenSP,SoLuongTon,TenTL from SanPham,LoaiSP where SoLuongTon <= 2 and SanPham.MaTL=LoaiSP.MaTL
+	select MaSP,TenSP,SoLuongTon,TenTL 
+	from SanPham,LoaiSP 
+	where SoLuongTon <= 2 and SanPham.MaTL=LoaiSP.MaTL
 end
 
 go 
@@ -533,6 +535,17 @@ begin
 	where DATEPART(MONTH, NgayXuat) = DATEPART(MONTH, GETDATE())
 end
 -----------------
+go
+create proc suacthdn(@mahd int)
+as 
+begin
+	select *
+	from HoaDonNhap, NhanVien, NhaCC, CTHDN, SanPham
+	where	HoaDonNhap.MaHDN = CTHDN.MaHDN and NhanVien.MaNV = HoaDonNhap.MaNV and
+			HoaDonNhap.MaNCC = NhaCC.MaNCC and CTHDN.MaSP = SanPham.MaSP and
+			HoaDonNhap.MaHDN = @mahd
+
+end
 
 -------------
 go 

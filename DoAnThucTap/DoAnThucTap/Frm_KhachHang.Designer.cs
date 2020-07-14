@@ -30,15 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_KhachHang));
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
-            this.txtEmail = new Guna.UI.WinForms.GunaLineTextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.lbmakh = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDiaChi = new Guna.UI.WinForms.GunaLineTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtSDT = new Guna.UI.WinForms.GunaLineTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenKH = new Guna.UI.WinForms.GunaLineTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTimSDT = new Guna.UI.WinForms.GunaLineTextBox();
             this.btnCancel = new Guna.UI.WinForms.GunaGradientButton();
             this.btnDelete = new Guna.UI.WinForms.GunaGradientButton();
@@ -47,12 +53,6 @@
             this.btnAdd = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.lbTim = new System.Windows.Forms.Label();
-            this.lbmakh = new System.Windows.Forms.Label();
-            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gunaGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
@@ -63,12 +63,12 @@
             this.gunaGroupBox1.BackColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox1.BaseColor = System.Drawing.Color.White;
             this.gunaGroupBox1.BorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaGroupBox1.Controls.Add(this.lbmakh);
             this.gunaGroupBox1.Controls.Add(this.txtEmail);
+            this.gunaGroupBox1.Controls.Add(this.txtSDT);
+            this.gunaGroupBox1.Controls.Add(this.lbmakh);
             this.gunaGroupBox1.Controls.Add(this.label4);
             this.gunaGroupBox1.Controls.Add(this.txtDiaChi);
             this.gunaGroupBox1.Controls.Add(this.label3);
-            this.gunaGroupBox1.Controls.Add(this.txtSDT);
             this.gunaGroupBox1.Controls.Add(this.label1);
             this.gunaGroupBox1.Controls.Add(this.txtTenKH);
             this.gunaGroupBox1.Controls.Add(this.label2);
@@ -83,17 +83,29 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.BackColor = System.Drawing.Color.White;
-            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.FocusedLineColor = System.Drawing.Color.SpringGreen;
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.LineColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(23, 293);
+            this.txtEmail.Location = new System.Drawing.Point(23, 304);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.Size = new System.Drawing.Size(219, 26);
-            this.txtEmail.TabIndex = 34;
+            this.txtEmail.Size = new System.Drawing.Size(211, 26);
+            this.txtEmail.TabIndex = 43;
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(23, 173);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(211, 26);
+            this.txtSDT.TabIndex = 42;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
+            // 
+            // lbmakh
+            // 
+            this.lbmakh.AutoSize = true;
+            this.lbmakh.Location = new System.Drawing.Point(24, 44);
+            this.lbmakh.Name = "lbmakh";
+            this.lbmakh.Size = new System.Drawing.Size(109, 19);
+            this.lbmakh.TabIndex = 42;
+            this.lbmakh.Text = "ma khach hang";
+            this.lbmakh.Click += new System.EventHandler(this.txtTimSDT_TextChanged);
             // 
             // label4
             // 
@@ -130,21 +142,6 @@
             this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 31;
             this.label3.Text = "Email:";
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.BackColor = System.Drawing.Color.White;
-            this.txtSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSDT.FocusedLineColor = System.Drawing.Color.SpringGreen;
-            this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSDT.ForeColor = System.Drawing.Color.Black;
-            this.txtSDT.LineColor = System.Drawing.Color.Black;
-            this.txtSDT.Location = new System.Drawing.Point(23, 161);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.PasswordChar = '\0';
-            this.txtSDT.Size = new System.Drawing.Size(219, 26);
-            this.txtSDT.TabIndex = 30;
-            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // label1
             // 
@@ -184,6 +181,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaKH,
@@ -193,9 +192,45 @@
             this.Email});
             this.dataGridView1.Location = new System.Drawing.Point(266, 2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(546, 238);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // MaKH
+            // 
+            this.MaKH.DataPropertyName = "MaKH";
+            this.MaKH.HeaderText = "Mã";
+            this.MaKH.Name = "MaKH";
+            this.MaKH.ReadOnly = true;
+            // 
+            // TenKH
+            // 
+            this.TenKH.DataPropertyName = "TenKH";
+            this.TenKH.HeaderText = "Tên khách hàng";
+            this.TenKH.Name = "TenKH";
+            this.TenKH.ReadOnly = true;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
             // 
             // txtTimSDT
             // 
@@ -359,46 +394,6 @@
             this.lbTim.TabIndex = 41;
             this.lbTim.Text = "Tìm Kiếm";
             // 
-            // lbmakh
-            // 
-            this.lbmakh.AutoSize = true;
-            this.lbmakh.Location = new System.Drawing.Point(24, 44);
-            this.lbmakh.Name = "lbmakh";
-            this.lbmakh.Size = new System.Drawing.Size(109, 19);
-            this.lbmakh.TabIndex = 42;
-            this.lbmakh.Text = "ma khach hang";
-            this.lbmakh.Click += new System.EventHandler(this.txtTimSDT_TextChanged);
-            // 
-            // MaKH
-            // 
-            this.MaKH.DataPropertyName = "MaKH";
-            this.MaKH.HeaderText = "Mã";
-            this.MaKH.Name = "MaKH";
-            // 
-            // TenKH
-            // 
-            this.TenKH.DataPropertyName = "TenKH";
-            this.TenKH.HeaderText = "Tên khách hàng";
-            this.TenKH.Name = "TenKH";
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "Số điện thoại";
-            this.SDT.Name = "SDT";
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            // 
             // Frm_KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,11 +427,9 @@
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private Guna.UI.WinForms.GunaLineTextBox txtEmail;
         private System.Windows.Forms.Label label4;
         private Guna.UI.WinForms.GunaLineTextBox txtDiaChi;
         private System.Windows.Forms.Label label3;
-        private Guna.UI.WinForms.GunaLineTextBox txtSDT;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaLineTextBox txtTenKH;
         private System.Windows.Forms.Label label2;
@@ -453,5 +446,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }

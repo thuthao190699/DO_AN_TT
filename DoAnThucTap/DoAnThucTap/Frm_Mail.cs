@@ -11,6 +11,7 @@ using System.Net.Mail;
 using System.Net;
 using System.IO;
 using Microsoft.Build.Tasks;
+using System.Text.RegularExpressions;
 
 namespace DoAnThucTap
 {
@@ -42,35 +43,72 @@ namespace DoAnThucTap
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            try
+            if(txtFrom.Text==""|| txtPass.Text == "" || txtTo.Text == "" || txtSubject.Text == "" || txtMessage.Text == "")
             {
-                SmtpClient mailclient = new SmtpClient("smtp.gmail.com", 587);
-                mailclient.EnableSsl = true;
-                mailclient.Credentials = new NetworkCredential(txtFrom.Text, txtPass.Text);
-
-                MailMessage message = new MailMessage(txtFrom.Text, txtTo.Text);
-                message.Subject = txtSubject.Text;
-                message.Body = txtMessage.Text;
-                //Kiểm tra nếu có file trong listBox1
-                if (listBox1.Items.Count > 0)
+                MessageBox.Show(" Bạn phải nhập đầy đủ thông tin:", "Thông Báo");
+            }
+            else
+            {
+                try
                 {
-                    foreach (var filename in listBox1.Items)
+                    SmtpClient mailclient = new SmtpClient("smtp.gmail.com", 587);
+                    mailclient.EnableSsl = true;
+                    mailclient.Credentials = new NetworkCredential(txtFrom.Text, txtPass.Text);
+
+                    MailMessage message = new MailMessage(txtFrom.Text, txtTo.Text);
+                    message.Subject = txtSubject.Text;
+                    message.Body = txtMessage.Text;
+                    //Kiểm tra nếu có file trong listBox1
+                    if (listBox1.Items.Count > 0)
                     {
-                        //Kiểm tra file có tồn tại trong ổ đĩa không
-                        if (File.Exists(filename.ToString())) 
+                        foreach (var filename in listBox1.Items)
                         {
-                            //Thêm file đính kèm vào tin nhắn
-                            message.Attachments.Add(new Attachment(filename.ToString()));
+                            //Kiểm tra file có tồn tại trong ổ đĩa không
+                            if (File.Exists(filename.ToString()))
+                            {
+                                //Thêm file đính kèm vào tin nhắn
+                                message.Attachments.Add(new Attachment(filename.ToString()));
+                            }
                         }
                     }
-                }
-                mailclient.Send(message);
-                MessageBox.Show("Mail đã được gửi đi", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    mailclient.Send(message);
+                    MessageBox.Show("Mail đã được gửi đi", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error", "Không gửi được gmail", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            catch (Exception)
+            
+        }
+        private bool isEmail(string inputEmail)
+        {
+            inputEmail = inputEmail ?? string.Empty;
+            string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                  @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                  @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+            Regex re = new Regex(strRegex);
+            if (re.IsMatch(inputEmail))
+                return (true);
+            else
+                return (false);
+        }
+        private void txtFrom_Leave(object sender, EventArgs e)
+        {
+            if (!isEmail(txtFrom.Text))
             {
-                MessageBox.Show("Error","Không gửi được gmail", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Email không đúng định dạng", "Thông Báo");
+                txtFrom.Text = "";
+            }
+        }
+
+        private void txtTo_Leave(object sender, EventArgs e)
+        {
+            if (!isEmail(txtTo.Text))
+            {
+                MessageBox.Show("Email không đúng định dạng", "Thông Báo");
+                txtTo.Text = "";
             }
         }
     }

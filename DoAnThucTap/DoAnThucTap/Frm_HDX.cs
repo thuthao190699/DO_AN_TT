@@ -20,6 +20,38 @@ namespace DoAnThucTap
         XuLyDuLieuDataContext kn = new XuLyDuLieuDataContext();
         public static int mahdx;
         int k = 0;
+        private void load()
+        {
+            cbTenNV.DisplayMember = "TenNV";
+            cbTenNV.ValueMember = "MaNV";
+            cbTenNV.DataSource = kn.NhanViens.ToList();
+
+            cbTenKH.DisplayMember = "TenKH";
+            cbTenKH.ValueMember = "MaKH";
+            cbTenKH.DataSource = kn.KhachHangs.ToList();
+
+            cbTenSP.DisplayMember = "TenSP";
+            cbTenSP.ValueMember = "MaSP";
+            cbTenSP.DataSource = kn.SanPhams.ToList();
+
+            cbTenKH.Enabled = false;
+            cbTenNV.Enabled = false;
+            txtThanhTien.Enabled = false;
+            txtSoLuong.Enabled = false;
+            dpNgayXuat.Enabled = false;
+
+            btnAdd.Enabled = true;
+            btnUpdate.Enabled = true;
+            btnSave.Enabled = false;
+
+            lbMaHDX.Text = "";
+            cbTenKH.Text = "";
+            cbTenNV.Text = "";
+            cbTenSP.Text = "";
+            dpNgayXuat.Text = "";
+            txtThanhTien.Text = "";
+            txtSoLuong.Text = "";
+        }
 
         private void gunaPictureBox3_Click(object sender, EventArgs e)
         {
@@ -29,6 +61,7 @@ namespace DoAnThucTap
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnChiTiet.Visible = true;
             if(lbMaHDX.Text.Trim() != null || lbMaHDX.Text.Trim() != "")
             {
                 int i = dataGridView1.CurrentRow.Index;
@@ -46,6 +79,9 @@ namespace DoAnThucTap
                 cbTenSP.Text = tensp.TenSP;
                 txtSoLuong.Text = Convert.ToString(cthdx.Soluong);
             }
+            btnAdd.Enabled = true;
+            btnUpdate.Enabled = true;
+            btnSave.Enabled = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -81,7 +117,6 @@ namespace DoAnThucTap
             Frm_CTHDX f = new Frm_CTHDX();
             f.ShowDialog();
             f.Close();
-           
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -102,39 +137,13 @@ namespace DoAnThucTap
 
         private void Frm_HDX_Load(object sender, EventArgs e)
         {
+            btnChiTiet.Visible = false;
+
             k = 0;
+
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = kn.selectHoaDonXuat();
-
-            cbTenNV.DisplayMember = "TenNV";
-            cbTenNV.ValueMember = "MaNV";
-            cbTenNV.DataSource = kn.NhanViens.ToList();
-
-            cbTenKH.DisplayMember = "TenKH";
-            cbTenKH.ValueMember = "MaKH";
-            cbTenKH.DataSource = kn.KhachHangs.ToList();
-
-            cbTenSP.DisplayMember = "TenSP";
-            cbTenSP.ValueMember = "MaSP";
-            cbTenSP.DataSource = kn.SanPhams.ToList();
-
-            cbTenKH.Enabled = false;
-            cbTenNV.Enabled = false;
-            txtThanhTien.Enabled = false;
-            txtSoLuong.Enabled = false;
-            dpNgayXuat.Enabled = false;
-
-            btnAdd.Enabled = true;
-            btnUpdate.Enabled = true;
-            btnSave.Enabled = false;
-
-            lbMaHDX.Text = "";
-            cbTenKH.Text = "";
-            cbTenNV.Text = "";
-            cbTenSP.Text = "";
-            dpNgayXuat.Text = "";
-            txtThanhTien.Text = "";
-            txtSoLuong.Text = "";
+            load();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -148,7 +157,11 @@ namespace DoAnThucTap
                     Convert.ToInt32(txtThanhTien.Text));
                     kn.ThemCTHDX(Convert.ToInt32(cbTenSP.SelectedValue), Convert.ToInt32(lbMaHDX.Text),
                      Convert.ToInt32(txtSoLuong.Text));
-                    Frm_HDX_Load(sender, e);
+                    DialogResult dr = MessageBox.Show("Luu thanh cong", "Thông Báo", MessageBoxButtons.OK);
+                    if (dr == DialogResult.OK)
+                    {
+                        load();
+                    }
                 }
                 else
                 {
@@ -165,7 +178,12 @@ namespace DoAnThucTap
                     Convert.ToInt32(txtThanhTien.Text));
                     kn.UpdatetCTHDX(Convert.ToInt32(lbMaHDX.Text), Convert.ToInt32(cbTenSP.SelectedValue),
                          Convert.ToInt32(txtSoLuong.Text));
-                    Frm_HDX_Load(sender, e);
+
+                    DialogResult dr = MessageBox.Show("Luu thanh cong", "Thông Báo", MessageBoxButtons.OK);
+                    if (dr == DialogResult.OK)
+                    {
+                        Frm_HDX_Load(sender, e);
+                    }
                 }
                 else
                 {
@@ -193,6 +211,31 @@ namespace DoAnThucTap
             if(txtSoLuong.Text != ""&& txtGia.Text != "")
             {
                 txtThanhTien.Text = Convert.ToString(Convert.ToInt32(txtSoLuong.Text)*Convert.ToInt32(txtGia.Text));
+            }
+        }
+
+        private void txtThanhTien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
             }
         }
     }

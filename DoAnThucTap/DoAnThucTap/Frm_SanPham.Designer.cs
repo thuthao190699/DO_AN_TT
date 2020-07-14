@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_SanPham));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSoLuongSP = new System.Windows.Forms.TextBox();
+            this.txtGiaSP = new System.Windows.Forms.TextBox();
+            this.txtTenSP = new System.Windows.Forms.TextBox();
             this.cbLoaiSP = new System.Windows.Forms.ComboBox();
             this.btnLoaiSP = new Guna.UI.WinForms.GunaGradientButton();
-            this.txtSoLuongSP = new Guna.UI.WinForms.GunaLineTextBox();
-            this.txtGiaSP = new Guna.UI.WinForms.GunaLineTextBox();
-            this.txtTenSP = new Guna.UI.WinForms.GunaLineTextBox();
             this.txtMaSP = new Guna.UI.WinForms.GunaLineTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,6 +48,9 @@
             this.SoLuongTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaTL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTimTenSP = new Guna.UI.WinForms.GunaLineTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.OpenFileImage = new System.Windows.Forms.OpenFileDialog();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnXoa = new Guna.UI.WinForms.GunaGradientButton();
             this.btnHetHang = new Guna.UI.WinForms.GunaGradientButton();
             this.btnRefresh = new Guna.UI.WinForms.GunaGradientButton();
@@ -56,9 +59,6 @@
             this.btnAdd = new Guna.UI.WinForms.GunaGradientButton();
             this.pic_AnhSach = new System.Windows.Forms.PictureBox();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.OpenFileImage = new System.Windows.Forms.OpenFileDialog();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AnhSach)).BeginInit();
@@ -67,11 +67,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbLoaiSP);
-            this.groupBox1.Controls.Add(this.btnLoaiSP);
             this.groupBox1.Controls.Add(this.txtSoLuongSP);
             this.groupBox1.Controls.Add(this.txtGiaSP);
             this.groupBox1.Controls.Add(this.txtTenSP);
+            this.groupBox1.Controls.Add(this.cbLoaiSP);
+            this.groupBox1.Controls.Add(this.btnLoaiSP);
             this.groupBox1.Controls.Add(this.txtMaSP);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
@@ -83,6 +83,32 @@
             this.groupBox1.Size = new System.Drawing.Size(537, 155);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // txtSoLuongSP
+            // 
+            this.txtSoLuongSP.Location = new System.Drawing.Point(375, 66);
+            this.txtSoLuongSP.Name = "txtSoLuongSP";
+            this.txtSoLuongSP.Size = new System.Drawing.Size(133, 20);
+            this.txtSoLuongSP.TabIndex = 41;
+            this.txtSoLuongSP.Text = "0";
+            this.txtSoLuongSP.TextChanged += new System.EventHandler(this.gunaLineTextBox5_TextChanged);
+            this.txtSoLuongSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaSP_KeyPress);
+            // 
+            // txtGiaSP
+            // 
+            this.txtGiaSP.Location = new System.Drawing.Point(375, 28);
+            this.txtGiaSP.Name = "txtGiaSP";
+            this.txtGiaSP.Size = new System.Drawing.Size(133, 20);
+            this.txtGiaSP.TabIndex = 40;
+            this.txtGiaSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaSP_KeyPress);
+            this.txtGiaSP.Leave += new System.EventHandler(this.txtGiaSP_Leave);
+            // 
+            // txtTenSP
+            // 
+            this.txtTenSP.Location = new System.Drawing.Point(131, 66);
+            this.txtTenSP.Name = "txtTenSP";
+            this.txtTenSP.Size = new System.Drawing.Size(133, 20);
+            this.txtTenSP.TabIndex = 39;
             // 
             // cbLoaiSP
             // 
@@ -115,49 +141,6 @@
             this.btnLoaiSP.Size = new System.Drawing.Size(47, 33);
             this.btnLoaiSP.TabIndex = 37;
             this.btnLoaiSP.Click += new System.EventHandler(this.btnLoaiSP_Click);
-            // 
-            // txtSoLuongSP
-            // 
-            this.txtSoLuongSP.BackColor = System.Drawing.Color.White;
-            this.txtSoLuongSP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSoLuongSP.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtSoLuongSP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSoLuongSP.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtSoLuongSP.Location = new System.Drawing.Point(375, 60);
-            this.txtSoLuongSP.Name = "txtSoLuongSP";
-            this.txtSoLuongSP.PasswordChar = '\0';
-            this.txtSoLuongSP.Size = new System.Drawing.Size(133, 26);
-            this.txtSoLuongSP.TabIndex = 35;
-            this.txtSoLuongSP.Text = "0";
-            this.txtSoLuongSP.TextChanged += new System.EventHandler(this.gunaLineTextBox5_TextChanged);
-            // 
-            // txtGiaSP
-            // 
-            this.txtGiaSP.BackColor = System.Drawing.Color.White;
-            this.txtGiaSP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGiaSP.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtGiaSP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtGiaSP.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtGiaSP.Location = new System.Drawing.Point(375, 19);
-            this.txtGiaSP.Name = "txtGiaSP";
-            this.txtGiaSP.PasswordChar = '\0';
-            this.txtGiaSP.Size = new System.Drawing.Size(133, 26);
-            this.txtGiaSP.TabIndex = 34;
-            this.txtGiaSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaSP_KeyPress);
-            // 
-            // txtTenSP
-            // 
-            this.txtTenSP.BackColor = System.Drawing.Color.White;
-            this.txtTenSP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenSP.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtTenSP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTenSP.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtTenSP.Location = new System.Drawing.Point(131, 60);
-            this.txtTenSP.Name = "txtTenSP";
-            this.txtTenSP.PasswordChar = '\0';
-            this.txtTenSP.Size = new System.Drawing.Size(133, 26);
-            this.txtTenSP.TabIndex = 32;
-            this.txtTenSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenSP_KeyPress);
             // 
             // txtMaSP
             // 
@@ -289,6 +272,30 @@
             this.txtTimTenSP.Size = new System.Drawing.Size(328, 26);
             this.txtTimTenSP.TabIndex = 5;
             this.txtTimTenSP.TextChanged += new System.EventHandler(this.txtTimTenSP_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(65, 189);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Chọn Ảnh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // OpenFileImage
+            // 
+            this.OpenFileImage.FileName = "openFileDialog1";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(215, 205);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 19);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Tìm Kiếm:";
             // 
             // btnXoa
             // 
@@ -461,30 +468,6 @@
             this.gunaPictureBox2.TabStop = false;
             this.gunaPictureBox2.Click += new System.EventHandler(this.gunaPictureBox2_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(65, 189);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Chọn Ảnh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // OpenFileImage
-            // 
-            this.OpenFileImage.FileName = "openFileDialog1";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(215, 205);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 19);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Tìm Kiếm:";
-            // 
             // Frm_SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -521,9 +504,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private Guna.UI.WinForms.GunaLineTextBox txtSoLuongSP;
-        private Guna.UI.WinForms.GunaLineTextBox txtGiaSP;
-        private Guna.UI.WinForms.GunaLineTextBox txtTenSP;
         private Guna.UI.WinForms.GunaLineTextBox txtMaSP;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
@@ -550,5 +530,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongTon;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTL;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtTenSP;
+        private System.Windows.Forms.TextBox txtGiaSP;
+        private System.Windows.Forms.TextBox txtSoLuongSP;
     }
 }

@@ -42,6 +42,10 @@
       <HintPath>..\..\..\guna\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Build.Tasks.v4.0" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -83,7 +87,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetDuLieu.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetHDX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetHDX.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Excel\Application.cs" />
+    <Compile Include="FormReportHDX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportHDX.Designer.cs">
+      <DependentUpon>FormReportHDX.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Mail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +221,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>XuLyDuLieu.dbml</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormReportHDX.resx">
+      <DependentUpon>FormReportHDX.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Mail.resx">
       <DependentUpon>Frm_Mail.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,6 +303,17 @@
     </None>
     <None Include="DataSetDuLieu.xss">
       <DependentUpon>DataSetDuLieu.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetHDX.xsc">
+      <DependentUpon>DataSetHDX.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetHDX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetHDX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetHDX.xss">
+      <DependentUpon>DataSetHDX.xsd</DependentUpon>
     </None>
     <None Include="XuLyDuLieu.dbml.layout">
       <DependentUpon>XuLyDuLieu.dbml</DependentUpon>

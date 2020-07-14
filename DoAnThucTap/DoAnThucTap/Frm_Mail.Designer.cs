@@ -75,6 +75,7 @@
             this.txtTo.Name = "txtTo";
             this.txtTo.Size = new System.Drawing.Size(333, 20);
             this.txtTo.TabIndex = 16;
+            this.txtTo.Leave += new System.EventHandler(this.txtTo_Leave);
             // 
             // label3
             // 
@@ -171,6 +172,7 @@
             this.txtFrom.Name = "txtFrom";
             this.txtFrom.Size = new System.Drawing.Size(333, 20);
             this.txtFrom.TabIndex = 25;
+            this.txtFrom.Leave += new System.EventHandler(this.txtFrom_Leave);
             // 
             // label4
             // 

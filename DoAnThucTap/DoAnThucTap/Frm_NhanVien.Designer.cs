@@ -39,9 +39,7 @@
             this.lbmanv = new System.Windows.Forms.Label();
             this.txtTK = new Guna.UI.WinForms.GunaLineTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtEmail = new Guna.UI.WinForms.GunaLineTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtSDT = new Guna.UI.WinForms.GunaLineTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenNV = new Guna.UI.WinForms.GunaLineTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,6 +54,8 @@
             this.btnUpdate = new Guna.UI.WinForms.GunaGradientButton();
             this.btnSave = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.gunaGroupBox1.SuspendLayout();
             this.gunaGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
@@ -115,12 +115,12 @@
             this.gunaGroupBox2.BackColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox2.BaseColor = System.Drawing.Color.White;
             this.gunaGroupBox2.BorderColor = System.Drawing.Color.Gainsboro;
+            this.gunaGroupBox2.Controls.Add(this.txtEmail);
+            this.gunaGroupBox2.Controls.Add(this.txtSDT);
             this.gunaGroupBox2.Controls.Add(this.lbmanv);
             this.gunaGroupBox2.Controls.Add(this.txtTK);
             this.gunaGroupBox2.Controls.Add(this.label4);
-            this.gunaGroupBox2.Controls.Add(this.txtEmail);
             this.gunaGroupBox2.Controls.Add(this.label3);
-            this.gunaGroupBox2.Controls.Add(this.txtSDT);
             this.gunaGroupBox2.Controls.Add(this.label1);
             this.gunaGroupBox2.Controls.Add(this.txtTenNV);
             this.gunaGroupBox2.Controls.Add(this.label2);
@@ -169,20 +169,6 @@
             this.label4.TabIndex = 26;
             this.label4.Text = "Tài Khoản:";
             // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.Color.White;
-            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.FocusedLineColor = System.Drawing.Color.SpringGreen;
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.LineColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(0, 262);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.Size = new System.Drawing.Size(219, 26);
-            this.txtEmail.TabIndex = 25;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -193,20 +179,6 @@
             this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 24;
             this.label3.Text = "Email:";
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.BackColor = System.Drawing.Color.White;
-            this.txtSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSDT.FocusedLineColor = System.Drawing.Color.SpringGreen;
-            this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSDT.ForeColor = System.Drawing.Color.Black;
-            this.txtSDT.LineColor = System.Drawing.Color.Black;
-            this.txtSDT.Location = new System.Drawing.Point(0, 198);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.PasswordChar = '\0';
-            this.txtSDT.Size = new System.Drawing.Size(219, 26);
-            this.txtSDT.TabIndex = 23;
             // 
             // label1
             // 
@@ -441,6 +413,22 @@
             this.gunaPictureBox2.TabStop = false;
             this.gunaPictureBox2.Click += new System.EventHandler(this.gunaPictureBox2_Click);
             // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(0, 210);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(219, 26);
+            this.txtSDT.TabIndex = 13;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(-3, 272);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(222, 26);
+            this.txtEmail.TabIndex = 30;
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
+            // 
             // Frm_NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -472,9 +460,7 @@
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox2;
         private Guna.UI.WinForms.GunaLineTextBox txtTK;
         private System.Windows.Forms.Label label4;
-        private Guna.UI.WinForms.GunaLineTextBox txtEmail;
         private System.Windows.Forms.Label label3;
-        private Guna.UI.WinForms.GunaLineTextBox txtSDT;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaLineTextBox txtTenNV;
         private System.Windows.Forms.Label label2;
@@ -492,5 +478,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn TK;
         private System.Windows.Forms.DataGridViewTextBoxColumn CV;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }

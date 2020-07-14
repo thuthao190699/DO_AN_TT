@@ -40,14 +40,30 @@ namespace DoAnThucTap
 
             txtGia.Enabled = false;
             txtSoLuong.Enabled = false;
-            
-
-
         }
 
         private void btnXuat_Click(object sender, EventArgs e)
         {
-            
+            FormReportHDX f = new FormReportHDX();
+            f.ShowDialog();
+        }
+
+        private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }

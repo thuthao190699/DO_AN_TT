@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_HDX));
-            this.txtThanhTien = new Guna.UI.WinForms.GunaLineTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lbMaHDX = new System.Windows.Forms.Label();
@@ -37,6 +36,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.MaHDX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSave = new Guna.UI.WinForms.GunaGradientButton();
             this.btnAdd = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaPictureBox3 = new Guna.UI.WinForms.GunaPictureBox();
@@ -45,35 +49,18 @@
             this.btnChiTiet = new Guna.UI.WinForms.GunaCircleButton();
             this.cbTenNV = new System.Windows.Forms.ComboBox();
             this.dpNgayXuat = new System.Windows.Forms.DateTimePicker();
-            this.MaHDX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtGia = new Guna.UI.WinForms.GunaLineTextBox();
-            this.txtSoLuong = new Guna.UI.WinForms.GunaLineTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cbTenSP = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbTenKH = new System.Windows.Forms.ComboBox();
             this.btnCancel = new Guna.UI.WinForms.GunaGradientButton();
+            this.txtThanhTien = new System.Windows.Forms.TextBox();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.txtGia = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtThanhTien
-            // 
-            this.txtThanhTien.BackColor = System.Drawing.Color.White;
-            this.txtThanhTien.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtThanhTien.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtThanhTien.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtThanhTien.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtThanhTien.Location = new System.Drawing.Point(413, 56);
-            this.txtThanhTien.Name = "txtThanhTien";
-            this.txtThanhTien.PasswordChar = '\0';
-            this.txtThanhTien.Size = new System.Drawing.Size(160, 26);
-            this.txtThanhTien.TabIndex = 44;
             // 
             // label5
             // 
@@ -154,6 +141,41 @@
             this.dataGridView1.TabIndex = 30;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // MaHDX
+            // 
+            this.MaHDX.DataPropertyName = "MaHDX";
+            this.MaHDX.HeaderText = "Hóa đơn";
+            this.MaHDX.Name = "MaHDX";
+            this.MaHDX.ReadOnly = true;
+            // 
+            // TenKH
+            // 
+            this.TenKH.DataPropertyName = "TenKH";
+            this.TenKH.HeaderText = "Tên khách hàng";
+            this.TenKH.Name = "TenKH";
+            this.TenKH.ReadOnly = true;
+            // 
+            // TenNV
+            // 
+            this.TenNV.DataPropertyName = "TenNV";
+            this.TenNV.HeaderText = "Tên nhân viên";
+            this.TenNV.Name = "TenNV";
+            this.TenNV.ReadOnly = true;
+            // 
+            // NgayXuat
+            // 
+            this.NgayXuat.DataPropertyName = "NgayXuat";
+            this.NgayXuat.HeaderText = "Ngày Xuất";
+            this.NgayXuat.Name = "NgayXuat";
+            this.NgayXuat.ReadOnly = true;
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.DataPropertyName = "ThanhTienChuan";
+            this.ThanhTien.HeaderText = "Thành tiền";
+            this.ThanhTien.Name = "ThanhTien";
+            this.ThanhTien.ReadOnly = true;
+            // 
             // btnSave
             // 
             this.btnSave.AnimationHoverSpeed = 0.07F;
@@ -166,7 +188,7 @@
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Image = global::DoAnThucTap.Properties.Resources.luu;
             this.btnSave.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSave.Location = new System.Drawing.Point(635, 130);
+            this.btnSave.Location = new System.Drawing.Point(650, 120);
             this.btnSave.Name = "btnSave";
             this.btnSave.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btnSave.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -191,7 +213,7 @@
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.Image = global::DoAnThucTap.Properties.Resources.add1;
             this.btnAdd.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAdd.Location = new System.Drawing.Point(635, 63);
+            this.btnAdd.Location = new System.Drawing.Point(650, 59);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btnAdd.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -289,68 +311,6 @@
             this.dpNgayXuat.Size = new System.Drawing.Size(200, 20);
             this.dpNgayXuat.TabIndex = 58;
             // 
-            // MaHDX
-            // 
-            this.MaHDX.DataPropertyName = "MaHDX";
-            this.MaHDX.HeaderText = "Hóa đơn";
-            this.MaHDX.Name = "MaHDX";
-            this.MaHDX.ReadOnly = true;
-            // 
-            // TenKH
-            // 
-            this.TenKH.DataPropertyName = "TenKH";
-            this.TenKH.HeaderText = "Tên khách hàng";
-            this.TenKH.Name = "TenKH";
-            this.TenKH.ReadOnly = true;
-            // 
-            // TenNV
-            // 
-            this.TenNV.DataPropertyName = "TenNV";
-            this.TenNV.HeaderText = "Tên nhân viên";
-            this.TenNV.Name = "TenNV";
-            this.TenNV.ReadOnly = true;
-            // 
-            // NgayXuat
-            // 
-            this.NgayXuat.DataPropertyName = "NgayXuat";
-            this.NgayXuat.HeaderText = "Ngày Xuất";
-            this.NgayXuat.Name = "NgayXuat";
-            this.NgayXuat.ReadOnly = true;
-            // 
-            // ThanhTien
-            // 
-            this.ThanhTien.DataPropertyName = "ThanhTienChuan";
-            this.ThanhTien.HeaderText = "Thành tiền";
-            this.ThanhTien.Name = "ThanhTien";
-            this.ThanhTien.ReadOnly = true;
-            // 
-            // txtGia
-            // 
-            this.txtGia.BackColor = System.Drawing.Color.White;
-            this.txtGia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGia.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtGia.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtGia.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtGia.Location = new System.Drawing.Point(413, 127);
-            this.txtGia.Name = "txtGia";
-            this.txtGia.PasswordChar = '\0';
-            this.txtGia.Size = new System.Drawing.Size(160, 26);
-            this.txtGia.TabIndex = 69;
-            // 
-            // txtSoLuong
-            // 
-            this.txtSoLuong.BackColor = System.Drawing.Color.White;
-            this.txtSoLuong.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSoLuong.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSoLuong.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtSoLuong.Location = new System.Drawing.Point(413, 91);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.PasswordChar = '\0';
-            this.txtSoLuong.Size = new System.Drawing.Size(160, 26);
-            this.txtSoLuong.TabIndex = 68;
-            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -423,24 +383,49 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // txtThanhTien
+            // 
+            this.txtThanhTien.Location = new System.Drawing.Point(413, 62);
+            this.txtThanhTien.Name = "txtThanhTien";
+            this.txtThanhTien.Size = new System.Drawing.Size(160, 20);
+            this.txtThanhTien.TabIndex = 74;
+            this.txtThanhTien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThanhTien_KeyPress);
+            // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.Location = new System.Drawing.Point(413, 98);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(160, 20);
+            this.txtSoLuong.TabIndex = 75;
+            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
+            // 
+            // txtGia
+            // 
+            this.txtGia.Location = new System.Drawing.Point(413, 139);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.Size = new System.Drawing.Size(160, 20);
+            this.txtGia.TabIndex = 76;
+            this.txtGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGia_KeyPress);
+            // 
             // Frm_HDX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtGia);
+            this.Controls.Add(this.txtSoLuong);
+            this.Controls.Add(this.txtThanhTien);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.cbTenKH);
             this.Controls.Add(this.cbTenSP);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtGia);
-            this.Controls.Add(this.txtSoLuong);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dpNgayXuat);
             this.Controls.Add(this.cbTenNV);
             this.Controls.Add(this.btnChiTiet);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.txtThanhTien);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lbMaHDX);
@@ -464,7 +449,6 @@
         }
 
         #endregion
-        private Guna.UI.WinForms.GunaLineTextBox txtThanhTien;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbMaHDX;
@@ -485,13 +469,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayXuat;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
-        private Guna.UI.WinForms.GunaLineTextBox txtGia;
-        private Guna.UI.WinForms.GunaLineTextBox txtSoLuong;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbTenSP;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbTenKH;
         private Guna.UI.WinForms.GunaGradientButton btnCancel;
+        private System.Windows.Forms.TextBox txtThanhTien;
+        private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.TextBox txtGia;
     }
 }

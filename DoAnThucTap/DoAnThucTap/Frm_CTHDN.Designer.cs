@@ -40,15 +40,15 @@
             this.gunaPictureBox3 = new Guna.UI.WinForms.GunaPictureBox();
             this.btnUpdate = new Guna.UI.WinForms.GunaGradientButton();
             this.btnSave = new Guna.UI.WinForms.GunaGradientButton();
-            this.txtSoLuong = new Guna.UI.WinForms.GunaLineTextBox();
             this.lbTenNCC = new System.Windows.Forms.Label();
             this.lbNgay = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbTenNV = new System.Windows.Forms.Label();
-            this.txtDonGia = new Guna.UI.WinForms.GunaLineTextBox();
             this.lbthanhtien = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lbMaSP = new System.Windows.Forms.ComboBox();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -218,20 +218,6 @@
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txtSoLuong
-            // 
-            this.txtSoLuong.BackColor = System.Drawing.Color.White;
-            this.txtSoLuong.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSoLuong.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSoLuong.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtSoLuong.Location = new System.Drawing.Point(190, 315);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.PasswordChar = '\0';
-            this.txtSoLuong.Size = new System.Drawing.Size(160, 26);
-            this.txtSoLuong.TabIndex = 60;
-            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
-            // 
             // lbTenNCC
             // 
             this.lbTenNCC.AutoSize = true;
@@ -269,20 +255,6 @@
             this.lbTenNV.TabIndex = 17;
             this.lbTenNV.Text = "tên nhân viên";
             // 
-            // txtDonGia
-            // 
-            this.txtDonGia.BackColor = System.Drawing.Color.White;
-            this.txtDonGia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDonGia.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtDonGia.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtDonGia.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtDonGia.Location = new System.Drawing.Point(190, 351);
-            this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.PasswordChar = '\0';
-            this.txtDonGia.Size = new System.Drawing.Size(160, 26);
-            this.txtDonGia.TabIndex = 63;
-            this.txtDonGia.TextChanged += new System.EventHandler(this.txtDonGia_TextChanged);
-            // 
             // lbthanhtien
             // 
             this.lbthanhtien.AutoSize = true;
@@ -310,18 +282,34 @@
             this.lbMaSP.Size = new System.Drawing.Size(121, 21);
             this.lbMaSP.TabIndex = 66;
             // 
+            // txtDonGia
+            // 
+            this.txtDonGia.Location = new System.Drawing.Point(190, 359);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Size = new System.Drawing.Size(121, 20);
+            this.txtDonGia.TabIndex = 67;
+            this.txtDonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
+            // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.Location = new System.Drawing.Point(190, 325);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(121, 20);
+            this.txtSoLuong.TabIndex = 68;
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
+            // 
             // Frm_CTHDN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 450);
+            this.Controls.Add(this.txtSoLuong);
+            this.Controls.Add(this.txtDonGia);
             this.Controls.Add(this.lbMaSP);
             this.Controls.Add(this.lbthanhtien);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtDonGia);
             this.Controls.Add(this.lbNgay);
             this.Controls.Add(this.lbTenNCC);
-            this.Controls.Add(this.txtSoLuong);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnXuat);
@@ -360,14 +348,14 @@
         private Guna.UI.WinForms.GunaGradientButton btnXuat;
         private Guna.UI.WinForms.GunaGradientButton btnUpdate;
         private Guna.UI.WinForms.GunaGradientButton btnSave;
-        private Guna.UI.WinForms.GunaLineTextBox txtSoLuong;
         private System.Windows.Forms.Label lbTenNCC;
         private System.Windows.Forms.Label lbNgay;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbTenNV;
-        private Guna.UI.WinForms.GunaLineTextBox txtDonGia;
         private System.Windows.Forms.Label lbthanhtien;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox lbMaSP;
+        private System.Windows.Forms.TextBox txtDonGia;
+        private System.Windows.Forms.TextBox txtSoLuong;
     }
 }

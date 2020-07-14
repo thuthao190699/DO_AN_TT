@@ -27,6 +27,8 @@ namespace DoAnThucTap
 
         private void Frm_HDN_Load(object sender, EventArgs e)
         {
+            btnChiTiet.Visible = false;
+
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = dt.selectlistHoaDonNhap();
 
@@ -57,6 +59,7 @@ namespace DoAnThucTap
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnChiTiet.Visible = true;
             int i = dataGridView1.CurrentRow.Index;
 
             lbMaHDN.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
@@ -72,7 +75,7 @@ namespace DoAnThucTap
             Frm_CTHDN f = new Frm_CTHDN();
             f.ShowDialog();
             f.Close();
-            Frm_HDN_Load(sender, e);
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -113,6 +116,15 @@ namespace DoAnThucTap
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Frm_HDN_Load(sender, e);
+        }
+
+        private void txtThanhTien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }

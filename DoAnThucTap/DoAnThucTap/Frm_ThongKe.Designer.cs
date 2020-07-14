@@ -172,11 +172,12 @@
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "Doanh thu mỗi tháng";
             this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(776, 261);
             this.chart1.TabIndex = 41;
             this.chart1.Text = "chart1";
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // Frm_ThongKe
             // 

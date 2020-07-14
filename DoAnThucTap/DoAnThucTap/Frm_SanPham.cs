@@ -43,9 +43,13 @@ namespace DoAnThucTap
         private void btnAdd_Click(object sender, EventArgs e)
         {
             choose = 1;
-            
+            btnAdd.Enabled = false;
+            btnRefresh.Enabled = true;
+            btnSave.Enabled = true;
+            dataGridView1.Enabled = false;
+
             //able();
-            txtMaSP.Enabled = true;
+            txtMaSP.Enabled = false;
             txtTenSP.Enabled = true;
             txtGiaSP.Enabled = true;
             txtSoLuongSP.Enabled = true;
@@ -53,9 +57,16 @@ namespace DoAnThucTap
             var a = kn.SanPhams.OrderByDescending(s => s.MaSP).FirstOrDefault();
             txtMaSP.Text = Convert.ToString(a.MaSP + 1);
             btnSave.Enabled = true;
+
         }
         private void Clear()
         {
+            btnAdd.Enabled = true;
+            btnUpdate.Enabled = false;
+            btnRefresh.Enabled = false;
+            btnSave.Enabled = false;
+            btnXoa.Enabled = false;
+            dataGridView1.Enabled = true;
             txtMaSP.Text = "";
             txtTenSP.Text = "";
             txtGiaSP.Text = "";
@@ -66,14 +77,13 @@ namespace DoAnThucTap
         {
             choose = 2;
             btnUpdate.Enabled = false;
+            btnSave.Enabled = true;
+            btnRefresh.Enabled = true;
+            dataGridView1.Enabled = false;
 
-            txtTenSP.Enabled = true;
-            txtGiaSP.Enabled = true;
-            txtSoLuongSP.Enabled = true;
-            cbLoaiSP.Enabled = true;
 
             btnSave.Enabled = true;
-            txtSoLuongSP.Enabled = true;
+            txtSoLuongSP.Enabled = false;
             txtTenSP.Enabled = true;
             txtGiaSP.Enabled = true;
             cbLoaiSP.Enabled = true;
@@ -84,7 +94,7 @@ namespace DoAnThucTap
         private void btnCancel_Click(object sender, EventArgs e)
         {
 
-           
+
         }
 
 
@@ -142,7 +152,8 @@ namespace DoAnThucTap
                         }
                         Frm_SanPham_Load(sender, e);
                     }
-                    else {
+                    else
+                    {
                         kn.UpdateSanPham(Convert.ToInt32(txtMaSP.Text), txtTenSP.Text,
                                 Convert.ToDouble(txtGiaSP.Text), null,
                                 Convert.ToInt32(txtSoLuongSP.Text),
@@ -186,7 +197,7 @@ namespace DoAnThucTap
 
         private void txtGiaSP_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
@@ -194,6 +205,8 @@ namespace DoAnThucTap
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnXoa.Enabled = true;
+            btnUpdate.Enabled = true;
             int i = dataGridView1.CurrentRow.Index;
             txtMaSP.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
 
@@ -214,7 +227,8 @@ namespace DoAnThucTap
                     {
                         pic_AnhSach.Image = img;
                     }
-                } catch (Exception) { }
+                }
+                catch (Exception) { }
             }
         }
 
@@ -233,14 +247,19 @@ namespace DoAnThucTap
 
         private void btnHetHang_Click(object sender, EventArgs e)
         {
-            Frm_ThongKeSLSP tk = new Frm_ThongKeSLSP();
-            tk.ShowDialog();
-            this.Close();
-            th = new Thread(MoFromThongKe);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-        }
+            this.Hide();
 
+            Frm_ThongKeSLSP tk = new Frm_ThongKeSLSP(ShowFrm);
+
+            tk.ShowDialog();
+            //th = new Thread(MoFromThongKe);
+            //th.SetApartmentState(ApartmentState.STA);
+            //th.Start();
+        }
+        private void ShowFrm()
+        {
+            this.Visible = true;
+        }
         private void MoFromThongKe()
         {
             Application.Run(new Frm_ThongKe());
@@ -255,11 +274,13 @@ namespace DoAnThucTap
                 if (string.IsNullOrEmpty(file)) return;
                 Image myimage = Image.FromFile(file);
                 pic_AnhSach.Image = myimage;
-            } catch (Exception) { }
+            }
+            catch (Exception) { }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+
             Frm_SanPham_Load(sender, e);
         }
 
@@ -271,11 +292,11 @@ namespace DoAnThucTap
                 dataGridView1.DataSource = kn.SanPhams;
                 Frm_SanPham_Load(sender, e);
             }
-            catch 
+            catch
             {
                 MessageBox.Show("Khong the xoa", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
+
         }
 
         private void load()
@@ -292,9 +313,15 @@ namespace DoAnThucTap
             txtSoLuongSP.Text = "0";
             pic_AnhSach.Image = null;
         }
-        
+
         private void Frm_SanPham_Load(object sender, EventArgs e)
         {
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Crimson;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            Clear();
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = kn.SanPhams.ToList();
 
@@ -320,14 +347,20 @@ namespace DoAnThucTap
             {
                 dataGridView1.DataSource = kn.TimSanPham(txtTimTenSP.Text);
             }
-            else {
+            else
+            {
                 dataGridView1.DataSource = kn.SanPhams.ToList();
             }
         }
 
-        private void txtTenSP_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtGiaSP_Leave(object sender, EventArgs e)
         {
-            e.Handled = !((e.KeyChar >= 65 && e.KeyChar <= 122) || (e.KeyChar == 8));
+            try { Convert.ToDouble(txtGiaSP.Text); }
+            catch
+            {
+                txtGiaSP.Text = "0";
+            }
+
         }
     }
 }

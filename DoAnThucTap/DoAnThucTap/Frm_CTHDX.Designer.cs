@@ -41,10 +41,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtSoLuong = new Guna.UI.WinForms.GunaLineTextBox();
             this.lbTenKH = new System.Windows.Forms.Label();
             this.lbNgayXuat = new System.Windows.Forms.Label();
-            this.txtGia = new Guna.UI.WinForms.GunaLineTextBox();
+            this.txtGia = new System.Windows.Forms.TextBox();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -192,19 +192,6 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "CHI TIẾT HÓA ĐƠN XUẤT";
             // 
-            // txtSoLuong
-            // 
-            this.txtSoLuong.BackColor = System.Drawing.Color.White;
-            this.txtSoLuong.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSoLuong.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSoLuong.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtSoLuong.Location = new System.Drawing.Point(163, 340);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.PasswordChar = '\0';
-            this.txtSoLuong.Size = new System.Drawing.Size(160, 26);
-            this.txtSoLuong.TabIndex = 61;
-            // 
             // lbTenKH
             // 
             this.lbTenKH.AutoSize = true;
@@ -225,26 +212,29 @@
             // 
             // txtGia
             // 
-            this.txtGia.BackColor = System.Drawing.Color.White;
-            this.txtGia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGia.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtGia.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtGia.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtGia.Location = new System.Drawing.Point(163, 376);
+            this.txtGia.Location = new System.Drawing.Point(163, 384);
             this.txtGia.Name = "txtGia";
-            this.txtGia.PasswordChar = '\0';
-            this.txtGia.Size = new System.Drawing.Size(160, 26);
-            this.txtGia.TabIndex = 65;
+            this.txtGia.Size = new System.Drawing.Size(100, 20);
+            this.txtGia.TabIndex = 66;
+            this.txtGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGia_KeyPress);
+            // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.Location = new System.Drawing.Point(163, 347);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(100, 20);
+            this.txtSoLuong.TabIndex = 67;
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
             // Frm_CTHDX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(607, 450);
+            this.Controls.Add(this.txtSoLuong);
             this.Controls.Add(this.txtGia);
             this.Controls.Add(this.lbNgayXuat);
             this.Controls.Add(this.lbTenKH);
-            this.Controls.Add(this.txtSoLuong);
             this.Controls.Add(this.btnXuat);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.lbTenNV);
@@ -283,9 +273,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Guna.UI.WinForms.GunaLineTextBox txtSoLuong;
         private System.Windows.Forms.Label lbTenKH;
         private System.Windows.Forms.Label lbNgayXuat;
-        private Guna.UI.WinForms.GunaLineTextBox txtGia;
+        private System.Windows.Forms.TextBox txtGia;
+        private System.Windows.Forms.TextBox txtSoLuong;
     }
 }

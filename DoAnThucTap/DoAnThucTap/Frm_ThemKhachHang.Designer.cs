@@ -37,10 +37,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTenKH = new Guna.UI.WinForms.GunaLineTextBox();
-            this.txtSDT = new Guna.UI.WinForms.GunaLineTextBox();
             this.txtDiaChi = new Guna.UI.WinForms.GunaLineTextBox();
-            this.txtEmail = new Guna.UI.WinForms.GunaLineTextBox();
             this.btnSave = new Guna.UI.WinForms.GunaGradientButton();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -140,21 +140,6 @@
             this.txtTenKH.Size = new System.Drawing.Size(219, 26);
             this.txtTenKH.TabIndex = 29;
             // 
-            // txtSDT
-            // 
-            this.txtSDT.BackColor = System.Drawing.Color.White;
-            this.txtSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSDT.FocusedLineColor = System.Drawing.Color.SpringGreen;
-            this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSDT.ForeColor = System.Drawing.Color.Black;
-            this.txtSDT.LineColor = System.Drawing.Color.Black;
-            this.txtSDT.Location = new System.Drawing.Point(12, 375);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.PasswordChar = '\0';
-            this.txtSDT.Size = new System.Drawing.Size(219, 26);
-            this.txtSDT.TabIndex = 30;
-            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
-            // 
             // txtDiaChi
             // 
             this.txtDiaChi.BackColor = System.Drawing.Color.White;
@@ -168,20 +153,6 @@
             this.txtDiaChi.PasswordChar = '\0';
             this.txtDiaChi.Size = new System.Drawing.Size(219, 26);
             this.txtDiaChi.TabIndex = 31;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.Color.White;
-            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.FocusedLineColor = System.Drawing.Color.SpringGreen;
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.LineColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(253, 375);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.Size = new System.Drawing.Size(219, 26);
-            this.txtEmail.TabIndex = 32;
             // 
             // btnSave
             // 
@@ -208,15 +179,31 @@
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(9, 381);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(219, 20);
+            this.txtSDT.TabIndex = 40;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(253, 381);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(219, 20);
+            this.txtEmail.TabIndex = 41;
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
+            // 
             // Frm_ThemKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 471);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtSDT);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtTenKH);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -247,9 +234,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private Guna.UI.WinForms.GunaLineTextBox txtTenKH;
-        private Guna.UI.WinForms.GunaLineTextBox txtSDT;
         private Guna.UI.WinForms.GunaLineTextBox txtDiaChi;
-        private Guna.UI.WinForms.GunaLineTextBox txtEmail;
         private Guna.UI.WinForms.GunaGradientButton btnSave;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }

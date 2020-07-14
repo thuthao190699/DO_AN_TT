@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -33,7 +34,7 @@ namespace DoAnThucTap
         {
             if (txtTenKH.Text == "" || txtSDT.Text == "" || txtDiaChi.Text == "" || txtEmail.Text == "")
             {
-                MessageBox.Show("Vui long dien day du thong tin", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin:", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             kn.ThemKhachHang(Convert.ToInt32(lbMaKH.Text), txtTenKH.Text, txtSDT.Text, txtDiaChi.Text, txtEmail.Text);
             this.Close();
@@ -44,6 +45,26 @@ namespace DoAnThucTap
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+        private bool isEmail(string inputEmail)
+        {
+            inputEmail = inputEmail ?? string.Empty;
+            string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                  @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                  @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+            Regex re = new Regex(strRegex);
+            if (re.IsMatch(inputEmail))
+                return (true);
+            else
+                return (false);
+        }
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            if (!isEmail(txtEmail.Text))
+            {
+                MessageBox.Show("Email không đúng định dạng", "Thông Báo");
+                txtEmail.Text = "";
             }
         }
     }

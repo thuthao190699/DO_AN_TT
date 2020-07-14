@@ -119,7 +119,6 @@ D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\bin\Debug\de\DevExpress.Pdf.v19.1.Core.resou
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\bin\Debug\es\DevExpress.Pdf.v19.1.Core.resources.dll
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\bin\Debug\ja\DevExpress.Pdf.v19.1.Core.resources.dll
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\bin\Debug\ru\DevExpress.Pdf.v19.1.Core.resources.dll
-D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.csprojAssemblyReference.cache
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.exe.config
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.Frm_CTHDN.resources
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.Frm_CTHDX.resources
@@ -148,3 +147,5 @@ D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\RdlCompile.compiled
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.Frm_Mail.resources
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.Frm_Report.resources
 D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.Frm_ThongKe.resources
+D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.FormReportHDX.resources
+D:\DO_AN_TT\DoAnThucTap\DoAnThucTap\obj\Debug\DoAnThucTap.csprojAssemblyReference.cache

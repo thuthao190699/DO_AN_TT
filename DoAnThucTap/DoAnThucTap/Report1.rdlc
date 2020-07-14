@@ -332,21 +332,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ThanhTien">
+                    <Textbox Name="ThanhTienChuan">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ThanhTien.Value</Value>
+                              <Value>=Fields!ThanhTienChuan.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ThanhTien</rd:DefaultName>
+                      <rd:DefaultName>ThanhTienChuan</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -907,6 +907,10 @@
         <Field Name="MaTL">
           <DataField>MaTL</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ThanhTienChuan">
+          <DataField>ThanhTienChuan</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

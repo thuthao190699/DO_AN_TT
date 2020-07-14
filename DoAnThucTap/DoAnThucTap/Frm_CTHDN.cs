@@ -24,11 +24,8 @@ namespace DoAnThucTap
         {
             this.Close();
         }
-        int tam;
-        int click;
-        private void Frm_CTHDN_Load(object sender, EventArgs e)
+        private void load()
         {
-            click = 0;
             int layMahd = Frm_HDN.mahd;
             CTHDN nv = dt.CTHDNs.Where(s => s.MaHDN == layMahd).FirstOrDefault();
             if (nv != null)
@@ -37,50 +34,63 @@ namespace DoAnThucTap
                 txtDonGia.Enabled = false;
                 txtSoLuong.Enabled = false;
                 tam = 2;
-                HoaDonNhap layDLHDN = dt.HoaDonNhaps.Where(s => s.MaHDN == layMahd).FirstOrDefault();
+                //HoaDonNhap layDLHDN = dt.HoaDonNhaps.Where(s => s.MaHDN == layMahd).FirstOrDefault();
 
-                lbMaHDN.Text = layDLHDN.MaHDN.ToString();
+                //lbMaHDN.Text = layDLHDN.MaHDN.ToString();
 
-                lbNgay.Text = layDLHDN.NgayNhap.ToString();
+                //lbNgay.Text = layDLHDN.NgayNhap.ToString();
 
-               
+                //NhanVien layDLNV = dt.NhanViens.Where(s => s.MaNV == layDLHDN.MaNV).FirstOrDefault();
 
-                NhanVien layDLNV = dt.NhanViens.Where(s => s.MaNV == layDLHDN.MaNV).FirstOrDefault();
+                //lbTenNV.Text = layDLNV.TenNV;
 
-                lbTenNV.Text = layDLNV.TenNV;
+                //NhaCC layDLNCC = dt.NhaCCs.Where(s => s.MaNCC == layDLHDN.MaNCC).FirstOrDefault();
 
-                NhaCC layDLNCC = dt.NhaCCs.Where(s => s.MaNCC == layDLHDN.MaNCC).FirstOrDefault();
+                //lbTenNCC.Text = layDLNCC.TenNCC;
 
-                lbTenNCC.Text = layDLNCC.TenNCC;
+                //CTHDN layDLCTHDN = dt.CTHDNs.Where(s => s.MaHDN == layMahd).FirstOrDefault();
 
-                CTHDN layDLCTHDN = dt.CTHDNs.Where(s => s.MaHDN == layMahd).FirstOrDefault();
+                //txtDonGia.Text = layDLCTHDN.Dongia.ToString();
 
-                txtDonGia.Text = layDLCTHDN.Dongia.ToString();
+                //txtSoLuong.Text = layDLCTHDN.Soluong.ToString();
+                //lbthanhtien.Text = Convert.ToString(Convert.ToInt32(txtSoLuong.Text) * Convert.ToInt32(txtDonGia.Text));
 
-                txtSoLuong.Text = layDLCTHDN.Soluong.ToString();
+                //SanPham layDLSP = dt.SanPhams.Where(s => s.MaSP == layDLCTHDN.MaSP).FirstOrDefault();
+
+                //lbMaSP.Text = layDLSP.TenSP.ToString();
+
+                var dl = dt.suacthdn(Frm_HDN.mahd).FirstOrDefault();
+                lbMaHDN.Text = dl.MaHDN.ToString();
+                lbNgay.Text = dl.NgayNhap.ToString();
+                lbTenNV.Text = dl.TenNV;
+                lbTenNCC.Text = dl.TenNCC;
+                txtDonGia.Text = dl.Dongia.ToString();
+                txtSoLuong.Text = dl.Soluong.ToString();
                 lbthanhtien.Text = Convert.ToString(Convert.ToInt32(txtSoLuong.Text) * Convert.ToInt32(txtDonGia.Text));
+                lbMaSP.Text = dl.TenSP.ToString();
 
-                SanPham layDLSP = dt.SanPhams.Where(s => s.MaSP == layDLCTHDN.MaSP).FirstOrDefault();
-
-                lbMaSP.Text = layDLSP.TenSP.ToString();
-                
             }
             else if (nv == null)
             {
                 tam = 1;
-                HoaDonNhap layDLHDN = dt.HoaDonNhaps.Where(s => s.MaHDN == layMahd).FirstOrDefault();
+                //HoaDonNhap layDLHDN = dt.HoaDonNhaps.Where(s => s.MaHDN == layMahd).FirstOrDefault();
 
-                lbMaHDN.Text = layDLHDN.MaHDN.ToString();
+                //lbMaHDN.Text = layDLHDN.MaHDN.ToString();
 
-                lbNgay.Text = layDLHDN.NgayNhap.ToString();
+                //lbNgay.Text = layDLHDN.NgayNhap.ToString();
 
-                NhanVien layDLNV = dt.NhanViens.Where(s => s.MaNV == layDLHDN.MaNV).FirstOrDefault();
+                //NhanVien layDLNV = dt.NhanViens.Where(s => s.MaNV == layDLHDN.MaNV).FirstOrDefault();
 
-                lbTenNV.Text = layDLNV.TenNV;
+                //lbTenNV.Text = layDLNV.TenNV;
 
-                NhaCC layDLNCC = dt.NhaCCs.Where(s => s.MaNCC == layDLHDN.MaNCC).FirstOrDefault();
+                //NhaCC layDLNCC = dt.NhaCCs.Where(s => s.MaNCC == layDLHDN.MaNCC).FirstOrDefault();
 
-                lbTenNCC.Text = layDLNCC.TenNCC;
+                //lbTenNCC.Text = layDLNCC.TenNCC;
+                var dl = dt.suacthdn(Frm_HDN.mahd).FirstOrDefault();
+                lbMaHDN.Text = dl.MaHDN.ToString();
+                lbNgay.Text = dl.NgayNhap.ToString();
+                lbTenNV.Text = dl.TenNV;
+                lbTenNCC.Text = dl.TenNCC;
 
                 txtDonGia.Text = "";
 
@@ -91,7 +101,15 @@ namespace DoAnThucTap
                 lbMaSP.DataSource = dt.SanPhams.ToList();
 
                 lbMaSP.Text = "";
-            }            
+            }
+        }
+
+        int tam;
+        int click;
+        private void Frm_CTHDN_Load(object sender, EventArgs e)
+        {
+            click = 0;
+            load(); 
         }
 
         private void btnXuat_Click(object sender, EventArgs e)
@@ -149,15 +167,38 @@ namespace DoAnThucTap
             if(tam ==2)
             {
                 dt.UpdateCTHDN1(Convert.ToInt32(lbMaHDN.Text), Convert.ToDouble(txtDonGia.Text), Convert.ToInt32(txtSoLuong.Text));
-                Frm_CTHDN_Load(sender, e);
-                MessageBox.Show("Luu thanh cong");
+                
+                DialogResult dr= MessageBox.Show("Luu thanh cong", "Thông Báo", MessageBoxButtons.OK);
+                if (dr == DialogResult.OK)
+                {
+                    load();
+                }
             }
             else if(tam ==1)
             {
                 dt.ThemCTHDN1(Convert.ToInt32(lbMaSP.SelectedValue.ToString()), Convert.ToInt32(lbMaHDN.Text), Convert.ToDouble(txtDonGia.Text), Convert.ToInt32(txtSoLuong.Text));
-                Frm_CTHDN_Load(sender, e);
-                MessageBox.Show("Luu thanh cong");
+                DialogResult dr= MessageBox.Show("Luu thanh cong", "Thông Báo", MessageBoxButtons.OK);
+                if (dr == DialogResult.OK)
+                {
+                    load();
+                }
             }            
+        }
+
+        private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDonGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
