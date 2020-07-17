@@ -31,6 +31,11 @@ namespace DoAnThucTap
 
         private void Frm_KhachHang_Load(object sender, EventArgs e)
         {
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.HotPink;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Aquamarine;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Green;
+
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = kn.select_KhachHang();
             dataGridView1.Enabled = true;

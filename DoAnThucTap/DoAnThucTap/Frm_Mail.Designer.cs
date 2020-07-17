@@ -43,6 +43,7 @@
             this.txtFrom = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             // 
             // txtMessage
             // 
-            this.txtMessage.Location = new System.Drawing.Point(80, 208);
+            this.txtMessage.Location = new System.Drawing.Point(80, 249);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(333, 120);
@@ -64,14 +65,14 @@
             // 
             // txtSubject
             // 
-            this.txtSubject.Location = new System.Drawing.Point(80, 158);
+            this.txtSubject.Location = new System.Drawing.Point(80, 199);
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(333, 20);
             this.txtSubject.TabIndex = 17;
             // 
             // txtTo
             // 
-            this.txtTo.Location = new System.Drawing.Point(80, 108);
+            this.txtTo.Location = new System.Drawing.Point(80, 149);
             this.txtTo.Name = "txtTo";
             this.txtTo.Size = new System.Drawing.Size(333, 20);
             this.txtTo.TabIndex = 16;
@@ -81,7 +82,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(6, 208);
+            this.label3.Location = new System.Drawing.Point(6, 249);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 19);
             this.label3.TabIndex = 15;
@@ -91,7 +92,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(6, 158);
+            this.label2.Location = new System.Drawing.Point(6, 199);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 19);
             this.label2.TabIndex = 14;
@@ -101,7 +102,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(12, 108);
+            this.label1.Location = new System.Drawing.Point(12, 149);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 19);
             this.label1.TabIndex = 13;
@@ -161,14 +162,14 @@
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(81, 73);
+            this.txtPass.Location = new System.Drawing.Point(81, 114);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(333, 20);
             this.txtPass.TabIndex = 26;
             // 
             // txtFrom
             // 
-            this.txtFrom.Location = new System.Drawing.Point(81, 23);
+            this.txtFrom.Location = new System.Drawing.Point(81, 64);
             this.txtFrom.Name = "txtFrom";
             this.txtFrom.Size = new System.Drawing.Size(333, 20);
             this.txtFrom.TabIndex = 25;
@@ -178,7 +179,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(7, 73);
+            this.label4.Location = new System.Drawing.Point(7, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 19);
             this.label4.TabIndex = 24;
@@ -188,17 +189,30 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(13, 23);
+            this.label5.Location = new System.Drawing.Point(13, 64);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 19);
             this.label5.TabIndex = 23;
             this.label5.Text = "Sender";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(246, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(276, 26);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "CẤU TRÚC GỬI GMAIL";
+            // 
             // Frm_Mail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(833, 450);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtFrom);
             this.Controls.Add(this.label4);
@@ -239,5 +253,6 @@
         private System.Windows.Forms.TextBox txtFrom;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

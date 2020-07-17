@@ -80,9 +80,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtPass);
-            this.panel1.Controls.Add(this.txtName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.gunaPictureBox2);
+            this.panel1.Controls.Add(this.txtName);
             this.panel1.Location = new System.Drawing.Point(363, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(304, 451);

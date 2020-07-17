@@ -30,18 +30,19 @@ namespace DoAnThucTap
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtTenTL.Text != null || txtTenTL.Text != "")
+            if (txtTenTL.Text == null || txtTenTL.Text == "")
             {
+                MessageBox.Show("Vui lòng điền tên loại sản phẩm !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenTL.Focus();
+            }
+            else
+            {
+               
                 kn.ThemLoaiSP(Convert.ToInt32(lbMaTL.Text), txtTenTL.Text);
                 this.Close();
                 th = new Thread(LoadForm);
                 th.SetApartmentState(ApartmentState.STA);
                 th.Start();
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng điền tên loại sản phẩm !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtTenTL.Focus();
             }
         }
 

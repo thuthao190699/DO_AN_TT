@@ -38,16 +38,28 @@ namespace DoAnThucTap
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-           //vậy xóa cái đó, xem dùm t cái phân quyền chạy ổn ko
+           
             if (txtTenNV.Text == "" || txtSDT.Text == "" || txtEmail.Text == "" || txtUserName.Text == "" || txtPass.Text == "")
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                kn.ThemNhanVien(Convert.ToInt32(lbMaNV.Text), txtTenNV.Text, txtSDT.Text, txtEmail.Text, txtUserName.Text, txtPass.Text, Convert.ToInt32(cbChucVu.SelectedValue.ToString()));
-                Frm_ThemNV_Load(sender, e);
-                this.Close();
+                int dem = 0;
+                foreach(var a in kn.NhanViens)
+                {
+                    if(a.TK == txtUserName.Text)
+                    {
+                        dem++;
+                    }
+                }
+                if (dem == 0)
+                {
+                    kn.ThemNhanVien(Convert.ToInt32(lbMaNV.Text), txtTenNV.Text, txtSDT.Text, txtEmail.Text, txtUserName.Text, txtPass.Text, Convert.ToInt32(cbChucVu.SelectedValue.ToString()));
+                    MessageBox.Show("Thêm thành công!", "Thông báo");
+                    this.Close();
+                }
+                else MessageBox.Show("Tài khoản đã tồn tại", "Thông báo");
             }
         }
 

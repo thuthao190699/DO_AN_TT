@@ -200,5 +200,15 @@ namespace DoAnThucTap
                 e.Handled = true;
             }
         }
+
+        private void btnPDF_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dl = new FolderBrowserDialog();
+            if (dl.ShowDialog(this) == DialogResult.OK)
+            {
+                Frm_Report f = new Frm_Report(Frm_HDN.mahd, dl.SelectedPath);
+                MessageBox.Show("Export done ");
+            }
+        }
     }
 }

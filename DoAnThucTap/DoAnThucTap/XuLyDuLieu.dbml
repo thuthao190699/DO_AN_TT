@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DATT" Class="XuLyDuLieuDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=THUTHAO;Initial Catalog=DATT;Integrated Security=True" SettingsObjectName="DoAnThucTap.Properties.Settings" SettingsPropertyName="DATTConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\bin\Debug\database\DATT.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="DoAnThucTap.Properties.Settings" SettingsPropertyName="DATTConnectionString3" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CTHDN" Member="CTHDNs">
     <Type Name="CTHDN">
       <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -28,6 +28,7 @@
       <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaHDX" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Association Name="SanPham_CTHDX" Member="SanPham" ThisKey="MaSP" OtherKey="MaSP" Type="SanPham" IsForeignKey="true" />
       <Association Name="HoaDonXuat_CTHDX" Member="HoaDonXuat" ThisKey="MaHDX" OtherKey="MaHDX" Type="HoaDonXuat" IsForeignKey="true" />
     </Type>
@@ -108,15 +109,18 @@
     <Parameter Name="MaHDN" Parameter="maHDN" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.updateSL" Method="updateSL">
-    <Parameter Name="ma" Type="System.Int32" DbType="Int" />
-    <Parameter Name="SL" Parameter="sL" Type="System.Int32" DbType="Int" />
+  <Function Name="dbo.UpdatetHDX" Method="UpdatetHDX">
+    <Parameter Name="MaHDX" Parameter="maHDX" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaKH" Parameter="maKH" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NgayXuat" Parameter="ngayXuat" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ThanhTien" Parameter="thanhTien" Type="System.Double" DbType="Float" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.DeleteCTHDX" Method="DeleteCTHDX">
+  <Function Name="dbo.DeleteCTHDX" Method="DeleteCTHDX" IsComposable="true">
     <Parameter Name="MaSP" Parameter="maSP" Type="System.Int32" DbType="Int" />
     <Parameter Name="MaHDX" Parameter="maHDX" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.DeleteHoaDonNhap" Method="DeleteHoaDonNhap">
     <Parameter Name="MaHDN" Parameter="maHDN" Type="System.Int32" DbType="Int" />
@@ -132,6 +136,14 @@
   </Function>
   <Function Name="dbo.DeleteLoaiSP" Method="DeleteLoaiSP">
     <Parameter Name="MaTL" Parameter="maTL" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteNhaCC" Method="DeleteNhaCC">
+    <Parameter Name="MaNCC" Parameter="maNCC" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteNhaCungCap" Method="DeleteNhaCungCap">
+    <Parameter Name="MaNCC" Parameter="maNCC" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.DeleteNhanVien" Method="DeleteNhanVien">
@@ -157,6 +169,96 @@
       <Column Name="LuongCoBan" Type="System.Double" DbType="Float" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.select_KhachHang" Method="select_KhachHang">
+    <ElementType Name="select_KhachHangResult">
+      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenKH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.select_ThongKeSLSP" Method="select_ThongKeSLSP">
+    <ElementType Name="select_ThongKeSLSPResult">
+      <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoLuongTon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenTL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.selectHoaDonNhap" Method="selectHoaDonNhap">
+    <ElementType Name="selectHoaDonNhapResult">
+      <Column Name="MaHDN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenNCC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgayNhap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ThanhTienChuan" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CTHD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Dongia" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.selectHoaDonXuat" Method="selectHoaDonXuat">
+    <ElementType Name="selectHoaDonXuatResult">
+      <Column Name="MaHDX" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenKH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgayXuat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ThanhTienChuan" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.selectlistHoaDonNhap" Method="selectlistHoaDonNhap">
+    <ElementType Name="selectlistHoaDonNhapResult">
+      <Column Name="MaHDN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaNCC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayNhap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaNV1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaCV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaNCC1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenNCC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SDT1" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Diachi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.selectReport" Method="selectReport">
+    <Parameter Name="MaHDN" Parameter="maHDN" Type="System.Int32" DbType="Int" />
+    <ElementType Name="selectReportResult">
+      <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaHDN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Dongia" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaHDN1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaNCC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayNhap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaNV1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaCV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaNCC1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenNCC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SDT1" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Diachi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaSP1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HinhAnh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="SoLuongTon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaTL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.selectReportTongTien" Method="selectReportTongTien">
     <Parameter Name="MaHDN" Parameter="maHDN" Type="System.Int32" DbType="Int" />
     <ElementType Name="selectReportTongTienResult">
@@ -175,11 +277,12 @@
       <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="MaHDX" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="MaHDX1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="MaKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NgayXuat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ThanhTien1" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="MaNV1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TenNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="SDT" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
@@ -198,11 +301,55 @@
       <Column Name="HinhAnh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
       <Column Name="SoLuongTon" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaTL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThanhTienChuan" Type="System.Double" DbType="Float" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.selectSanPham" Method="selectSanPham">
     <ElementType Name="selectSanPhamResult">
       <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HinhAnh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="SoLuongTon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaTL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.selectThongKe" Method="selectThongKe">
+    <ElementType Name="selectThongKeResult">
+      <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HinhAnh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="SoLuongTon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaTL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaTL1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenTL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.suacthdn" Method="suacthdn">
+    <Parameter Name="mahd" Type="System.Int32" DbType="Int" />
+    <ElementType Name="suacthdnResult">
+      <Column Name="MaHDN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaNCC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayNhap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaNV1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaCV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaNCC1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenNCC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SDT1" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Diachi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaHDN1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Dongia" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaSP1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TenSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Gia" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="HinhAnh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
@@ -235,9 +382,9 @@
     <Parameter Name="MaHDN" Parameter="maHDN" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.TinhTongTienHDX" Method="TinhTongTienHDX">
+  <Function Name="dbo.TinhTongTienHDX" Method="TinhTongTienHDX" IsComposable="true">
     <Parameter Name="MaHDX" Parameter="maHDX" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.tongtienthangnay" Method="tongtienthangnay">
     <ElementType Name="tongtienthangnayResult">
@@ -256,10 +403,32 @@
     <Parameter Name="Soluong" Parameter="soluong" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.ThemCTHDN1" Method="ThemCTHDN1">
+    <Parameter Name="MaSP" Parameter="maSP" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaHDN" Parameter="maHDN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Dongia" Parameter="dongia" Type="System.Double" DbType="Float" />
+    <Parameter Name="Soluong" Parameter="soluong" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.ThemCTHDX" Method="ThemCTHDX">
     <Parameter Name="MaSP" Parameter="maSP" Type="System.Int32" DbType="Int" />
     <Parameter Name="MaHDX" Parameter="maHDX" Type="System.Int32" DbType="Int" />
     <Parameter Name="Soluong" Parameter="soluong" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ThemHDN" Method="ThemHDN">
+    <Parameter Name="MaHDN" Parameter="maHDN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaNCC" Parameter="maNCC" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NgayNhap" Parameter="ngayNhap" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ThanhTien" Parameter="thanhTien" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ThemHoaDonNhap" Method="ThemHoaDonNhap">
+    <Parameter Name="MaHDN" Parameter="maHDN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaNCC" Parameter="maNCC" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NgayNhap" Parameter="ngayNhap" Type="System.DateTime" DbType="Date" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.ThemHoaDonXuat" Method="ThemHoaDonXuat">
@@ -267,7 +436,7 @@
     <Parameter Name="MaKH" Parameter="maKH" Type="System.Int32" DbType="Int" />
     <Parameter Name="MaNV" Parameter="maNV" Type="System.Int32" DbType="Int" />
     <Parameter Name="NgayXuat" Parameter="ngayXuat" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="ThanhTien" Parameter="thanhTien" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ThanhTien" Parameter="thanhTien" Type="System.Double" DbType="Float" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.ThemKhachHang" Method="ThemKhachHang">
@@ -317,9 +486,22 @@
     <Parameter Name="MaHDX" Parameter="maHDX" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.ThongKe" Method="ThongKe">
+    <Parameter Name="nam" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ThongKeResult">
+      <Column Name="Thang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.update_Soluongton" Method="update_Soluongton">
     <Parameter Name="MaSP" Parameter="maSP" Type="System.Int32" DbType="Int" />
     <Parameter Name="SoluongTon" Parameter="soluongTon" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateCTHDN1" Method="UpdateCTHDN1">
+    <Parameter Name="MaHDN" Parameter="maHDN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Dongia" Parameter="dongia" Type="System.Double" DbType="Float" />
+    <Parameter Name="Soluong" Parameter="soluong" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.UpdateCTHDNGiaBanCu" Method="UpdateCTHDNGiaBanCu">
@@ -328,33 +510,33 @@
     <Parameter Name="Soluong" Parameter="soluong" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.UpdateCTHDNGiaBanMoi" Method="UpdateCTHDNGiaBanMoi">
+  <Function Name="dbo.UpdateCTHDNGiaBanMoi" Method="UpdateCTHDNGiaBanMoi" IsComposable="true">
     <Parameter Name="MaSP" Parameter="maSP" Type="System.Int32" DbType="Int" />
     <Parameter Name="MaHDN" Parameter="maHDN" Type="System.Int32" DbType="Int" />
     <Parameter Name="Dongia" Parameter="dongia" Type="System.Double" DbType="Float" />
     <Parameter Name="Soluong" Parameter="soluong" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
+    <Return Type="object" />
   </Function>
-  <Function Name="dbo.UpdateCTHDX" Method="UpdateCTHDX">
+  <Function Name="dbo.UpdateCTHDX" Method="UpdateCTHDX" IsComposable="true">
     <Parameter Name="MaSP" Parameter="maSP" Type="System.Int32" DbType="Int" />
     <Parameter Name="MaHDX" Parameter="maHDX" Type="System.Int32" DbType="Int" />
     <Parameter Name="Soluong" Parameter="soluong" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
+    <Return Type="object" />
   </Function>
-  <Function Name="dbo.UpdateHoaDonNhap" Method="UpdateHoaDonNhap">
+  <Function Name="dbo.UpdateHoaDonNhap" Method="UpdateHoaDonNhap" IsComposable="true">
     <Parameter Name="MaHDN" Parameter="maHDN" Type="System.Int32" DbType="Int" />
     <Parameter Name="MaNCC" Parameter="maNCC" Type="System.Int32" DbType="Int" />
     <Parameter Name="MaNV" Parameter="maNV" Type="System.Int32" DbType="Int" />
     <Parameter Name="NgayNhap" Parameter="ngayNhap" Type="System.DateTime" DbType="Date" />
     <Parameter Name="ThanhTien" Parameter="thanhTien" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.UpdateHoaDonXuat" Method="UpdateHoaDonXuat">
     <Parameter Name="MaHDX" Parameter="maHDX" Type="System.Int32" DbType="Int" />
     <Parameter Name="MaKH" Parameter="maKH" Type="System.Int32" DbType="Int" />
     <Parameter Name="MaNV" Parameter="maNV" Type="System.Int32" DbType="Int" />
     <Parameter Name="NgayXuat" Parameter="ngayXuat" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="ThanhTien" Parameter="thanhTien" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ThanhTien" Parameter="thanhTien" Type="System.Double" DbType="Float" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.UpdateKhachHang" Method="UpdateKhachHang">
@@ -387,6 +569,7 @@
     <Parameter Name="TenNV" Parameter="tenNV" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="SDT" Parameter="sDT" Type="System.String" DbType="Text" />
     <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MaCV" Parameter="maCV" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.UpdateSanPham" Method="UpdateSanPham">
@@ -398,87 +581,9 @@
     <Parameter Name="MaTL" Parameter="maTL" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.select_KhachHang" Method="select_KhachHang">
-    <ElementType Name="select_KhachHangResult">
-      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenKH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SDT" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.DeleteNhaCungCap" Method="DeleteNhaCungCap">
-    <Parameter Name="MaNCC" Parameter="maNCC" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.selectHoaDonNhap" Method="selectHoaDonNhap">
-    <ElementType Name="selectHoaDonNhapResult">
-      <Column Name="MaHDN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenNCC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TenNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NgayNhap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="ThanhTienChuan" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="CTHD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Dongia" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.selectlistHoaDonNhap" Method="selectlistHoaDonNhap">
-    <ElementType Name="selectlistHoaDonNhapResult">
-      <Column Name="MaHDN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaNCC" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NgayNhap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MaNV1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SDT" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MaCV" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaNCC1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenNCC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SDT1" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Diachi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.ThemHoaDonNhap" Method="ThemHoaDonNhap">
-    <Parameter Name="MaHDN" Parameter="maHDN" Type="System.Int32" DbType="Int" />
-    <Parameter Name="MaNCC" Parameter="maNCC" Type="System.Int32" DbType="Int" />
-    <Parameter Name="MaNV" Parameter="maNV" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NgayNhap" Parameter="ngayNhap" Type="System.DateTime" DbType="Date" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.ThemCTHDN1" Method="ThemCTHDN1">
-    <Parameter Name="MaSP" Parameter="maSP" Type="System.Int32" DbType="Int" />
-    <Parameter Name="MaHDN" Parameter="maHDN" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Dongia" Parameter="dongia" Type="System.Double" DbType="Float" />
-    <Parameter Name="Soluong" Parameter="soluong" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.UpdateCTHDN1" Method="UpdateCTHDN1">
-    <Parameter Name="MaHDN" Parameter="maHDN" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Dongia" Parameter="dongia" Type="System.Double" DbType="Float" />
-    <Parameter Name="Soluong" Parameter="soluong" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.selectHoaDonXuat" Method="selectHoaDonXuat">
-    <ElementType Name="selectHoaDonXuatResult">
-      <Column Name="MaHDX" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenKH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TenNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NgayXuat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="ThanhTienChuan" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.UpdatetHDX" Method="UpdatetHDX">
-    <Parameter Name="MaHDX" Parameter="maHDX" Type="System.Int32" DbType="Int" />
-    <Parameter Name="MaKH" Parameter="maKH" Type="System.Int32" DbType="Int" />
-    <Parameter Name="MaNV" Parameter="maNV" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NgayXuat" Parameter="ngayXuat" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="ThanhTien" Parameter="thanhTien" Type="System.Double" DbType="Float" />
+  <Function Name="dbo.updateSL" Method="updateSL">
+    <Parameter Name="ma" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SL" Parameter="sL" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.UpdatetCTHDX" Method="UpdatetCTHDX">
@@ -486,84 +591,6 @@
     <Parameter Name="MaSP" Parameter="maSP" Type="System.Int32" DbType="Int" />
     <Parameter Name="Soluong" Parameter="soluong" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.select_ThongKeSLSP" Method="select_ThongKeSLSP">
-    <ElementType Name="select_ThongKeSLSPResult">
-      <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SoLuongTon" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TenTL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.ThongKe" Method="ThongKe">
-    <Parameter Name="nam" Type="System.Int32" DbType="Int" />
-    <ElementType Name="ThongKeResult">
-      <Column Name="Thang" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.suacthdn" Method="suacthdn">
-    <Parameter Name="mahd" Type="System.Int32" DbType="Int" />
-    <ElementType Name="suacthdnResult">
-      <Column Name="MaHDN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaNCC" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NgayNhap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MaNV1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SDT" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MaCV" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaNCC1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenNCC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SDT1" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Diachi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaHDN1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Dongia" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaSP1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Gia" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="HinhAnh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
-      <Column Name="SoLuongTon" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaTL" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.selectReport" Method="selectReport">
-    <Parameter Name="MaHDN" Parameter="maHDN" Type="System.Int32" DbType="Int" />
-    <ElementType Name="selectReportResult">
-      <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaHDN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Dongia" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaHDN1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaNCC" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NgayNhap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MaNV1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SDT" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MaCV" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaNCC1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenNCC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SDT1" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Diachi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MaSP1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Gia" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="HinhAnh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
-      <Column Name="SoLuongTon" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaTL" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ThanhTienChuan" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </ElementType>
   </Function>
   <Function Name="dbo.select_Nhanvien" Method="select_Nhanvien">
     <ElementType Name="select_NhanvienResult">

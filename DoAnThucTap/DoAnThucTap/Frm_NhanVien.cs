@@ -37,6 +37,7 @@ namespace DoAnThucTap
 
         private void Frm_NhanVien_Load(object sender, EventArgs e)
         {
+            
             cbChucVu.ValueMember = "MaCV";
             cbChucVu.DisplayMember = "TenCV";
             cbChucVu.DataSource = kn.select_chucvu();
@@ -79,9 +80,9 @@ namespace DoAnThucTap
             }
             else
             {
-                kn.UpdateNhanVien(Convert.ToInt32(lbmanv.Text), txtTenNV.Text, txtSDT.Text, txtEmail.Text);
+                kn.UpdateNhanVien(Convert.ToInt32(lbmanv.Text), txtTenNV.Text, txtSDT.Text, txtEmail.Text, (int)cbChucVu.SelectedValue);
                 Frm_NhanVien_Load(sender, e);
-                this.Close();
+                gunaDataGridView1.Enabled = true;
             }
         }
 
@@ -103,6 +104,7 @@ namespace DoAnThucTap
             txtSDT.Text = "";
             txtEmail.Text = "";
             txtTK.Text = "";
+            gunaDataGridView1.Enabled = true;
           
             btnThem.Enabled = true;
             Frm_NhanVien_Load(sender, e);
@@ -133,7 +135,7 @@ namespace DoAnThucTap
         {
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
-
+            gunaDataGridView1.Enabled = false;
             gunaGroupBox2.Enabled = true;            
         }
 

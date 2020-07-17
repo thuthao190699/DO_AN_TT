@@ -59,6 +59,7 @@
             this.btnAdd = new Guna.UI.WinForms.GunaGradientButton();
             this.pic_AnhSach = new System.Windows.Forms.PictureBox();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AnhSach)).BeginInit();
@@ -78,7 +79,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(197, 27);
+            this.groupBox1.Location = new System.Drawing.Point(198, 52);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(537, 155);
             this.groupBox1.TabIndex = 0;
@@ -266,7 +267,7 @@
             this.txtTimTenSP.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtTimTenSP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTimTenSP.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtTimTenSP.Location = new System.Drawing.Point(296, 198);
+            this.txtTimTenSP.Location = new System.Drawing.Point(292, 217);
             this.txtTimTenSP.Name = "txtTimTenSP";
             this.txtTimTenSP.PasswordChar = '\0';
             this.txtTimTenSP.Size = new System.Drawing.Size(328, 26);
@@ -275,7 +276,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(65, 189);
+            this.button1.Location = new System.Drawing.Point(65, 217);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 14;
@@ -291,7 +292,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(215, 205);
+            this.label6.Location = new System.Drawing.Point(193, 224);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 19);
             this.label6.TabIndex = 15;
@@ -449,7 +450,7 @@
             // 
             // pic_AnhSach
             // 
-            this.pic_AnhSach.Location = new System.Drawing.Point(25, 36);
+            this.pic_AnhSach.Location = new System.Drawing.Point(26, 61);
             this.pic_AnhSach.Name = "pic_AnhSach";
             this.pic_AnhSach.Size = new System.Drawing.Size(166, 146);
             this.pic_AnhSach.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -468,11 +469,24 @@
             this.gunaPictureBox2.TabStop = false;
             this.gunaPictureBox2.Click += new System.EventHandler(this.gunaPictureBox2_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(284, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(280, 26);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "THÔNG TIN SẢN PHẨM";
+            // 
             // Frm_SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(913, 450);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnXoa);
@@ -533,5 +547,6 @@
         private System.Windows.Forms.TextBox txtTenSP;
         private System.Windows.Forms.TextBox txtGiaSP;
         private System.Windows.Forms.TextBox txtSoLuongSP;
+        private System.Windows.Forms.Label label7;
     }
 }

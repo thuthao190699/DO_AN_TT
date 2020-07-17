@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CTHDX));
             this.gunaPictureBox3 = new Guna.UI.WinForms.GunaPictureBox();
             this.btnXuat = new Guna.UI.WinForms.GunaGradientButton();
             this.label13 = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@
             this.lbNgayXuat = new System.Windows.Forms.Label();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.btnPDF = new Guna.UI.WinForms.GunaAdvenceButton();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +100,7 @@
             // lbTenNV
             // 
             this.lbTenNV.AutoSize = true;
-            this.lbTenNV.Location = new System.Drawing.Point(166, 302);
+            this.lbTenNV.Location = new System.Drawing.Point(199, 302);
             this.lbTenNV.Name = "lbTenNV";
             this.lbTenNV.Size = new System.Drawing.Size(72, 13);
             this.lbTenNV.TabIndex = 43;
@@ -107,7 +109,7 @@
             // lbTenSP
             // 
             this.lbTenSP.AutoSize = true;
-            this.lbTenSP.Location = new System.Drawing.Point(166, 163);
+            this.lbTenSP.Location = new System.Drawing.Point(199, 167);
             this.lbTenSP.Name = "lbTenSP";
             this.lbTenSP.Size = new System.Drawing.Size(71, 13);
             this.lbTenSP.TabIndex = 41;
@@ -116,7 +118,7 @@
             // lbMaHDX
             // 
             this.lbMaHDX.AutoSize = true;
-            this.lbMaHDX.Location = new System.Drawing.Point(184, 124);
+            this.lbMaHDX.Location = new System.Drawing.Point(199, 124);
             this.lbMaHDX.Name = "lbMaHDX";
             this.lbMaHDX.Size = new System.Drawing.Size(64, 13);
             this.lbMaHDX.TabIndex = 40;
@@ -185,17 +187,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(219, 48);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(165, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 24);
+            this.label1.Size = new System.Drawing.Size(308, 26);
             this.label1.TabIndex = 33;
             this.label1.Text = "CHI TIẾT HÓA ĐƠN XUẤT";
             // 
             // lbTenKH
             // 
             this.lbTenKH.AutoSize = true;
-            this.lbTenKH.Location = new System.Drawing.Point(160, 217);
+            this.lbTenKH.Location = new System.Drawing.Point(199, 219);
             this.lbTenKH.Name = "lbTenKH";
             this.lbTenKH.Size = new System.Drawing.Size(82, 13);
             this.lbTenKH.TabIndex = 63;
@@ -204,7 +207,7 @@
             // lbNgayXuat
             // 
             this.lbNgayXuat.AutoSize = true;
-            this.lbNgayXuat.Location = new System.Drawing.Point(160, 261);
+            this.lbNgayXuat.Location = new System.Drawing.Point(199, 259);
             this.lbNgayXuat.Name = "lbNgayXuat";
             this.lbNgayXuat.Size = new System.Drawing.Size(53, 13);
             this.lbNgayXuat.TabIndex = 64;
@@ -212,7 +215,7 @@
             // 
             // txtGia
             // 
-            this.txtGia.Location = new System.Drawing.Point(163, 384);
+            this.txtGia.Location = new System.Drawing.Point(202, 384);
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(100, 20);
             this.txtGia.TabIndex = 66;
@@ -220,17 +223,49 @@
             // 
             // txtSoLuong
             // 
-            this.txtSoLuong.Location = new System.Drawing.Point(163, 347);
+            this.txtSoLuong.Location = new System.Drawing.Point(202, 346);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(100, 20);
             this.txtSoLuong.TabIndex = 67;
             this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
+            // btnPDF
+            // 
+            this.btnPDF.AnimationHoverSpeed = 0.07F;
+            this.btnPDF.AnimationSpeed = 0.03F;
+            this.btnPDF.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnPDF.BorderColor = System.Drawing.Color.Black;
+            this.btnPDF.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnPDF.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnPDF.CheckedForeColor = System.Drawing.Color.White;
+            this.btnPDF.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnPDF.CheckedImage")));
+            this.btnPDF.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnPDF.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPDF.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPDF.ForeColor = System.Drawing.Color.White;
+            this.btnPDF.Image = ((System.Drawing.Image)(resources.GetObject("btnPDF.Image")));
+            this.btnPDF.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnPDF.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnPDF.Location = new System.Drawing.Point(368, 213);
+            this.btnPDF.Name = "btnPDF";
+            this.btnPDF.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnPDF.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnPDF.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPDF.OnHoverImage = null;
+            this.btnPDF.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnPDF.OnPressedColor = System.Drawing.Color.Black;
+            this.btnPDF.Size = new System.Drawing.Size(159, 42);
+            this.btnPDF.TabIndex = 68;
+            this.btnPDF.Text = "Xuất PDF";
+            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
+            // 
             // Frm_CTHDX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(607, 450);
+            this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.txtSoLuong);
             this.Controls.Add(this.txtGia);
             this.Controls.Add(this.lbNgayXuat);
@@ -250,6 +285,7 @@
             this.Controls.Add(this.gunaPictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_CTHDX";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_CTHDX";
             this.Load += new System.EventHandler(this.Frm_CTHDX_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).EndInit();
@@ -277,5 +313,6 @@
         private System.Windows.Forms.Label lbNgayXuat;
         private System.Windows.Forms.TextBox txtGia;
         private System.Windows.Forms.TextBox txtSoLuong;
+        private Guna.UI.WinForms.GunaAdvenceButton btnPDF;
     }
 }

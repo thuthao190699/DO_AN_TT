@@ -76,6 +76,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
             this.label8.Location = new System.Drawing.Point(211, 14);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(291, 24);
@@ -188,7 +189,7 @@
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Image = global::DoAnThucTap.Properties.Resources.luu;
             this.btnSave.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSave.Location = new System.Drawing.Point(650, 120);
+            this.btnSave.Location = new System.Drawing.Point(638, 92);
             this.btnSave.Name = "btnSave";
             this.btnSave.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btnSave.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -213,7 +214,7 @@
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.Image = global::DoAnThucTap.Properties.Resources.add1;
             this.btnAdd.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAdd.Location = new System.Drawing.Point(650, 59);
+            this.btnAdd.Location = new System.Drawing.Point(638, 44);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btnAdd.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -250,7 +251,7 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnUpdate.Image = global::DoAnThucTap.Properties.Resources.update;
             this.btnUpdate.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnUpdate.Location = new System.Drawing.Point(649, 182);
+            this.btnUpdate.Location = new System.Drawing.Point(638, 140);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btnUpdate.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -284,7 +285,7 @@
             this.btnChiTiet.ForeColor = System.Drawing.Color.Black;
             this.btnChiTiet.Image = null;
             this.btnChiTiet.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnChiTiet.Location = new System.Drawing.Point(614, 12);
+            this.btnChiTiet.Location = new System.Drawing.Point(500, 194);
             this.btnChiTiet.Name = "btnChiTiet";
             this.btnChiTiet.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnChiTiet.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -366,11 +367,11 @@
             this.btnCancel.BaseColor2 = System.Drawing.Color.Fuchsia;
             this.btnCancel.BorderColor = System.Drawing.Color.Black;
             this.btnCancel.FocusedColor = System.Drawing.Color.Empty;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCancel.Location = new System.Drawing.Point(540, 195);
+            this.btnCancel.Location = new System.Drawing.Point(638, 194);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btnCancel.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -378,7 +379,7 @@
             this.btnCancel.OnHoverForeColor = System.Drawing.Color.White;
             this.btnCancel.OnHoverImage = null;
             this.btnCancel.OnPressedColor = System.Drawing.Color.Black;
-            this.btnCancel.Size = new System.Drawing.Size(87, 29);
+            this.btnCancel.Size = new System.Drawing.Size(139, 38);
             this.btnCancel.TabIndex = 73;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -412,6 +413,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txtGia);
             this.Controls.Add(this.txtSoLuong);
@@ -439,6 +441,7 @@
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_HDX";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_HDX";
             this.Load += new System.EventHandler(this.Frm_HDX_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

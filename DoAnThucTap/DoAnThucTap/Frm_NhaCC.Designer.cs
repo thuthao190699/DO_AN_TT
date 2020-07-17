@@ -47,6 +47,7 @@
             this.btnUpdate = new Guna.UI.WinForms.GunaGradientButton();
             this.btnAdd = new Guna.UI.WinForms.GunaGradientButton();
             this.txtSDT = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -112,36 +113,40 @@
             // lbMaNCC
             // 
             this.lbMaNCC.AutoSize = true;
+            this.lbMaNCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbMaNCC.Location = new System.Drawing.Point(64, 44);
             this.lbMaNCC.Name = "lbMaNCC";
-            this.lbMaNCC.Size = new System.Drawing.Size(57, 13);
+            this.lbMaNCC.Size = new System.Drawing.Size(140, 19);
             this.lbMaNCC.TabIndex = 35;
-            this.lbMaNCC.Text = "mã nhà cc";
+            this.lbMaNCC.Text = "Mã Nhà Cung Cấp:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(64, 86);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.Size = new System.Drawing.Size(142, 19);
             this.label2.TabIndex = 36;
-            this.label2.Text = "Tên Nhà CC:";
+            this.label2.Text = "Tên Nhà Cung Cấp:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(64, 130);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 13);
+            this.label3.Size = new System.Drawing.Size(109, 19);
             this.label3.TabIndex = 37;
             this.label3.Text = "Số Điện Thoại:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(64, 175);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.Size = new System.Drawing.Size(65, 19);
             this.label4.TabIndex = 38;
             this.label4.Text = "Địa Chỉ:";
             // 
@@ -152,7 +157,7 @@
             this.txtTenNCC.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtTenNCC.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTenNCC.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtTenNCC.Location = new System.Drawing.Point(183, 73);
+            this.txtTenNCC.Location = new System.Drawing.Point(212, 79);
             this.txtTenNCC.Name = "txtTenNCC";
             this.txtTenNCC.PasswordChar = '\0';
             this.txtTenNCC.Size = new System.Drawing.Size(160, 26);
@@ -165,7 +170,7 @@
             this.txtDiaChi.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDiaChi.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtDiaChi.Location = new System.Drawing.Point(183, 175);
+            this.txtDiaChi.Location = new System.Drawing.Point(212, 168);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.PasswordChar = '\0';
             this.txtDiaChi.Size = new System.Drawing.Size(160, 26);
@@ -183,7 +188,7 @@
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCancel.Location = new System.Drawing.Point(565, 114);
+            this.btnCancel.Location = new System.Drawing.Point(570, 152);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btnCancel.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -208,7 +213,7 @@
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
             this.btnDelete.Image = global::DoAnThucTap.Properties.Resources.xoa;
             this.btnDelete.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnDelete.Location = new System.Drawing.Point(565, 57);
+            this.btnDelete.Location = new System.Drawing.Point(570, 86);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btnDelete.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -233,7 +238,7 @@
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Image = global::DoAnThucTap.Properties.Resources.luu;
             this.btnSave.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSave.Location = new System.Drawing.Point(398, 146);
+            this.btnSave.Location = new System.Drawing.Point(406, 107);
             this.btnSave.Name = "btnSave";
             this.btnSave.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btnSave.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -258,7 +263,7 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnUpdate.Image = global::DoAnThucTap.Properties.Resources.update;
             this.btnUpdate.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnUpdate.Location = new System.Drawing.Point(398, 73);
+            this.btnUpdate.Location = new System.Drawing.Point(406, 168);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btnUpdate.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -283,7 +288,7 @@
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.Image = global::DoAnThucTap.Properties.Resources.add1;
             this.btnAdd.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAdd.Location = new System.Drawing.Point(398, 12);
+            this.btnAdd.Location = new System.Drawing.Point(406, 44);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btnAdd.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -298,17 +303,30 @@
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(183, 127);
+            this.txtSDT.Location = new System.Drawing.Point(212, 129);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(160, 20);
             this.txtSDT.TabIndex = 48;
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(156, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(336, 26);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "THÔNG TIN NHÀ CUNG CẤP";
+            // 
             // Frm_NhaCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(746, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
@@ -325,6 +343,7 @@
             this.Controls.Add(this.gunaPictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_NhaCC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_NhaCC";
             this.Load += new System.EventHandler(this.Frm_NhaCC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).EndInit();
@@ -354,5 +373,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -65,5 +65,15 @@ namespace DoAnThucTap
             }
 
         }
+
+        private void btnPDF_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dl = new FolderBrowserDialog();
+            if (dl.ShowDialog(this) == DialogResult.OK)
+            {
+                FormReportHDX f = new FormReportHDX(Frm_HDX.mahdx, dl.SelectedPath);
+                MessageBox.Show("Export done ");
+            }
+        }
     }
 }

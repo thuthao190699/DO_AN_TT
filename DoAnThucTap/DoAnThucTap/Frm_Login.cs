@@ -24,6 +24,7 @@ namespace DoAnThucTap
         public Frm_Login()
         {
             InitializeComponent();
+          
         }
         string tkDoiMK = "";
         public string MaHoa(string txt)

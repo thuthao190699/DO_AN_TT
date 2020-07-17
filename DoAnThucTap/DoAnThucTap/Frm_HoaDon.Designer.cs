@@ -42,9 +42,9 @@
             // 
             this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox2.Image = global::DoAnThucTap.Properties.Resources.xuat;
-            this.gunaPictureBox2.Location = new System.Drawing.Point(308, 96);
+            this.gunaPictureBox2.Location = new System.Drawing.Point(467, 96);
             this.gunaPictureBox2.Name = "gunaPictureBox2";
-            this.gunaPictureBox2.Size = new System.Drawing.Size(172, 182);
+            this.gunaPictureBox2.Size = new System.Drawing.Size(243, 182);
             this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gunaPictureBox2.TabIndex = 1;
             this.gunaPictureBox2.TabStop = false;
@@ -54,9 +54,9 @@
             // 
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox1.Image = global::DoAnThucTap.Properties.Resources.hd;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(44, 96);
+            this.gunaPictureBox1.Location = new System.Drawing.Point(112, 96);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(176, 182);
+            this.gunaPictureBox1.Size = new System.Drawing.Size(245, 182);
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gunaPictureBox1.TabIndex = 0;
             this.gunaPictureBox1.TabStop = false;
@@ -66,7 +66,7 @@
             // 
             this.gunaPictureBox3.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox3.Image = global::DoAnThucTap.Properties.Resources.dong;
-            this.gunaPictureBox3.Location = new System.Drawing.Point(538, 1);
+            this.gunaPictureBox3.Location = new System.Drawing.Point(801, 12);
             this.gunaPictureBox3.Name = "gunaPictureBox3";
             this.gunaPictureBox3.Size = new System.Drawing.Size(45, 35);
             this.gunaPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -78,7 +78,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(58, 300);
+            this.label1.Location = new System.Drawing.Point(155, 300);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 19);
             this.label1.TabIndex = 4;
@@ -88,7 +88,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(327, 300);
+            this.label2.Location = new System.Drawing.Point(529, 300);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 19);
             this.label2.TabIndex = 5;
@@ -99,7 +99,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(583, 403);
+            this.ClientSize = new System.Drawing.Size(867, 528);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gunaPictureBox3);
@@ -107,6 +107,7 @@
             this.Controls.Add(this.gunaPictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_HoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_HoaDon";
             this.Load += new System.EventHandler(this.Frm_HoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();

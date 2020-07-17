@@ -137,6 +137,11 @@ namespace DoAnThucTap
 
         private void Frm_HDX_Load(object sender, EventArgs e)
         {
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.HotPink;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Aquamarine;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Green;
+
             btnChiTiet.Visible = false;
 
             k = 0;

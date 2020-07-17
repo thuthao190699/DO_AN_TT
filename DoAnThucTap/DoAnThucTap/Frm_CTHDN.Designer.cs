@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CTHDN));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,16 +50,18 @@
             this.lbMaSP = new System.Windows.Forms.ComboBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.btnPDF = new Guna.UI.WinForms.GunaAdvenceButton();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(244, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 24);
+            this.label1.Size = new System.Drawing.Size(311, 26);
             this.label1.TabIndex = 6;
             this.label1.Text = "CHI TIẾT HÓA ĐƠN NHẬP";
             // 
@@ -86,7 +89,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(30, 186);
+            this.label4.Location = new System.Drawing.Point(64, 186);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(142, 19);
             this.label4.TabIndex = 9;
@@ -115,7 +118,7 @@
             // lbMaHDN
             // 
             this.lbMaHDN.AutoSize = true;
-            this.lbMaHDN.Location = new System.Drawing.Point(191, 95);
+            this.lbMaHDN.Location = new System.Drawing.Point(216, 99);
             this.lbMaHDN.Name = "lbMaHDN";
             this.lbMaHDN.Size = new System.Drawing.Size(64, 13);
             this.lbMaHDN.TabIndex = 13;
@@ -180,7 +183,7 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnUpdate.Image = global::DoAnThucTap.Properties.Resources.update;
             this.btnUpdate.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnUpdate.Location = new System.Drawing.Point(516, 315);
+            this.btnUpdate.Location = new System.Drawing.Point(516, 248);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btnUpdate.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -188,7 +191,7 @@
             this.btnUpdate.OnHoverForeColor = System.Drawing.Color.White;
             this.btnUpdate.OnHoverImage = null;
             this.btnUpdate.OnPressedColor = System.Drawing.Color.Black;
-            this.btnUpdate.Size = new System.Drawing.Size(139, 42);
+            this.btnUpdate.Size = new System.Drawing.Size(159, 42);
             this.btnUpdate.TabIndex = 56;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -205,7 +208,7 @@
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Image = global::DoAnThucTap.Properties.Resources.luu;
             this.btnSave.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSave.Location = new System.Drawing.Point(516, 258);
+            this.btnSave.Location = new System.Drawing.Point(516, 186);
             this.btnSave.Name = "btnSave";
             this.btnSave.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btnSave.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -213,7 +216,7 @@
             this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
             this.btnSave.OnHoverImage = null;
             this.btnSave.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSave.Size = new System.Drawing.Size(139, 42);
+            this.btnSave.Size = new System.Drawing.Size(159, 42);
             this.btnSave.TabIndex = 55;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -221,7 +224,7 @@
             // lbTenNCC
             // 
             this.lbTenNCC.AutoSize = true;
-            this.lbTenNCC.Location = new System.Drawing.Point(193, 186);
+            this.lbTenNCC.Location = new System.Drawing.Point(216, 192);
             this.lbTenNCC.Name = "lbTenNCC";
             this.lbTenNCC.Size = new System.Drawing.Size(39, 13);
             this.lbTenNCC.TabIndex = 61;
@@ -230,7 +233,7 @@
             // lbNgay
             // 
             this.lbNgay.AutoSize = true;
-            this.lbNgay.Location = new System.Drawing.Point(193, 234);
+            this.lbNgay.Location = new System.Drawing.Point(216, 234);
             this.lbNgay.Name = "lbNgay";
             this.lbNgay.Size = new System.Drawing.Size(49, 13);
             this.lbNgay.TabIndex = 62;
@@ -249,7 +252,7 @@
             // lbTenNV
             // 
             this.lbTenNV.AutoSize = true;
-            this.lbTenNV.Location = new System.Drawing.Point(191, 277);
+            this.lbTenNV.Location = new System.Drawing.Point(216, 277);
             this.lbTenNV.Name = "lbTenNV";
             this.lbTenNV.Size = new System.Drawing.Size(72, 13);
             this.lbTenNV.TabIndex = 17;
@@ -258,7 +261,7 @@
             // lbthanhtien
             // 
             this.lbthanhtien.AutoSize = true;
-            this.lbthanhtien.Location = new System.Drawing.Point(191, 395);
+            this.lbthanhtien.Location = new System.Drawing.Point(216, 399);
             this.lbthanhtien.Name = "lbthanhtien";
             this.lbthanhtien.Size = new System.Drawing.Size(54, 13);
             this.lbthanhtien.TabIndex = 65;
@@ -270,21 +273,21 @@
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label9.Location = new System.Drawing.Point(64, 395);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 19);
+            this.label9.Size = new System.Drawing.Size(90, 19);
             this.label9.TabIndex = 64;
-            this.label9.Text = "Thanh tien:";
+            this.label9.Text = "Thành Tiền:";
             // 
             // lbMaSP
             // 
             this.lbMaSP.FormattingEnabled = true;
-            this.lbMaSP.Location = new System.Drawing.Point(190, 136);
+            this.lbMaSP.Location = new System.Drawing.Point(219, 138);
             this.lbMaSP.Name = "lbMaSP";
             this.lbMaSP.Size = new System.Drawing.Size(121, 21);
             this.lbMaSP.TabIndex = 66;
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Location = new System.Drawing.Point(190, 359);
+            this.txtDonGia.Location = new System.Drawing.Point(219, 359);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(121, 20);
             this.txtDonGia.TabIndex = 67;
@@ -292,17 +295,49 @@
             // 
             // txtSoLuong
             // 
-            this.txtSoLuong.Location = new System.Drawing.Point(190, 325);
+            this.txtSoLuong.Location = new System.Drawing.Point(219, 321);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(121, 20);
             this.txtSoLuong.TabIndex = 68;
             this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
+            // btnPDF
+            // 
+            this.btnPDF.AnimationHoverSpeed = 0.07F;
+            this.btnPDF.AnimationSpeed = 0.03F;
+            this.btnPDF.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnPDF.BorderColor = System.Drawing.Color.Black;
+            this.btnPDF.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnPDF.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnPDF.CheckedForeColor = System.Drawing.Color.White;
+            this.btnPDF.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnPDF.CheckedImage")));
+            this.btnPDF.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnPDF.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPDF.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPDF.ForeColor = System.Drawing.Color.White;
+            this.btnPDF.Image = ((System.Drawing.Image)(resources.GetObject("btnPDF.Image")));
+            this.btnPDF.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnPDF.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnPDF.Location = new System.Drawing.Point(516, 299);
+            this.btnPDF.Name = "btnPDF";
+            this.btnPDF.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnPDF.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnPDF.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPDF.OnHoverImage = null;
+            this.btnPDF.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnPDF.OnPressedColor = System.Drawing.Color.Black;
+            this.btnPDF.Size = new System.Drawing.Size(159, 42);
+            this.btnPDF.TabIndex = 69;
+            this.btnPDF.Text = "Xuất PDF";
+            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
+            // 
             // Frm_CTHDN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(776, 450);
+            this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.txtSoLuong);
             this.Controls.Add(this.txtDonGia);
             this.Controls.Add(this.lbMaSP);
@@ -326,6 +361,7 @@
             this.Controls.Add(this.gunaPictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_CTHDN";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_CTHDN";
             this.Load += new System.EventHandler(this.Frm_CTHDN_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).EndInit();
@@ -357,5 +393,6 @@
         private System.Windows.Forms.ComboBox lbMaSP;
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.TextBox txtSoLuong;
+        private Guna.UI.WinForms.GunaAdvenceButton btnPDF;
     }
 }

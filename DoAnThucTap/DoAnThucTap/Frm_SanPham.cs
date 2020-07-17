@@ -52,7 +52,7 @@ namespace DoAnThucTap
             txtMaSP.Enabled = false;
             txtTenSP.Enabled = true;
             txtGiaSP.Enabled = true;
-            txtSoLuongSP.Enabled = true;
+            txtSoLuongSP.Enabled =false;
             cbLoaiSP.Enabled = true;
             var a = kn.SanPhams.OrderByDescending(s => s.MaSP).FirstOrDefault();
             txtMaSP.Text = Convert.ToString(a.MaSP + 1);
@@ -286,16 +286,19 @@ namespace DoAnThucTap
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            try
-            {
-                kn.DeleteSanPham(Convert.ToInt32(txtMaSP.Text));
-                dataGridView1.DataSource = kn.SanPhams;
-                Frm_SanPham_Load(sender, e);
-            }
-            catch
-            {
-                MessageBox.Show("Khong the xoa", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+
+            MessageBox.Show("Khong the xoa", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
+            //if (result==DialogResult.Yes)
+            //try
+            //{
+            //    kn.DeleteSanPham(Convert.ToInt32(txtMaSP.Text));
+            //    dataGridView1.DataSource = kn.SanPhams;
+            //    Frm_SanPham_Load(sender, e);
+            //}
+            //catch
+            //{
+            //}
 
         }
 
@@ -316,10 +319,10 @@ namespace DoAnThucTap
 
         private void Frm_SanPham_Load(object sender, EventArgs e)
         {
-            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.HotPink;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Crimson;
-            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Aquamarine;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Green;
 
             Clear();
             dataGridView1.AutoGenerateColumns = false;
