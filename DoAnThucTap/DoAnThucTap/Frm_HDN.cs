@@ -87,12 +87,12 @@ namespace DoAnThucTap
         {
             var a = dt.HoaDonNhaps.OrderByDescending(s => s.MaHDN).FirstOrDefault();
             lbMaHDN.Text = Convert.ToString(a.MaHDN + 1);
-            
-           
+
+            dateTimePicker1.Enabled = false;
 
             cbNhaCC.Enabled = true;
             cbTenNV.Enabled = true;
-            dateTimePicker1.Enabled = true;
+            dateTimePicker1.Enabled = false;
 
             btnAdd.Enabled = false;
             btnUpdate.Enabled = false;
@@ -102,8 +102,17 @@ namespace DoAnThucTap
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            dt.ThemHoaDonNhap(Convert.ToInt32(lbMaHDN.Text), Convert.ToInt32(cbNhaCC.SelectedValue.ToString()), Convert.ToInt32(cbTenNV.SelectedValue.ToString()), (dateTimePicker1.Value));
-            Frm_HDN_Load(sender, e);
+            if(cbNhaCC.Text != "" && cbTenNV.Text != "" )
+            {
+                dt.ThemHoaDonNhap(Convert.ToInt32(lbMaHDN.Text), Convert.ToInt32(cbNhaCC.SelectedValue.ToString()), Convert.ToInt32(cbTenNV.SelectedValue.ToString()), (DateTime.Now));
+                Frm_HDN_Load(sender, e);
+            }
+            else
+            {
+
+                MessageBox.Show("Vui long nhap du thong tin");
+            }
+            
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -115,7 +124,7 @@ namespace DoAnThucTap
             btnUpdate.Enabled = false;
             btnSave.Enabled = true;
 
-            dateTimePicker1.Enabled = true;
+            dateTimePicker1.Enabled = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

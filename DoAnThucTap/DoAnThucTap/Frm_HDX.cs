@@ -98,6 +98,7 @@ namespace DoAnThucTap
             txtThanhTien.Enabled = false;
             txtGia.Enabled = false;
             txtSoLuong.Enabled = true;
+            dpNgayXuat.Enabled = false;
 
             btnAdd.Enabled = false;
             btnUpdate.Enabled = false;
@@ -132,7 +133,7 @@ namespace DoAnThucTap
             btnUpdate.Enabled = false;
             btnSave.Enabled = true;
 
-            dpNgayXuat.Enabled = true;
+            dpNgayXuat.Enabled = false;
         }
 
         private void Frm_HDX_Load(object sender, EventArgs e)
@@ -158,7 +159,7 @@ namespace DoAnThucTap
                 if (txtSoLuong.Text != "" && cbTenSP.Text != "" &&cbTenNV.Text != "" &&cbTenKH.Text != "")
                 {
                     kn.ThemHoaDonXuat(Convert.ToInt32(lbMaHDX.Text), Convert.ToInt32(cbTenKH.SelectedValue),
-                    Convert.ToInt32(cbTenNV.SelectedValue), Convert.ToDateTime(dpNgayXuat.Text),
+                    Convert.ToInt32(cbTenNV.SelectedValue),(DateTime.Now),
                     Convert.ToInt32(txtThanhTien.Text));
                     kn.ThemCTHDX(Convert.ToInt32(cbTenSP.SelectedValue), Convert.ToInt32(lbMaHDX.Text),
                      Convert.ToInt32(txtSoLuong.Text));
@@ -179,7 +180,7 @@ namespace DoAnThucTap
                 if (txtSoLuong.Text != "" && cbTenSP.Text != "" && cbTenNV.Text != "" && cbTenKH.Text != "")
                 {
                     kn.UpdatetHDX(Convert.ToInt32(lbMaHDX.Text), Convert.ToInt32(cbTenKH.SelectedValue),
-                    Convert.ToInt32(cbTenNV.SelectedValue), Convert.ToDateTime(dpNgayXuat.Text),
+                    Convert.ToInt32(cbTenNV.SelectedValue), (DateTime.Now),
                     Convert.ToInt32(txtThanhTien.Text));
                     kn.UpdatetCTHDX(Convert.ToInt32(lbMaHDX.Text), Convert.ToInt32(cbTenSP.SelectedValue),
                          Convert.ToInt32(txtSoLuong.Text));
