@@ -72,15 +72,16 @@ namespace DoAnThucTap
             cbTenNV.Text = dataGridView1.Rows[i].Cells[2].Value.ToString();
             dateTimePicker1.Text = dataGridView1.Rows[i].Cells[3].Value.ToString();
             txtThanhTien.Text = dataGridView1.Rows[i].Cells[4].Value.ToString();
-            mahd = Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value.ToString());
+            mahd = Convert.ToInt32(lbMaHDN.Text);
         }
 
         private void btnChiTiet_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(mahd.ToString());
             Frm_CTHDN f = new Frm_CTHDN();
             f.ShowDialog();
             f.Close();
-            
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -105,6 +106,7 @@ namespace DoAnThucTap
             if(cbNhaCC.Text != "" && cbTenNV.Text != "" )
             {
                 dt.ThemHoaDonNhap(Convert.ToInt32(lbMaHDN.Text), Convert.ToInt32(cbNhaCC.SelectedValue.ToString()), Convert.ToInt32(cbTenNV.SelectedValue.ToString()), (DateTime.Now));
+                dt.ThemCTHDN(1, Convert.ToInt32(lbMaHDN.Text), 0, 0);
                 Frm_HDN_Load(sender, e);
             }
             else

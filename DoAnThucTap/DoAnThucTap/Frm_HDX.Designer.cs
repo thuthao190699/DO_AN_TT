@@ -58,6 +58,7 @@
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.txtGia = new System.Windows.Forms.TextBox();
+            this.gunaImageButton1 = new Guna.UI.WinForms.GunaImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -302,7 +303,7 @@
             this.cbTenNV.FormattingEnabled = true;
             this.cbTenNV.Location = new System.Drawing.Point(133, 141);
             this.cbTenNV.Name = "cbTenNV";
-            this.cbTenNV.Size = new System.Drawing.Size(121, 21);
+            this.cbTenNV.Size = new System.Drawing.Size(136, 21);
             this.cbTenNV.TabIndex = 56;
             // 
             // dpNgayXuat
@@ -409,12 +410,27 @@
             this.txtGia.TabIndex = 76;
             this.txtGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGia_KeyPress);
             // 
+            // gunaImageButton1
+            // 
+            this.gunaImageButton1.BackgroundImage = global::DoAnThucTap.Properties.Resources.add;
+            this.gunaImageButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.gunaImageButton1.Image = null;
+            this.gunaImageButton1.ImageSize = new System.Drawing.Size(64, 64);
+            this.gunaImageButton1.Location = new System.Drawing.Point(248, 98);
+            this.gunaImageButton1.Name = "gunaImageButton1";
+            this.gunaImageButton1.OnHoverImage = null;
+            this.gunaImageButton1.OnHoverImageOffset = new System.Drawing.Point(0, 0);
+            this.gunaImageButton1.Size = new System.Drawing.Size(21, 22);
+            this.gunaImageButton1.TabIndex = 77;
+            this.gunaImageButton1.Click += new System.EventHandler(this.gunaImageButton1_Click);
+            // 
             // Frm_HDX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.gunaImageButton1);
             this.Controls.Add(this.txtGia);
             this.Controls.Add(this.txtSoLuong);
             this.Controls.Add(this.txtThanhTien);
@@ -481,5 +497,6 @@
         private System.Windows.Forms.TextBox txtThanhTien;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.TextBox txtGia;
+        private Guna.UI.WinForms.GunaImageButton gunaImageButton1;
     }
 }

@@ -244,5 +244,16 @@ namespace DoAnThucTap
                 e.Handled = true;
             }
         }
+        private void LoadCombobox()
+        {
+            cbTenKH.DisplayMember = "TenKH";
+            cbTenKH.ValueMember = "MaKH";
+            cbTenKH.DataSource = kn.KhachHangs.ToList();
+        }
+        private void gunaImageButton1_Click(object sender, EventArgs e)
+        {
+            Frm_ThemKhachHang f = new Frm_ThemKhachHang(LoadCombobox,true);
+            f.ShowDialog();
+        }
     }
 }

@@ -17,10 +17,19 @@ namespace DoAnThucTap
         {
             InitializeComponent();
         }
+        private Voids voids;
+        private bool checkExit = false;
+        public Frm_ThemKhachHang(Voids vd,bool check)
+        {
+            InitializeComponent();
+            voids = vd;
+            checkExit = check;
+        }
         XuLyDuLieuDataContext kn = new XuLyDuLieuDataContext();
 
         private void gunaPictureBox2_Click(object sender, EventArgs e)
         {
+            if (checkExit) voids();
             this.Close();
         }
 
@@ -36,8 +45,14 @@ namespace DoAnThucTap
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin:", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            kn.ThemKhachHang(Convert.ToInt32(lbMaKH.Text), txtTenKH.Text, txtSDT.Text, txtDiaChi.Text, txtEmail.Text);
-            this.Close();
+            else
+            {
+                kn.ThemKhachHang(Convert.ToInt32(lbMaKH.Text), txtTenKH.Text, txtSDT.Text, txtDiaChi.Text, txtEmail.Text);
+                MessageBox.Show("Thêm thành công", "Thông báo");
+                if (checkExit) voids();
+                this.Close();
+            }
+            
         }
 
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
