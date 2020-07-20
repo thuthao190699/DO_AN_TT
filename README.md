@@ -19,6 +19,7 @@ Lớp:CNTT-K58
 - Gửi gmail cấp lại password
 3. Quản lý khách hàng:
 - Thêm, sửa, xóa thông tin khách hàng
+- Tìm kiếm khách hàng
 4. Quản lý hóa đơn:
 - Hóa đơn nhập:Thêm, sửa thông tin hóa đơn nhập; xem chi tiết hóa đơn nhập;Xuất report và PDF hóa đơn nhập.
 - Hóa đơn xuất:Thêm thông tin hóa đơn xuất; Xem chi tiết hóa đơn xuất;Xuất report và PDF hóa đơn xuất.
@@ -32,12 +33,14 @@ Lớp:CNTT-K58
 1. Phương thức thanh toán
 2. Thông báo hết hàng
 3. Hóa đơn nhập hàng chưa ổn về mặt logic
+4. Thống kê doanh thu theo quý, năm
+
 
 ## Hướng dẫn sử dụng
 - Cài đặt file msi: mở file và nhấn next để cài đặt
-*Sử dụng:
--Đăng nhập: 
-+Tên đăng nhập:thao
-+Pass:123
+* Sử dụng:
+- Đăng nhập: 
++ Tên đăng nhập:thao
++ Pass:123
 
 Xin cảm ơn!
