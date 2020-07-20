@@ -27,7 +27,7 @@ Lớp:CNTT-K58
 6. Thống kê:
 - Thống kê doanh thu hàng tháng
 - Biểu đồ doanh thu
-7. Chức năng gửi gmail, liên kết facebook
+7. Chức năng gửi gmail cho khách hàng, liên kết facebook.
 ## Phần 3: Các chức năng chưa hoàn thành
 1. Phương thức thanh toán
 2. Thông báo hết hàng
